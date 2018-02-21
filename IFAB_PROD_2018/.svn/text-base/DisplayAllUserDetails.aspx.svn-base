@@ -1,0 +1,18 @@
+<%@ Page Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="DisplayAllUserDetails.aspx.vb"
+    Inherits="DisplayAllUserDetails" Title="All user details" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" DataSourceID="ODSUserDetails"
+        ShowFooter="True" SkinID="GridView" EmptyDataText="There are no records to display." AutoGenerateColumns="False">
+        <Columns>
+            <asp:BoundField DataField="UserName" HeaderText="UserName" />
+             <asp:BoundField DataField="Email" HeaderText="Email" />
+             <asp:BoundField DataField="PasswordQuestion" HeaderText="PasswordQuestion" />
+              <asp:BoundField DataField="IsApproved" HeaderText="IsApproved" />
+               <asp:BoundField DataField="CreateDate" HeaderText="CreateDate" />
+                <asp:BoundField DataField="LastLoginDate" HeaderText="LastLoginDate" />
+                </Columns>
+    </asp:GridView>
+    <asp:ObjectDataSource ID="ODSUserDetails" runat="server" TypeName="UserDetailsDB" 
+        SelectMethod="GetAllUsers"></asp:ObjectDataSource>
+</asp:Content>

@@ -1,0 +1,1271 @@
+<%@ Page Language="VB" AutoEventWireup="false" MasterPageFile="~/Home.master" CodeFile="QualificationDetails.aspx.vb"
+    Inherits="QualificationDetails" Title="Additional Qualification Details" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <script type="text/javascript" language="javascript">
+
+        function ShowImage1() {
+            GlbShowSImage(document.getElementById("<%=txtStudentCode.ClientID%>"));
+
+        }
+        function HideImage1() {
+            GlbHideSImage(document.getElementById("<%=txtStudentCode.ClientID%>"));
+        }
+        function ValidV2() {
+            msg = AutoCompleteExtenderForThree(document.getElementById("<%=txtStudentcode.ClientID %>"), 'Student Code');
+            if (msg != "") {
+                document.getElementById("<%=txtStudentcode.ClientID %>").focus();
+                return msg;
+            }
+        }
+
+        function ValidateV2() {
+            var msg = ValidV2();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=msginfo1.ClientID %>").innerText = msg;
+                    document.getElementById("<%=msginfo.ClientID%>").innerText = "";
+                    document.getElementById("<%=msgin.ClientID%>").innerText = "";
+                    document.getElementById("<%=lblS.ClientID%>").innerText = "";
+                    document.getElementById("<%=lblE.ClientID%>").innerText = "";
+                    document.getElementById("<%=lblSC.ClientID%>").innerText = "";
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=msginfo1.ClientID %>").textContent = msg;
+                    document.getElementById("<%=msginfo.ClientID%>").textContent = "";
+                    document.getElementById("<%=msgin.ClientID%>").textContent = "";
+                    document.getElementById("<%=lblS.ClientID%>").textContent = "";
+                    document.getElementById("<%=lblE.ClientID%>").textContent = "";
+                    document.getElementById("<%=lblSC.ClientID%>").textContent = "";
+                    return false;
+                }
+            }
+            return true;
+        }
+        function ValidV3() {
+            var msg;
+            msg = AutoCompleteExtenderForThree(document.getElementById("<%=txtStudentcode.ClientID %>"), 'Student Code');
+            if (msg != "") {
+                document.getElementById("<%=txtStudentcode.ClientID %>").focus();
+                return msg;
+            }
+        }
+
+        function ValidateV3() {
+            var msg = ValidV3();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=msginfo1.ClientID %>").innerText = "";
+                    document.getElementById("<%=msginfo.ClientID%>").innerText = "";
+                    document.getElementById("<%=msgin.ClientID%>").innerText = "";
+                    document.getElementById("<%=lblS.ClientID%>").innerText = "";
+                    document.getElementById("<%=lblE.ClientID%>").innerText = "";
+                    document.getElementById("<%=lblSC.ClientID%>").innerText = "";
+                    document.getElementById("<%=msgin.ClientID %>").innerText = msg;
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=msginfo1.ClientID %>").textContent = "";
+                    document.getElementById("<%=msginfo.ClientID%>").textContent = "";
+                    document.getElementById("<%=msgin.ClientID%>").textContent = "";
+                    document.getElementById("<%=lblS.ClientID%>").textContent = "";
+                    document.getElementById("<%=lblE.ClientID%>").textContent = "";
+                    document.getElementById("<%=lblSC.ClientID%>").textContent = "";
+                    document.getElementById("<%=msgin.ClientID %>").textContent = msg;
+                    return false;
+                }
+            }
+            return true;
+        }
+        function Valid() {
+            var msg;
+            msg = AutoCompleteExtenderForThree(document.getElementById("<%=txtStudentcode.ClientID %>"), 'Student Code');
+            if (msg != "") {
+                document.getElementById("<%=txtStudentcode.ClientID %>").focus();
+                return msg;
+            }
+            msg = NameField100(document.getElementById("<%=txtExamination.ClientID %>"), 'Examination');
+            if (msg != "") {
+                document.getElementById("<%=txtExamination.ClientID %>").focus();
+                return msg;
+            }
+            //            msg = NameField100(document.getElementById("<%=txt_BOU.ClientID %>"), 'Board/University*');
+            //            if (msg != "") {
+            //                document.getElementById("<%=txt_BOU.ClientID %>").focus();
+            //                return msg;
+            //            }
+
+            msg = FeesField(document.getElementById("<%=txt_marks.ClientID %>"), 'Marks');
+            if (msg != "") {
+                document.getElementById("<%=txt_marks.ClientID %>").focus();
+                return msg;
+            }
+
+            return true;
+        }
+        function Valid1() {
+            var msg;
+            msg = AutoCompleteExtenderForThree(document.getElementById("<%=txtStudentcode.ClientID %>"), 'Student Code');
+            if (msg != "") {
+                document.getElementById("<%=txtStudentcode.ClientID %>").focus();
+                return msg;
+            }
+            msg = NameField100(document.getElementById("<%=txtName.ClientID %>"), 'Organisation Name');
+            if (msg != "") {
+                document.getElementById("<%=txtName.ClientID %>").focus();
+                return msg;
+            }
+            msg = NameField100(document.getElementById("<%=txtNIJ.ClientID %>"), 'Nature of Job');
+            if (msg != "") {
+                document.getElementById("<%=txtNIJ.ClientID %>").focus();
+                return msg;
+            }
+            msg = FeesField(document.getElementById("<%=txtNOY.ClientID %>"), 'Year');
+            if (msg != "") {
+                document.getElementById("<%=txtNOY.ClientID %>").focus();
+                return msg;
+            }
+
+            return true;
+        }
+        function Valid2() {
+            var msg;
+            msg = AutoCompleteExtenderForThree(document.getElementById("<%=txtStudentcode.ClientID %>"), 'Student Code');
+            if (msg != "") {
+                document.getElementById("<%=txtStudentcode.ClientID %>").focus();
+                return msg;
+            }
+            msg = NameField100(document.getElementById("<%=txtcertificatename.ClientID %>"), 'Certificate Name');
+            if (msg != "") {
+                document.getElementById("<%=txtcertificatename.ClientID %>").focus();
+                return msg;
+            }
+            msg = Field255N(document.getElementById("<%=txtremarks.ClientID %>"), 'Remarks');
+            if (msg != "") {
+                document.getElementById("<%=txtremarks.ClientID %>").focus();
+                return msg;
+            }
+
+
+            return true;
+        }
+
+        function Validate() {
+            var msg = Valid();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=lblE.ClientID %>").innerText = msg;
+                    document.getElementById("<%=msginfo.ClientID%>").innerText = "";
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=lblE.ClientID %>").textContent = msg;
+                    document.getElementById("<%=msginfo.ClientID%>").textContent = "";
+                    return false;
+                }
+            }
+            return true;
+        }
+        function Validate1() {
+            var msg = Valid1();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=msginfo1.ClientID %>").innerText = msg;
+                    document.getElementById("<%=lblS.ClientID%>").innerText = "";
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=msginfo1.ClientID %>").textContent = msg;
+                    document.getElementById("<%=lblS.ClientID%>").textContent = "";
+                    return false;
+                }
+            }
+            return true;
+        }
+        function Validate2() {
+            var msg = Valid2();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=msgin.ClientID %>").innerText = msg;
+                    document.getElementById("<%=lblSC.ClientID%>").innerText = "";
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=msgin.ClientID %>").textContent = msg;
+                    document.getElementById("<%=lblSC.ClientID%>").textContent = "";
+                    return false;
+                }
+            }
+            return true;
+        }
+        function TABLE1_onclick() {
+
+        }
+        function SplitName() {
+//            var text = document.getElementById("<%=txtStudentcode.ClientID%>").value;
+//            var split = text.split(':');
+//            if (split.length > 0) {
+//                document.getElementById("<%=txtStudentCode.ClientID%>").innerText = split[0] + ":" + split[1];
+//                document.getElementById("<%=HidStudentId.ClientID%>").innerText = split[2];
+//            }
+        }
+
+    </script>
+
+    <script type="text/javascript" language="javascript">
+
+        function ShowImage2() {
+            GlbShowSImage(document.getElementById("<%=txtStdCode2.ClientID%>"));
+
+        }
+        function HideImage2() {
+            GlbHideSImage(document.getElementById("<%=txtStdCode2.ClientID%>"));
+        }
+
+        function SplitNameMed() {
+//            var text = document.getElementById("<%=txtStdCode2.ClientID%>").value;
+//            var split = text.split(':');
+//            if (split.length > 0) {
+//                document.getElementById("<%=txtStdCode2.ClientID%>").innerText = split[0];
+//                document.getElementById("<%=HidId.ClientID%>").innerText = split[1];
+//                document.getElementById("<%=HidstdId.ClientID%>").innerText = split[2];
+//            }
+        }
+        function ValidMed() {
+            msg = AutoCompleteExtenderForThree(document.getElementById("<%=txtStdCode2.ClientID %>"), 'Student Code');
+            if (msg != "") {
+                document.getElementById("<%=txtStdCode2.ClientID %>").focus();
+                return msg;
+            }
+            msg = Field50(document.getElementById("<%=txtHeight1.ClientID %>"), 'Height');
+            if (msg != "") {
+                document.getElementById("<%=txtHeight1.ClientID %>").focus();
+                return msg;
+            }
+
+            msg = Field50(document.getElementById("<%=txtWeight1.ClientID %>"), 'Weight');
+            if (msg != "") {
+                document.getElementById("<%=txtWeight1.ClientID %>").focus();
+                return msg;
+            }
+
+            msg = Field50(document.getElementById("<%=txtBloodGroup1.ClientID %>"), 'Blood Group');
+            if (msg != "") {
+                document.getElementById("<%=txtBloodGroup1.ClientID %>").focus();
+                return msg;
+            }
+
+            return true;
+        }
+        function ValidateMed() {
+            var msg = ValidMed();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=lblRed.ClientID %>").innerText = msg;
+                    document.getElementById("<%=lblGreen.ClientID%>").innerText = "";
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=lblRed.ClientID %>").textContent = msg;
+                    document.getElementById("<%=lblGreen.ClientID%>").textContent = "";
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <a name="top">
+                <div align="right">
+                    <a href="#bottom">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="Images/down.png" Width="30px" Height="30px" /></a>
+                </div>
+                <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" CssClass="ajax__tab_xp"
+                    ActiveTabIndex="0">
+                    <ajaxToolkit:TabPanel ID="Qualification" runat="server" HeaderText="QUALIFICATION">
+                        <ContentTemplate>
+                            <asp:UpdatePanel runat="server" ID="UpdatePanel2">
+                                <ContentTemplate>
+                                    <center>
+                                        <center>
+                                            <table>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblStdcode" runat="server" SkinID="lbl" Text="Student Code* :&nbsp;"></asp:Label>
+                                                        <asp:HiddenField ID="HidStudentId" runat="server" />
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtStudentcode" runat="server" SkinID="txtRsz" Width="200px" TabIndex="1"
+                                                            AutoPostBack="true"></asp:TextBox>
+                                                        <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender1" runat="Server" TargetControlID="txtStudentcode"
+                                                            EnableCaching="true" MinimumPrefixLength="3" ServiceMethod="getStudentid" ServicePath="TextBoxExt.asmx"
+                                                            FirstRowSelected="true" CompletionInterval="2000" OnClientPopulated="HideImage1"
+                                                            OnClientPopulating="ShowImage1" CompletionListCssClass="completeListStyle22"
+                                                            OnClientItemSelected="SplitName">
+                                                        </ajaxToolkit:AutoCompleteExtender>
+                                                        <ajaxToolkit:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender2" runat="server"
+                                                            WatermarkText="Type first 3 characters" TargetControlID="txtStudentcode" SkinID="watermark">
+                                                        </ajaxToolkit:TextBoxWatermarkExtender>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                    <td>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </center>
+                                        <br />
+                                        <div>
+                                            <%--   <center>
+                        <h1 class="headingTxt">
+                            QUALIFICATION DETAILS</h1>
+                    </center>--%>
+                                            <center>
+                                                <h1 class="headingTxt">
+                                                    <asp:Label ID="Lblheading" runat="server"></asp:Label>
+                                                </h1>
+                                            </center>
+                                            <br />
+                                            <br />
+                                        </div>
+                                        <center>
+                                            <table>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="Label12" runat="server" SkinID="lbl" Text="Examination* :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtExamination" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                                    </td>
+                                                    <td align="right">
+                                                        <asp:Label ID="Label22" runat="server" SkinID="lblRsz" Text="Board/University :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txt_BOU" runat="server" SkinID="txt" TabIndex="3"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="Label23" runat="server" SkinID="lbl" Text="Year* :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <%--<asp:TextBox ID="txt_YOP" runat="server" SkinID="txt" TabIndex="4"></asp:TextBox>--%>
+                                                        <asp:DropDownList ID="ddlYear" runat="server" DataSourceID="ObjSelectYear" DataTextField="Data"
+                                                            DataValueField="LookUpAutoID" SkinID="ddlRsz" TabIndex="1" Width="160px">
+                                                        </asp:DropDownList>
+                                                        <asp:ObjectDataSource ID="ObjSelectYear" runat="server" SelectMethod="ddlYear" TypeName="BLClientContractMaster">
+                                                        </asp:ObjectDataSource>
+                                                    </td>
+                                                    <td align="right">
+                                                        <asp:Label ID="Label24" runat="server" SkinID="lbl" Text="Marks%* :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txt_marks" runat="server" SkinID="txt" TabIndex="5"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Label ID="Label13" runat="server" Text="Submitted Certificate :&nbsp;" SkinID="lblRsz"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:DropDownList ID="ddlsubcertificate" runat="server" SkinID="ddl" TabIndex="6">
+                                                            <asp:ListItem>Select</asp:ListItem>
+                                                            <asp:ListItem>Original</asp:ListItem>
+                                                            <asp:ListItem>Xerox</asp:ListItem>
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                    <td align="right">
+                                                        <asp:Button ID="btnInsert" runat="server" Text="ADD" SkinID="btn" CssClass="ButtonClass"
+                                                            TabIndex="7" OnClientClick="return Validate()" />
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:Button ID="btnView" runat="server" Text="VIEW" SkinID="btn" CssClass="ButtonClass"
+                                                            TabIndex="8" />
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <center>
+                                                    
+                                                    <tr>
+                                                        <td>
+                                                            <asp:Label ID="lblE" runat="server" SkinID="lblRed"></asp:Label>
+                                                            <asp:Label ID="msginfo" runat="server" SkinID="lblGreen"></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </center>
+                                            </table>
+                                        </center>
+                                        <center>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <asp:GridView ID="GV_qualific" runat="server" AutoGenerateColumns="False" AllowPaging="True"
+                                                            SkinID="GridView" PageSize="100" AllowSorting="True" EnableSortingAndPagingCallbacks="True">
+                                                            <Columns>
+                                                                <asp:TemplateField>
+                                                                    <ItemTemplate>
+                                                                        <asp:LinkButton Text="Edit" CommandName="Edit" CausesValidation="false" runat="server"
+                                                                            ID="btEdit" />&nbsp;
+                                                                        <asp:LinkButton ID="btDelete" runat="server" CausesValidation="true" CommandName="Delete"
+                                                                            Text="Delete" OnClientClick="return confirm('Do you want to delete this record?')" />
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Examination" SortExpression="Qualification">
+                                                                    <ItemTemplate>
+                                                                        <asp:HiddenField ID="Qualification_ID" runat="server" Value='<%# Bind("Qualification_ID") %>'>
+                                                                        </asp:HiddenField>
+                                                                        <asp:HiddenField ID="StdCode" runat="server" Value='<%# Bind("StdCode") %>'></asp:HiddenField>
+                                                                        <asp:HiddenField ID="Stdcodeid" runat="server" Value='<%# Bind("Std_code") %>'></asp:HiddenField>
+                                                                        <asp:Label ID="lblname" runat="server" Text='<%# Bind("Qualification") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Board/University" SortExpression="Board_Univ">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="lbl_universe" runat="server" Text='<%# Bind("Board_Univ") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Marks" SortExpression="Marks">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="lbl_marks" runat="server" Text='<%# Bind("Marks") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Year of Passing" SortExpression="YearofPassing">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="lbl_YOP" runat="server" Text='<%# Bind("YearofPassing") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Submitted Certificate" SortExpression="CERT_SBMT">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="lbl_Certificate" runat="server" Text='<%# Bind("CERT_SBMT") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                        </asp:GridView>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </center>
+                                        <br />
+                                        <div>
+                                            <center>
+                                                <h1 class="headingTxt">
+                                                    EXPERIENCE DETAILS</h1>
+                                            </center>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <center>
+                                            <table>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="Label26" runat="server" SkinID="lblRsz" Text="Organisation Name* :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtName" runat="server" SkinID="txt" TabIndex="9"></asp:TextBox>
+                                                    </td>
+                                                    <td align="right">
+                                                        <asp:Label ID="Label29" runat="server" SkinID="lbl" Text="No of Years* :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtNOY" runat="server" SkinID="txt" TabIndex="10"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="Label30" runat="server" SkinID="lbl" Text="Nature of Job* :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtNIJ" runat="server" SkinID="txt" TabIndex="11"></asp:TextBox>
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                    <td align="right">
+                                                        <asp:Button ID="btnExper" runat="server" Text="ADD" TabIndex="12" OnClientClick="return Validate1()"
+                                                            SkinID="btn" CssClass="ButtonClass" />
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:Button ID="btnDet" runat="server" Text="VIEW" SkinID="btn" CssClass="ButtonClass"
+                                                            TabIndex="13" />
+                                                    </td>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <center>
+                                                   
+                                                    <tr>
+                                                        <td>
+                                                            <asp:Label ID="msginfo1" runat="server" SkinID="lblRed"></asp:Label>
+                                                            <asp:Label ID="lblS" runat="server" SkinID="lblGreen"></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </center>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <asp:GridView ID="GV_Exp" runat="server" AutoGenerateColumns="False" AllowPaging="True"
+                                                            SkinID="GridView" PageSize="100" AllowSorting="True" EnableSortingAndPagingCallbacks="True">
+                                                            <Columns>
+                                                                <asp:TemplateField InsertVisible="False" ShowHeader="False">
+                                                                    <ItemTemplate>
+                                                                        <asp:LinkButton ID="Button1" runat="server" CausesValidation="False" CommandName="Edit"
+                                                                            Text="Edit" />&nbsp;
+                                                                        <asp:LinkButton ID="Button2" runat="server" CausesValidation="true" CommandName="Delete"
+                                                                            Text="Delete" OnClientClick="return confirm('Do you want to delete this record?')" />
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Name of Organisation" SortExpression="NameofOrganisation">
+                                                                    <ItemTemplate>
+                                                                        <asp:HiddenField ID="ExpId" runat="server" Value='<%# Bind("Exp_id") %>' />
+                                                                        <asp:HiddenField ID="Hidstdcode" runat="server" Value='<%# Bind("StdCode") %>' />
+                                                                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("NameofOrganisation") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="No Of Years" SortExpression="NoOfYears">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="Label2" runat="server" Text='<%# Bind("NoOfYears") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Nature Of Job" SortExpression="Natureofjob">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="Label3" runat="server" Text='<%# Bind("Natureofjob") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                        </asp:GridView>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </center>
+                                        <br />
+                                        <div>
+                                            <center>
+                                                <h1 class="headingTxt">
+                                                    CERTIFICATES RECEIVED</h1>
+                                            </center>
+                                        </div>
+                                        <br />
+                                        <br />
+                                        <center>
+                                            <table>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblcertificatename" runat="server" SkinID="lblRsz" Text="Certificate Name* :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtcertificatename" runat="server" SkinID="txt" TabIndex="14"></asp:TextBox>
+                                                    </td>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblremarks" runat="server" SkinID="lbl" Text="Remarks :&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td>
+                                                        <asp:TextBox ID="txtremarks" runat="server" SkinID="txt" TabIndex="15" TextMode="MultiLine"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <br />
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                    </td>
+                                                    <td align="right">
+                                                        <asp:Button ID="btncerti" runat="server" Text="ADD" TabIndex="16" SkinID="btn" CssClass="ButtonClass"
+                                                            OnClientClick="return Validate2()" />
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:Button ID="btnDetail" runat="server" Text="VIEW" SkinID="btn" CssClass="ButtonClass"
+                                                            TabIndex="17" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <center>
+                                                    <tr>
+                                                        <td colspan="2" align="right">
+                                                            <asp:UpdateProgress runat="server" ID="PageUpdateProgress3">
+                                                                <ProgressTemplate>
+                                                                    <div class="PleaseWait">
+                                                                        Processing your request..Please wait...
+                                                                    </div>
+                                                                </ProgressTemplate>
+                                                            </asp:UpdateProgress>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <asp:Label ID="msgin" runat="server" SkinID="lblRed"></asp:Label>
+                                                            <asp:Label ID="lblSC" runat="server" SkinID="lblGreen"></asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </center>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowPaging="True"
+                                                            SkinID="GridView" PageSize="100" AllowSorting="True" EnableSortingAndPagingCallbacks="True">
+                                                            <Columns>
+                                                                <asp:TemplateField InsertVisible="False" ShowHeader="False">
+                                                                    <ItemTemplate>
+                                                                        <asp:LinkButton ID="Button1" runat="server" CausesValidation="False" CommandName="Edit"
+                                                                            Text="Edit" />
+                                                                        <asp:LinkButton ID="Button2" runat="server" CausesValidation="true" CommandName="Delete"
+                                                                            Text="Delete" OnClientClick="return confirm('Do you want to delete this record?')" />
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Certificate Name" SortExpression="Qualification">
+                                                                    <ItemTemplate>
+                                                                        <asp:HiddenField ID="CID" runat="server" Value='<%# Bind("Qualification_ID") %>'>
+                                                                        </asp:HiddenField>
+                                                                        <asp:HiddenField ID="Scode" runat="server" Value='<%# Bind("Std_code") %>'></asp:HiddenField>
+                                                                        <asp:Label ID="Label11" runat="server" Text='<%# Bind("Qualification") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                                <asp:TemplateField HeaderText="Remarks">
+                                                                    <ItemTemplate>
+                                                                        <asp:Label ID="lblremks" runat="server" Text='<%# Bind("Remarks") %>'></asp:Label>
+                                                                    </ItemTemplate>
+                                                                </asp:TemplateField>
+                                                            </Columns>
+                                                        </asp:GridView>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Button ID="btnReturn" runat="server" Visible="false" Text="BACK" TabIndex="18"
+                                                            SkinID="btn" CssClass="ButtonClass" />
+                                                        <asp:Button ID="btnfee" runat="server" Text="Fee Collection" TabIndex="19" SkinID="btnRsz"
+                                                            Width="200px" CssClass="ButtonClass" />
+                                                        <asp:Button ID="btnplacement" runat="server" Text="Placement Details" TabIndex="20"
+                                                            SkinID="btnRsz" Width="200px" CssClass="ButtonClass" Visible="false" />
+                                                        <asp:Button ID="btnlateral" runat="server" Text="Lateral Entry Details" TabIndex="21"
+                                                            SkinID="btnRsz" Width="200px" CssClass="ButtonClass" Visible="false" />
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </center>
+                                    </center>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                    <ajaxToolkit:TabPanel ID="label4" runat="server" HeaderText="MEDICAL DETAILS">
+                        <ContentTemplate>
+                            <asp:UpdatePanel runat="server" ID="UpdatePanel3">
+                                <ContentTemplate>
+                                    <center>
+                                        <h1 class="headingTxt">
+                                            <asp:Label ID="Medical" runat="server" Text="MEDICAL DETAILS"></asp:Label>
+                                        </h1>
+                                    </center>
+                                    <center>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblStdid1" runat="server" SkinID="lbl" Text="Student Code*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:HiddenField ID="HidstdId" runat="server"></asp:HiddenField>
+                                                        <asp:HiddenField ID="HidId" runat="server"></asp:HiddenField>
+                                                        <asp:TextBox ID="txtStdCode2" runat="server" SkinID="txt" TabIndex="2" AutoPostBack="True"></asp:TextBox>
+                                                        <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="Server" CompletionInterval="2000"
+                                                            EnableCaching="true" FirstRowSelected="true" MinimumPrefixLength="3" OnClientPopulated="HideImage2"
+                                                            OnClientPopulating="ShowImage2" ServiceMethod="getStudentIdName1" ServicePath="TextBoxExt.asmx"
+                                                            TargetControlID="txtStdCode2" CompletionListCssClass="completeListStyle1" OnClientItemSelected="SplitNameMed">
+                                                        </ajaxToolkit:AutoCompleteExtender>
+                                                        <ajaxToolkit:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server"
+                                                            SkinID="watermark" TargetControlID="txtStdCode2" WatermarkText="Type first 3 characters">
+                                                        </ajaxToolkit:TextBoxWatermarkExtender>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblHeight1" runat="server" SkinID="lbl" Text="Height(Cms)*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtHeight1" runat="server" SkinID="txt" TabIndex="3"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblWeight1" runat="server" SkinID="lbl" Text="Weight(Kgs)*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtWeight1" runat="server" SkinID="txt" TabIndex="4"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblIdentificationMark1" runat="server" SkinID="lblRsz" Width="200px"
+                                                            Text="Identification Mark&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtIdentificationMark1" runat="server" SkinID="txt" TabIndex="5"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblBloodGroup1" runat="server" SkinID="lblRsz" Width="200px" Text="Blood Group*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtBloodGroup1" runat="server" SkinID="txt" TabIndex="6"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblImmunizationRecord1" runat="server" SkinID="lblRsz" Width="200px"
+                                                            Text="Immunization Record&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtImmunizationRecord1" runat="server" SkinID="txt" TabIndex="7"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblDetailsofanyseriousillness1" runat="server" SkinID="lblRsz" Width="230px"
+                                                            Text="Details of any serious illness&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtDetailsofanyseriousillness1" runat="server" SkinID="txt" TabIndex="8"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblParticularsofanyallergies1" runat="server" SkinID="lblRsz" Width="230px"
+                                                            Text="Particulars of any allergies&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtParticularsofanyallergies1" runat="server" SkinID="txt" TabIndex="9"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblEmergencyContactName1" runat="server" SkinID="lblRsz" Width="230px"
+                                                            Text="Emergency Contact Name&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtEmergencyContactName1" runat="server" SkinID="txt" TabIndex="10"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblEmergencyContactNumber1" runat="server" SkinID="lblRsz" Width="230px"
+                                                            Text="Emergency Contact Number&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtEmergencyContactNumber1" runat="server" SkinID="txt" TabIndex="11"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="right">
+                                                        <asp:Label ID="lblDisabilitiesifany1" runat="server" SkinID="lblRsz" Width="200px"
+                                                            Text="Disabilities if any&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                                    </td>
+                                                    <td align="left">
+                                                        <asp:TextBox ID="txtDisabilitiesifany1" runat="server" SkinID="txt" TabIndex="12"></asp:TextBox>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" align="center">
+                                                        <asp:Button ID="btnadd" runat="server" CommandName="Insert" CssClass="ButtonClass"
+                                                            SkinID="btn" TabIndex="13" Text="ADD" OnClientClick="return ValidateMed();" />
+                                                        <asp:Button ID="btnBack" runat="server" CssClass="ButtonClass" SkinID="btn" TabIndex="14"
+                                                            Text="VIEW" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        &nbsp;
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" align="center">
+                                                        <asp:UpdateProgress runat="server" ID="PageUpdateProgress">
+                                                            <ProgressTemplate>
+                                                                <div class="PleaseWait">
+                                                                    Processing your request..Please wait...
+                                                                </div>
+                                                            </ProgressTemplate>
+                                                        </asp:UpdateProgress>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <asp:Label ID="lblRed" runat="server" SkinID="lblRed"></asp:Label>
+                                                        <asp:Label ID="lblGreen" runat="server" SkinID="lblGreen"></asp:Label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <asp:Panel ID="panel2" runat="server" ScrollBars="Auto" Width="650px" Height="300px">
+                                                            <table>
+                                                                <tr>
+                                                                    <td>
+                                                                        <asp:GridView ID="GridMedical" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                                                                            PageSize="100" SkinID="GridView" Width="368px">
+                                                                            <Columns>
+                                                                                <asp:TemplateField ShowHeader="False">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit"
+                                                                                            Text="Edit" TabIndex="11"></asp:LinkButton>
+                                                                                        <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete"
+                                                                                            Text="Delete" TabIndex="15" OnClientClick="return confirm('Do you want to delete the selected record?')"
+                                                                                            Visible="True"></asp:LinkButton>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="False" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Student Name">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblId" runat="server" Text='<%# Bind("Id") %>' Visible="false"></asp:Label>
+                                                                                        <asp:Label ID="lblStdId" runat="server" Text='<%# Bind("Std_ID") %>' Visible="false"></asp:Label>
+                                                                                        <asp:Label ID="lblStdName" runat="server" Text='<%# Bind("StdName")  %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Student Code">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblcode" runat="server" Text='<%# Bind("StdCode") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Height(Cms)">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblHeight" runat="server" Text='<%# Bind("Height") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Weight(Kgs)">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblWeight" runat="server" Text='<%# Bind("Weight") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Identification Mark">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblIdentificationMark" runat="server" Text='<%# Bind("IdentificationMark") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Blood Group">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblBloodGroup" runat="server" Text='<%# Bind("BloodGroup") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Immunization Record">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblImmunizationRecord" runat="server" Text='<%# Bind("ImmunizationRecord") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Details of any serious illness">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblDetailsofanyseriousillness" runat="server" Text='<%# Bind("Detailsofanyseriousillness") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Particulars of any allergies">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblParticularsofanyallergies" runat="server" Text='<%# Bind("Particularsofanyallergies") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Emergency Contact Name">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblEmergencyContactName" runat="server" Text='<%# Bind("EmergencyContactName") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Emergency Contact Number">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblEmergencyContactNumber" runat="server" Text='<%# Bind("EmergencyContactNumber") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                                <asp:TemplateField HeaderText="Disabilities if any">
+                                                                                    <ItemTemplate>
+                                                                                        <asp:Label ID="lblDisabilitiesifany" runat="server" Text='<%# Bind("Disabilitiesifany") %>'></asp:Label>
+                                                                                    </ItemTemplate>
+                                                                                    <ItemStyle Wrap="false" />
+                                                                                    <HeaderStyle Wrap="false" />
+                                                                                </asp:TemplateField>
+                                                                            </Columns>
+                                                                        </asp:GridView>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </asp:Panel>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </center>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
+                        </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                    <%--<ajaxToolkit:TabPanel ID="MEDICAL" runat="server" HeaderText="MEDICAL DETAILS">
+            <ContentTemplate>
+                <asp:UpdatePanel runat="server" ID="UpdatePanel2">
+                    <ContentTemplate>
+                        <div>
+                            <center>
+                                <h1 class="headingTxt">
+                                    <asp:Label ID="Label4" runat="server" Text="MEDICAL DETAILS"></asp:Label>
+                                </h1>
+                            </center>
+                            <center>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblStdid" runat="server" SkinID="lbl" Text="Student Code*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:HiddenField ID="HidstdId" runat="server"></asp:HiddenField>
+                                                <asp:HiddenField ID="HidId" runat="server"></asp:HiddenField>
+                                                <asp:TextBox ID="txtStdCode" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                                <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="Server" CompletionInterval="2000"
+                                                    EnableCaching="true" FirstRowSelected="true" MinimumPrefixLength="3" OnClientPopulated="HideImageMed"
+                                                    OnClientPopulating="ShowImageMed" ServiceMethod="getStudentIdName1" ServicePath="TextBoxExt.asmx"
+                                                    TargetControlID="txtStdCode" CompletionListCssClass="completeListStyle" OnClientItemSelected="SplitNameMed">
+                                                </ajaxToolkit:AutoCompleteExtender>
+                                                <ajaxToolkit:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender2" runat="server"
+                                                    SkinID="watermark" TargetControlID="txtStdCode" WatermarkText="Type first 3 characters">
+                                                </ajaxToolkit:TextBoxWatermarkExtender>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblHeight" runat="server" SkinID="lbl" Text="Height*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtHeight" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblWeight" runat="server" SkinID="lbl" Text="Weight*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtWeight" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblIdentificationMark" runat="server" SkinID="lblRsz" Width="200px"
+                                                    Text="Identification Mark&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtIdentificationMark" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblBloodGroup" runat="server" SkinID="lblRsz" Width="200px" Text="Blood Group*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtBloodGroup" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblImmunizationRecord" runat="server" SkinID="lblRsz" Width="200px"
+                                                    Text="Immunization Record&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtImmunizationRecord" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblDetailsofanyseriousillness" runat="server" SkinID="lblRsz" Width="230px"
+                                                    Text="Details of any serious illness&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtDetailsofanyseriousillness" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblParticularsofanyallergies" runat="server" SkinID="lblRsz" Width="230px"
+                                                    Text="Particulars of any allergies&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtParticularsofanyallergies" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblEmergencyContactName" runat="server" SkinID="lblRsz" Width="230px"
+                                                    Text="Emergency Contact Name&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtEmergencyContactName" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblEmergencyContactNumber" runat="server" SkinID="lblRsz" Width="230px"
+                                                    Text="Emergency Contact Number&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtEmergencyContactNumber" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblDisabilitiesifany" runat="server" SkinID="lblRsz" Width="200px"
+                                                    Text="Disabilities if any&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtDisabilitiesifany" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <asp:Button ID="btnadd" runat="server" CommandName="Insert" CssClass="ButtonClass"
+                                                    SkinID="btn" TabIndex="7" Text="ADD" OnClientClick="return ValidateMed();" />
+                                                <asp:Button ID="btnBack" runat="server" CssClass="ButtonClass" SkinID="btn" TabIndex="8"
+                                                    Text="VIEW" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <asp:Label ID="lblRed" runat="server" SkinID="lblRed"></asp:Label>
+                                                <asp:Label ID="lblGreen" runat="server" SkinID="lblGreen"></asp:Label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <asp:Panel ID="panel2" runat="server" ScrollBars="Auto" Width="650px" Height="300px">
+                                                    <table>
+                                                        <tr>
+                                                            <td>
+                                                                <asp:GridView ID="GridMedical" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                                                                    PageSize="100" SkinID="GridView" Width="368px">
+                                                                    <Columns>
+                                                                        <asp:TemplateField ShowHeader="False">
+                                                                            <ItemTemplate>
+                                                                                <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="Edit"
+                                                                                    Text="Edit" TabIndex="11"></asp:LinkButton>
+                                                                                <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Delete"
+                                                                                    Text="Delete" TabIndex="12" OnClientClick="return confirm('Do you want to delete the selected record?')"
+                                                                                    Visible="false"></asp:LinkButton>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="False" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Student Code">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblId" runat="server" Text='<%# Bind("Id") %>' Visible="false"></asp:Label>
+                                                                                <asp:Label ID="lblStd_ID" runat="server" Text='<%# Bind("Std_ID")  %>'></asp:Label>
+                                                                                <asp:Label ID="lblStdCode" runat="server" Text='<%# Bind("StdCode")  %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Height">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblHeight" runat="server" Text='<%# Bind("Height") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Weight">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblWeight" runat="server" Text='<%# Bind("Weight") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Identification Mark">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblIdentificationMark" runat="server" Text='<%# Bind("IdentificationMark") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Blood Group">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblBloodGroup" runat="server" Text='<%# Bind("BloodGroup") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Immunization Record">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblImmunizationRecord" runat="server" Text='<%# Bind("ImmunizationRecord") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Details of any serious illness">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblDetailsofanyseriousillness" runat="server" Text='<%# Bind("Detailsofanyseriousillness") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Particulars of any allergies">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblParticularsofanyallergies" runat="server" Text='<%# Bind("Particularsofanyallergies") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Emergency Contact Name">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblEmergencyContactName" runat="server" Text='<%# Bind("EmergencyContactName") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Emergency Contact Number">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblEmergencyContactNumber" runat="server" Text='<%# Bind("EmergencyContactNumber") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                        <asp:TemplateField HeaderText="Disabilities if any">
+                                                                            <ItemTemplate>
+                                                                                <asp:Label ID="lblDisabilitiesifany" runat="server" Text='<%# Bind("Disabilitiesifany") %>'></asp:Label>
+                                                                            </ItemTemplate>
+                                                                            <ItemStyle Wrap="false" />
+                                                                            <HeaderStyle Wrap="false" />
+                                                                        </asp:TemplateField>
+                                                                    </Columns>
+                                                                </asp:GridView>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </asp:Panel>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </center>
+                        </div>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </ContentTemplate>
+        </ajaxToolkit:TabPanel>--%>
+                </ajaxToolkit:TabContainer>
+                <style type="text/css">
+                    .completeListStyle22
+                    {
+                        height: 200px;
+                        width: 505px;
+                        overflow: auto;
+                        list-style-type: disc;
+                        padding-left: 17px;
+                        background-color: #FFF;
+                        border: 1px solid DarkGray;
+                        text-align: left;
+                        font-size: small;
+                        color: black;
+                        visibility: hidden;
+                    }
+                </style>
+                <style type="text/css">
+                    .completeListStyle1
+                    {
+                        height: 200px;
+                        width: 705px;
+                        overflow: auto;
+                        list-style-type: disc;
+                        padding-left: 17px;
+                        background-color: #FFF;
+                        border: 1px solid DarkGray;
+                        text-align: left;
+                        font-size: small;
+                        color: black;
+                        visibility: hidden;
+                    }
+                </style>
+                <a name="bottom">
+                    <div align="right">
+                        <a href="#top">
+                            <asp:Image ID="Image5" runat="server" ImageUrl="Images/top.png" Width="30px" Height="30px" /></a>
+                        <asp:LinkButton ID="LinkButton3" runat="server"></asp:LinkButton>
+                    </div>
+                </a>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

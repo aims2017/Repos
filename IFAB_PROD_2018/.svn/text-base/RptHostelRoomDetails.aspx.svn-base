@@ -1,0 +1,80 @@
+﻿<%@ Page Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="RptHostelRoomDetails.aspx.vb"
+    Inherits="RptHostelRoomDetails" Title="Hostel Room Details" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <center>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div>
+                    <center>
+                        <h1 class="headingTxt">
+                      HOSTEL ROOM DETAILS
+                        </h1>
+                        <br />
+                    </center>
+                    <center>
+                        <table>
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblHosName" runat="server" Text="Hostel Name :&nbsp;&nbsp;" SkinID="lblRsz"
+                                        Width="120px"></asp:Label>
+                                </td>
+                                <td align="left">
+                                    <asp:DropDownList ID="cmbHosName" runat="server" DataSourceID="odshosname" DataTextField="HostelName"
+                                        TabIndex="1" SkinID="ddl" AutoPostBack="True" AppendDataBoundItems="True" DataValueField="HMIDAuto">
+                                        <asp:ListItem Text="ALL" Value="0"></asp:ListItem>
+                                    </asp:DropDownList>
+                                    <asp:ObjectDataSource ID="odshosname" runat="server" SelectMethod="GetHosNameCombo"
+                                        TypeName="HostelAdmissionBL"></asp:ObjectDataSource>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblRoomType" runat="server" Text="Room Type :&nbsp;&nbsp;" SkinID="lblRsz"
+                                        Width="120px"></asp:Label>
+                                </td>
+                                <td align="left">
+                                    <asp:DropDownList ID="cmbRoomType" runat="server" DataSourceID="odsroomtype" DataTextField="RoomType"
+                                        SkinID="ddl" AutoPostBack="True" DataValueField="RoomTypeAuto" TabIndex="2">
+                                        <asp:ListItem Text="ALL" Value="0"></asp:ListItem>
+                                    </asp:DropDownList>
+                                    <asp:ObjectDataSource ID="odsroomtype" runat="server" SelectMethod="RoomTypeCombo"
+                                        TypeName="DLHostelRpt">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="cmbHosName" PropertyName="SelectedValue" Name="Hid" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br />
+                                </td>
+                                <td>
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="btnTd" colspan="4">
+                                    <asp:Button ID="btnReport" TabIndex="3" runat="server" Text="REPORT" SkinID="btn"
+                                        CssClass="ButtonClass"></asp:Button>
+                                    <asp:Button ID="btnAdd" TabIndex="4" runat="server" Text="BACK" SkinID="btn" CssClass="ButtonClass">
+                                    </asp:Button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    &nbsp;
+                                </td>
+                            </tr>
+                        </table>
+                        <center>
+                            <asp:Label ID="lblMsg" runat="server" SkinID="lblRed"></asp:Label>
+                        </center>
+                        <asp:ObjectDataSource ID="objHostelname" runat="server" SelectMethod="GetHosNameCombo"
+                            TypeName="HostelAdmissionBL"></asp:ObjectDataSource>
+                    </center>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </center>
+</asp:Content>

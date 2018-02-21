@@ -1,0 +1,291 @@
+﻿<%@ Page Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="MfgFrmStockIssue.aspx.vb"
+    Inherits="MfgFrmStockIssue" Title="Stock Issue" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+ <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <a name="Top">
+                <div align="right">
+                    <a href="#Bottom">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="Images/down.png" Width="30px" Height="30px" /></a>
+                </div>
+                <ajaxToolkit:TabContainer ID="TabContainer1" runat="server" CssClass="ajax__tab_xp"
+                    BackColor="#E2E3BB">
+                    <ajaxToolkit:TabPanel ID="TabPanel1" runat="server" HeaderText="SALE INVOICE" TabIndex="1">
+                        <ContentTemplate>
+                            <center>
+                                <center>
+                                    <h1 class="headingTxt">
+                                        STOCK ISSUE
+                                    </h1>
+                                </center>
+                                <br />
+                                <br />
+                                <center>
+                                    <table>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblDate" runat="server" SkinID="lblRsz" Text="Date&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtDate" runat="server" SkinID="txt"></asp:TextBox>
+                                                <ajaxToolkit:CalendarExtender ID="Date" runat="server" TargetControlID="txtDate"
+                                                    Format="dd-MMM-yyyy" Enabled="True">
+                                                </ajaxToolkit:CalendarExtender>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblse" runat="server" SkinID="lbl" Text="SE&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:DropDownList ID="DdlSE" runat="server" DataSourceID="ObjSE" DataTextField="MR_Name"
+                                                    DataValueField="MR_ID" SkinID="ddl">
+                                                    <asp:ListItem Value="0" Text="Select"></asp:ListItem>
+                                                </asp:DropDownList>
+                                                <asp:ObjectDataSource ID="ObjSE" runat="server" SelectMethod="GetSECobmo" TypeName="SupplierDB">
+                                                </asp:ObjectDataSource>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+                                <%--  </asp:Panel>--%>
+                                <br />
+                            </center>
+                            <center>
+                                <table>
+                                    <tr>
+                                        <td class="btnTd" colspan="2">
+                                            <asp:Button ID="btnView" runat="server" CssClass="ButtonClass" OnClientClick="return Validate();"
+                                                SkinID="btn" Text="VIEW" />
+                                            <asp:Button ID="btnDetails" runat="server" CssClass="ButtonClass" SkinID="btnRsz"
+                                                Text="ADD DETAILS" Width="130px" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <asp:Label ID="lblRedM" runat="server" SkinID="lblRed"></asp:Label>
+                                            <asp:Label ID="lblGreenM" runat="server" SkinID="lblGreen"></asp:Label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </center>
+                            </br>
+                            <center>
+                                <asp:Panel ID="panel1" runat="server" ScrollBars="Auto" Width="650px" Height="320px">
+                                    <asp:GridView ID="GVStockIssue" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                                        PageSize="100" SkinID="GridView">
+                                        <Columns>
+                                            <asp:TemplateField HeaderText="Issue Date">
+                                                <ItemTemplate>
+                                                    <asp:HiddenField ID="ID1" runat="server" Value='<%# Bind("ID_AutoNo") %>' />
+                                                    <asp:Label ID="lblSuppName1" runat="server" Text='<%# Bind("Issue_Date","{0:dd-MMM-yyyy}") %>' />
+                                                </ItemTemplate>
+                                                <ItemStyle Wrap="False" HorizontalAlign="Left" VerticalAlign="Middle" />
+                                                <HeaderStyle HorizontalAlign="Left" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="SE">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblPurchReturnId1" runat="server" Visible="false" Text='<%# Bind("MR_ID") %>'></asp:Label>
+                                                    <asp:Label ID="lblPurchReturnNo1" runat="server" Text='<%# Bind("MR_Name") %>'></asp:Label>
+                                                </ItemTemplate>
+                                                <ItemStyle HorizontalAlign="Center" Wrap="False" VerticalAlign="Middle" />
+                                                <HeaderStyle HorizontalAlign="Center" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Product">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblPurchReturnId1" runat="server" Visible="false" Text='<%# Bind("Product_Id") %>'></asp:Label>
+                                                    <asp:Label ID="lblPurchReturnNo1" runat="server" Text='<%# Bind("Product_Name") %>'></asp:Label>
+                                                </ItemTemplate>
+                                                <ItemStyle Wrap="False" HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                <HeaderStyle HorizontalAlign="Center" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Issued Qty">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblIssuedQty1" runat="server" Text='<%# Bind("Qty_In") %>'></asp:Label>
+                                                </ItemTemplate>
+                                                <ItemStyle Wrap="False" HorizontalAlign="Left" VerticalAlign="Middle" />
+                                                <HeaderStyle HorizontalAlign="Center" />
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Returned Qty">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="lblReturnedQty1" runat="server" Text='<%# Bind("Qty_Out") %>'></asp:Label>
+                                                </ItemTemplate>
+                                                <ItemStyle Wrap="False" HorizontalAlign="Left" VerticalAlign="Middle" />
+                                                <HeaderStyle HorizontalAlign="Center" />
+                                            </asp:TemplateField>
+                                        </Columns>
+                                    </asp:GridView>
+                                </asp:Panel>
+                            </center>
+                        </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                    <ajaxToolkit:TabPanel ID="TabPanel2" runat="server" HeaderText="Stock Issue Details"
+                        TabIndex="3">
+                        <ContentTemplate>
+                            <center>
+                                <center>
+                                    <h1 class="headingTxt">
+                                        STOCK ISSUE DEATILS
+                                        <br />
+                                        <br />
+                                    </h1>
+                                </center>
+                                <center>
+                                    <table>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblConvNo" runat="server" SkinID="lblRsz" Text="Conversion Factor&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtConvNo" runat="server" Enabled="False" SkinID="txt"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblProduct" runat="server" SkinID="lblRsz" Text="Product*&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:DropDownList ID="DDLPRODUCT" runat="server" DataSourceID="ObjProduct1" DataTextField="Product_Name"
+                                                    Width="200" DataValueField="Product_Id" SkinID="ddlRsz" AutoPostBack="true">
+                                                </asp:DropDownList>
+                                                <asp:ObjectDataSource ID="ObjProduct1" runat="server" SelectMethod="ProductComboD"
+                                                    TypeName="Mfg_DLBatchDetails"></asp:ObjectDataSource>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblIssuedQty" runat="server" Text="Qty Issued* :&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtQtyIssued" runat="server" SkinID="txt"></asp:TextBox>
+                                                <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender20" runat="server"
+                                                    ValidChars="0123456789." TargetControlID="txtReturnedQty" Enabled="True" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblReturnQty" runat="server" Text="Qty Returned* :&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtReturnedQty" runat="server" SkinID="txt"></asp:TextBox>
+                                                <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender" runat="server"
+                                                    ValidChars="0123456789." TargetControlID="txtReturnedQty" Enabled="True" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right">
+                                                <asp:Label ID="lblExpiry" runat="server" Text="Expiry Date :&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                                            </td>
+                                            <td align="left">
+                                                <asp:TextBox ID="txtExpiryDate" runat="server" Enabled="False" SkinID="txt" ReadOnly="True"></asp:TextBox>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+                                <center>
+                                    <table>
+                                        <tr>
+                                            <td class="btnTd" colspan="4" align="center">
+                                                <asp:Button ID="btnAdddet" runat="server" CssClass="ButtonClass" OnClientClick="return Validate1();"
+                                                    SkinID="btn" Text="ADD" />&nbsp;
+                                                <asp:Button ID="BtnViewDetails" runat="server" CssClass="ButtonClass" SkinID="btn"
+                                                    Text="VIEW" />&nbsp;
+                                                <asp:Button ID="BtnClose" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                                                    SkinID="btn" Text="CLOSE" />&nbsp;
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <asp:Label ID="lblGreen" runat="server" SkinID="lblGreen"></asp:Label>
+                                                <asp:Label ID="lblRed" runat="server" SkinID="lblRed"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </center>
+                                <center>
+                                    <asp:Panel ID="panel3" runat="server" ScrollBars="Auto" Width="500px" Height="300px">
+                                        <asp:GridView ID="GVStockIssueDetails" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                                            PageSize="100" SkinID="GridView">
+                                            <Columns>
+                                                <asp:TemplateField ShowHeader="False">
+                                                    <ItemTemplate>
+                                                        <asp:LinkButton ID="EditProduct" runat="server" CausesValidation="False" CommandName="Edit"
+                                                            Font-Underline="False" Text="Edit"></asp:LinkButton>
+                                                        <asp:LinkButton ID="DeteteProduct" runat="server" CausesValidation="False" CommandName="Delete"
+                                                            OnClientClick="return confirm('Do you want to delete the selected record?')"
+                                                            Text="Delete" Font-Underline="False"></asp:LinkButton>
+                                                    </ItemTemplate>
+                                                    <ItemStyle Wrap="False" />
+                                                    <HeaderStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Issue Date">
+                                                    <ItemTemplate>
+                                                        <asp:HiddenField ID="ID" runat="server" Value='<%# Bind("ID_AutoNo") %>' />
+                                                        <asp:Label ID="lblSuppName" runat="server" Text='<%# Bind("Issue_Date","{0:dd-MMM-yyyy}") %>' />
+                                                    </ItemTemplate>
+                                                    <ItemStyle Wrap="False" HorizontalAlign="Left" VerticalAlign="Middle" />
+                                                    <HeaderStyle HorizontalAlign="Left" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="SE">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblPurchReturnId" runat="server" Visible="false" Text='<%# Bind("MR_ID") %>'></asp:Label>
+                                                        <asp:Label ID="lblPurchReturnNo" runat="server" Text='<%# Bind("MR_Name") %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                    <ItemStyle HorizontalAlign="Center" Wrap="False" VerticalAlign="Middle" />
+                                                    <HeaderStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Product">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblPurchReturnId" runat="server" Visible="false" Text='<%# Bind("Product_Id") %>'></asp:Label>
+                                                        <asp:Label ID="lblPurchReturnNo" runat="server" Text='<%# Bind("Product_Name") %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                    <ItemStyle Wrap="False" HorizontalAlign="Center" VerticalAlign="Middle" />
+                                                    <HeaderStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Issued Qty">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblIssuedQty" runat="server" Text='<%# Bind("Qty_In") %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                    <ItemStyle Wrap="False" HorizontalAlign="Left" VerticalAlign="Middle" />
+                                                    <HeaderStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                                <asp:TemplateField HeaderText="Returned Qty">
+                                                    <ItemTemplate>
+                                                        <asp:Label ID="lblReturnedQty" runat="server" Text='<%# Bind("Qty_Out") %>'></asp:Label>
+                                                    </ItemTemplate>
+                                                    <ItemStyle Wrap="False" HorizontalAlign="Left" VerticalAlign="Middle" />
+                                                    <HeaderStyle HorizontalAlign="Center" />
+                                                </asp:TemplateField>
+                                            </Columns>
+                                        </asp:GridView>
+                                    </asp:Panel>
+                                </center>
+                        </ContentTemplate>
+                    </ajaxToolkit:TabPanel>
+                </ajaxToolkit:TabContainer>
+                <a name="Bottom">
+                    <div align="right">
+                        <a href="#Top">
+                            <asp:Image ID="Image2" runat="server" ImageUrl="Images/top.png" Width="30px" Height="30px" /></a>
+                        <asp:LinkButton ID="LinkButton1" runat="server"></asp:LinkButton>
+                    </div>
+                </a>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

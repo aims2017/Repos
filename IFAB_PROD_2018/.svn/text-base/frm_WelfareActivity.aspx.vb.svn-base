@@ -1,0 +1,107 @@
+﻿
+Partial Class frm_WelfareActivity
+    Inherits BasePage
+    Dim Dt As DataTable
+    Sub CheckAll()
+        If CType(GridView1.HeaderRow.FindControl("ChkAll"), CheckBox).Checked = True Then
+            GridView1.Visible = True
+
+            For Each grid As GridViewRow In GridView1.Rows
+                CType(grid.FindControl("ChkSelect"), CheckBox).Checked = True
+            Next
+        Else
+            GridView1.Visible = True
+
+
+            For Each grid As GridViewRow In GridView1.Rows
+                CType(grid.FindControl("ChkSelect"), CheckBox).Checked = False
+            Next
+        End If
+
+    End Sub
+
+    Protected Sub btnLoad_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnLoad.Click
+        DisplayGrid()
+        lblMsg.Text = "Daate loaded successfully."
+
+    End Sub
+    Sub DisplayGrid()
+        Dim BatchId As Integer
+        If ddlBatch.SelectedValue = "" Then
+            lblErrorMsg.Text = "Please Select Any Batch"
+        Else
+            BatchId = ddlBatch.SelectedValue
+        End If
+        Dt = WelfareActivityDL.WelfareActivityLoadGridView(BatchId)
+        If Dt.Rows.Count > 0 Then
+            lblMsg.Text = ""
+            lblErrorMsg.Text = ""
+            GridView1.Visible = True
+            GridView1.Enabled = True
+            GridView1.DataSource = Dt
+            GridView1.DataBind()
+
+            
+        Else
+            lblMsg.Visible = False
+            lblErrorMsg.Visible = True
+            lblErrorMsg.Text = "No records to display."
+            GridView1.Visible = False
+            
+        End If
+    End Sub
+    
+    Protected Sub btnApprove_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnApprove.Click
+        Try
+            'Dim DL As New WelfareActivityDL
+            ''Dim EL As New WelfareActivityEL
+            Dim BatchId As Integer
+            Dim Scholar As Integer
+            Dim id As String = ""
+            Dim check As String = ""
+
+            If ddlBatch.SelectedValue = "" Then
+                'BatchId = 0
+                lblErrorMsg.Text = "Please Select Any Batch"
+            Else
+                BatchId = ddlBatch.SelectedValue
+            End If
+            If ddlScholarship.SelectedValue = "" Then
+                'Scholar = 0
+                lblErrorMsg.Text = "Please Select Any Scholarship"
+            Else
+                Scholar = ddlScholarship.SelectedValue
+            End If
+            Dim Count1 As Integer = 0
+            For Each Grid As GridViewRow In GridView1.Rows
+
+                If CType(Grid.FindControl("ChkSelect"), CheckBox).Checked = True Then
+                    check = CType(Grid.FindControl("lblADId"), HiddenField).Value
+                    id = check + "," + id
+                    Count1 = Count1 + 1
+                End If
+            Next
+
+            If id = "" Then
+                id = 0
+            Else
+                id = Left(id, id.Length - 1)
+            End If
+
+
+            If Count1 > 0 Then
+                'id = ViewState("ChkSelect")
+                WelfareActivityDL.ApproveWelfareActivity(BatchId, id, Scholar)
+                DisplayGrid()
+                lblMsg.Text = "Approved Successfuly."
+            Else
+                lblErrorMsg.Text = "Please select the records to Approve."
+                lblMsg.Text = ""
+            End If
+
+        Catch ex As Exception
+            lblErrorMsg.Text = "Please Enter Correct Data."
+        End Try
+    End Sub
+End Class
+

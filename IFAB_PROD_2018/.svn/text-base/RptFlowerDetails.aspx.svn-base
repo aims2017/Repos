@@ -1,0 +1,50 @@
+﻿<%@ Page Title="FLOWER DETAILS REPORT" Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false"
+    CodeFile="RptFlowerDetails.aspx.vb" Inherits="RptFlowerDetails" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <div>
+                <center>
+                    <h1 class="headingTxt">
+                        FLOWER DETAILS REPORT
+                        <br />
+                        <br />
+                    </h1>
+                </center>
+                <center>
+                    <table>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblFlowerCategory" runat="server" SkinID="lblRsz" Text="Flower Category :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:DropDownList ID="ddlFlowerCategory" runat="server" Width="250px" DataSourceID="Objflowercategory"
+                                    DataTextField="FlowerCategory" SkinID="Rsz" AutoPostBack="true" DataValueField="FlowerCategoryId"
+                                    TabIndex="1">
+                                </asp:DropDownList>
+                                <asp:ObjectDataSource ID="Objflowercategory" runat="server" SelectMethod="GetFlowerCategoryCombo" TypeName="DLRptFlowerDetails">
+                                </asp:ObjectDataSource>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="btnTd">
+                                <asp:Button ID="btnReport" runat="server" Text="REPORT" SkinID="btn" TabIndex="2"
+                                    CssClass="ButtonClass"></asp:Button>
+                                <asp:Button ID="btnBack" TabIndex="3" runat="server" Text="BACK" SkinID="btn" CssClass="ButtonClass">
+                                </asp:Button>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <asp:Label ID="msginfo" runat="server" SkinID="lblRed" Visible="true"></asp:Label>
+                    <asp:Label ID="lblmsg" runat="server" SkinID="lblGreen" Visible="true"></asp:Label>
+                </center>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

@@ -1,0 +1,173 @@
+﻿<%@ Page Title="Student Progress Report" Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="RptStudentProgress.aspx.vb" Inherits="RptStudentProgress" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<center>
+<script language="JavaScript" type="text/javascript">
+
+    function Valid() {
+        var msg;
+        msg = DropDownForZero(document.getElementById("<%=ddlbatch.ClientID %>"), 'Batch');
+        if (msg != "") {
+            document.getElementById("<%=ddlbatch.ClientID %>").focus();
+            return msg;
+        }
+        msg = DropDownForZero(document.getElementById("<%=ddlSemester.ClientID %>"), 'Semester');
+        if (msg != "") {
+            document.getElementById("<%=ddlSemester.ClientID %>").focus();
+            return msg;
+        }
+        msg = DropDownForZero(document.getElementById("<%=ddlassessment.ClientID %>"), 'Assessment Type');
+        if (msg != "") {
+            document.getElementById("<%=ddlassessment.ClientID %>").focus();
+            return msg;
+        }
+    }
+    function Validate() {
+        var msg = Valid();
+        if (msg == undefined) {
+            return true;
+        }
+        if (msg != true) {
+            if (navigator.appName == "Microsoft Internet Explorer") {
+                document.getElementById("<%=lblErrorMsg.ClientID %>").innerText = msg;
+                return false;
+            }
+            else if (navigator.appName == "Netscape") {
+                document.getElementById("<%=lblErrorMsg.ClientID %>").textContent = msg;
+                return false;
+            }
+        }
+
+    }
+    </script>
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+                <div>
+                    <center>
+                        <h1 class="headingTxt">
+                            STUDENT PROGRESS REPORT
+                            <br />
+                            <br />
+                        </h1>
+                    </center>
+                    <center>
+                        <table>
+                            
+                           
+                           
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblbatch" runat="server" Text="Batch*&nbsp;:&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                                </td>
+                                <td align="left">
+                                    <asp:DropDownList ID="ddlbatch" SkinID="ddl" runat="server" DataSourceID="ObjBatch"
+                                        DataTextField="Batch_No" DataValueField="BatchID" AutoPostBack="True" Width="250">
+                                    </asp:DropDownList>
+                                    <asp:ObjectDataSource ID="ObjBatch" runat="server" SelectMethod="GetBatchCombo" TypeName="DLStudentProgress">
+
+                                    </asp:ObjectDataSource>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblsemester" runat="server" Text="Semester*&nbsp;:&nbsp;&nbsp;" SkinID="lbl"></asp:Label>
+                                </td>
+                                <td align="left">
+                                    <asp:DropDownList ID="ddlSemester" SkinID="ddl" AutoPostBack="true" runat="server"
+                                        DataSourceID="ObjSemester" DataTextField="SemName" DataValueField="SemCode" Width="250">
+                                    </asp:DropDownList>
+                                     <asp:ObjectDataSource ID="ObjSemester" runat="server" SelectMethod="SemesterComboD1"
+                                        TypeName="DLStudentProgress">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="ddlbatch" PropertyName="SelectedValue" Name="Batch_No"
+                                                DbType="Int16" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </td>
+                            </tr>
+                            
+                            
+                           <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblAssessment" runat="server" Text="Assessment Type*&nbsp;:&nbsp;&nbsp;"
+                                        SkinID="lblRsz" Width="200px"></asp:Label>
+                                </td>
+                                <td align="left">
+                                    <asp:DropDownList ID="ddlassessment" SkinID="ddl" runat="server" DataSourceID="ObjAssesment"
+                                        DataTextField="AssessmentType" DataValueField="ID" TabIndex="3" Width="240px">
+                                    </asp:DropDownList>
+                                    <asp:ObjectDataSource ID="ObjAssesment" runat="server" SelectMethod="GetAssesmentCombo"
+                                        TypeName="DLStudentProgress"></asp:ObjectDataSource>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td align="right">
+                                    <asp:Label ID="lblStudent" runat="server" SkinID="lbl" Text="Student &nbsp;:&nbsp;&nbsp;"></asp:Label>
+                                </td>
+                                <td align="left">
+                                    <asp:DropDownList ID="DDLStudent" runat="server" DataValueField="STDID" DataTextField="StdName"
+                                        SkinID="ddlRsz" TabIndex="5" DataSourceID="ObjStudent" AutoPostBack="true" Width="250">
+                                    </asp:DropDownList>
+                                    <asp:ObjectDataSource ID="ObjStudent" runat="server" SelectMethod="GetStudent" TypeName="DLStudentProgress">
+                                        <SelectParameters>
+                                            <asp:ControlParameter ControlID="ddlbatch" PropertyName="SelectedValue" Name="Batch_No"
+                                                DbType="Int16" />
+                                        </SelectParameters>
+                                    </asp:ObjectDataSource>
+                                </td>
+                            </tr>
+                            <tr>
+                            <td align="right">
+                                <asp:Label ID="lblFromDate" runat="server" SkinID="lblRsz" Text="Attendance From Date  :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtFromDateExt" runat="server" SkinID="txt" TabIndex="1"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <ajaxToolkit:CalendarExtender ID="FromDateExt" runat="server" TargetControlID="txtFromDateExt"
+                            Format="dd-MMM-yyyy">
+                        </ajaxToolkit:CalendarExtender>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblToDate" runat="server" SkinID="lblRsz" Text="Attendance To Date  :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtToDateExt" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <ajaxToolkit:CalendarExtender ID="ToDateExt" runat="server" TargetControlID="txtToDateExt"
+                            Format="dd-MMM-yyyy">
+                        </ajaxToolkit:CalendarExtender>
+                            </tr>
+                             <tr>
+                                <td>
+                                    <br />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="btnTd" colspan="4">
+                                    <asp:Button ID="btnReport" TabIndex="9" runat="server" Text="REPORT" SkinID="btn"
+                                        CssClass="ButtonClass" OnClientClick="return Validate();"></asp:Button>
+                                    &nbsp;
+                                    <asp:Button ID="btnBack" TabIndex="11" runat="server" Text="BACK" SkinID="btn" CssClass="ButtonClass">
+                                    </asp:Button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br />
+                                </td>
+                            </tr>
+                        </table>
+                        <asp:Label ID="lblErrorMsg" runat="server" SkinID="lblRed"></asp:Label>
+                    </center>
+                    
+                   
+                   
+            </ContentTemplate>
+        </asp:UpdatePanel>
+    </center>
+</asp:Content>
+

@@ -1,0 +1,99 @@
+﻿
+Partial Class Merge
+    Inherits System.Web.UI.Page
+    Dim dt, dt1, dt2, dt3, dtQ1, dtQ2, dtQ3, dtF As New DataTable
+    Dim fromdate, todate As Date
+    Dim obj As New SelfDetailsB
+    Dim Bl As New DLQualficationDtsRpt
+    Dim BF As New FeeCollectionBL
+        
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+
+    End Sub
+    Protected Sub ReportViewer1_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReportViewer1.Init
+        Dim DL As New DLStudentLogBook
+
+        Dim BatchId As Integer
+        Dim assesstype As Integer
+        Dim StudentID As Integer
+        Dim StdID, LogID As Integer
+        Dim BranchCode As String
+        Dim BatchNo, Course As String
+        Dim AY As String
+        Dim dm As New Microsoft.Reporting.WebForms.ReportDataSource
+        fromdate = "01-01-1900"
+        todate = "01-01-4000"
+        'Dim bachid As Integer = CInt(Request.QueryString.Get("batch"))
+
+        dt = obj.RPT_GetSelfDeatilsByBranch(Request.QueryString(1))
+        'AddHandler ReportViewer1.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+        ReportViewer1.LocalReport.ReportPath = "Merge.rdlc"
+
+        BatchNo = Request.QueryString.Get("BatchNo")
+        Course = Request.QueryString.Get("Course")
+        BatchId = Request.QueryString.Get("BatchID")
+        StudentID = Request.QueryString.Get("StudentID")
+        AY = Request.QueryString.Get("AY")
+        dt1 = RptStudentAdmissionDetailsDL.GetStudentAdmissiondetails(0, 0, BatchID, StudentID)
+
+        BranchCode = (Session("BranchCode"))
+        dt2 = DLStdReportCard.GetStudentReportCard(BranchCode, StudentID, BatchId, 0, 0, 0)
+
+        dt3 = DL.RptGetStudentLog(BatchId, StudentID, 0, fromdate, todate)
+
+        dtQ1 = Bl.GetQualificaitonDetailsReportt(StudentID)
+        dtQ2 = Bl.GetExperienceDetailsReportt(StudentID)
+        dtQ3 = Bl.GetCertificateDetailsReportt(StudentID)
+
+        dtF = BF.FeeCollectionReport(AY, BatchId, 0, 0, StudentID, fromdate, todate)
+
+        Dim paramList As New Generic.List(Of Microsoft.Reporting.WebForms.ReportParameter)
+
+        paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("Course", Course, False))
+        paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("Batch", BatchNo, False))
+
+        ReportViewer1.LocalReport.SetParameters(paramList)
+
+        AddHandler ReportViewer1.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+
+        'If (a.Equals("0")) Then
+        '    su()
+        'End If
+        
+    End Sub
+    Sub SubreportProcessingEvent(ByVal sender As Object, ByVal e As Microsoft.Reporting.WebForms.SubreportProcessingEventArgs)
+        'Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_RPT_GetSelfDetailByUID", dt)
+        'e.DataSources.Add(rptDataSource)
+        Dim rpt = e.ReportPath
+
+        Select Case rpt
+            Case "RptStudentIndividualAdmissionDetails"
+                Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Rpt_StudentIndividualReport", dt1)
+                e.DataSources.Add(rptDataSource)
+            Case "StdReportCardMarksGrade"
+                Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Rpt_StudentReportCard", dt2)
+                e.DataSources.Add(rptDataSource)
+            Case "RptStudentLogBook"
+                Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Rpt_StudentLogBook", dt3)
+                e.DataSources.Add(rptDataSource)
+            Case "MasterHeadingL"
+                Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_RPT_GetSelfDetailByUID", dt)
+                e.DataSources.Add(rptDataSource)
+            Case "MasterHeading"
+                Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_RPT_GetSelfDetailByUID", dt)
+                e.DataSources.Add(rptDataSource)
+            Case "RptQualificationDetails"
+                Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_GetQualicDetails", dtQ1)
+                e.DataSources.Add(rptDataSource)
+
+                Dim rptDataSource1 As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_GetExperienceDetails", dtQ2)
+                e.DataSources.Add(rptDataSource1)
+
+                Dim rptDataSource2 As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_GetCertiDetails", dtQ3)
+                e.DataSources.Add(rptDataSource2)
+            Case "RptFeeCollectionReport"
+                Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Rpt_FeeCollectionReport", dtF)
+                e.DataSources.Add(rptDataSource)
+        End Select
+    End Sub
+End Class

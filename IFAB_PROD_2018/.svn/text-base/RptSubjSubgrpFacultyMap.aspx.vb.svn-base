@@ -1,0 +1,34 @@
+﻿
+Partial Class RptSubjSubgrpFacultyMap
+
+    Inherits BasePage
+    Protected Sub btnReport_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnReport.Click
+        lblErrorMsg.Text = ""
+        Dim QS As String
+        
+        Dim BatchId As Integer = ddlBatch.SelectedValue
+        Dim SemId As Integer = cmbSemester.SelectedValue
+       
+
+        If ddlBatch.SelectedValue = "0" Then
+            lblErrorMsg.Text = "Batch field is Mandatory."
+            ddlBatch.Focus()
+        Else
+            Dim qrystring As String = "RptSubjSubgrpFacultyMapV.aspx?" & QueryStr.Querystring() & "&BatchId=" & BatchId & "&SemId=" & SemId
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "message", "<script>window.open('" & qrystring & "',null,'toolbar=no,scrollbars=yes,location=no,resizable =yes,width=1050,height=700,left=0,top=0')</script>", False)
+        End If
+        'End If
+
+    End Sub
+    Protected Sub btnAdd_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAdd.Click
+        Response.Redirect("Report.aspx")
+    End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+End Class
+
+
+

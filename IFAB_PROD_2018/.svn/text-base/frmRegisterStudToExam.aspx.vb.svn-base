@@ -1,0 +1,503 @@
+﻿
+Partial Class frmRegisterStudToExam
+    Inherits BasePage
+    Dim El As New ELExamStudRegistration
+    Dim BL As New BLExamStudRegistration
+    Dim Dt1, Dt2 As DataTable
+    Protected Sub btnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSave.Click
+
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Try
+
+                El.ExamBatchId = ddlExamBatch.SelectedValue
+                El.BatchId = ddlBatch.SelectedValue
+                El.StdId = ddlStudent.SelectedValue
+                El.Eligibility = ddlEligibility.SelectedValue
+                El.Branchcode = ddlBranch.SelectedValue
+                btnPublish.Enabled = True
+                If btnSave.Text = "UPDATE" Then
+                    El.ID = ViewState("id")
+                    Dt1 = DLExamStudRegistration.GetDuplData(El)
+                    If Dt1.Rows.Count > 0 Then
+
+                        DisplayGrid(0)
+                        lblmsgifo.Text = ""
+                        lblerrmsg.Text = "Data already exists."
+                        btnSave.Text = "ADD"
+                        btnView.Text = "VIEW"
+                    Else
+                        El.ID = ViewState("id")
+                        BL.UpdateRecord(El)
+                        btnSave.Text = "ADD"
+                        btnView.Text = "VIEW"
+                        GrdExamStudRegister.PageIndex = ViewState("PageIndex")
+                        DisplayGrid(0)
+                        'txtEligibility.Text = ""
+                        lblerrmsg.Text = ""
+                        lblmsgifo.Text = "Data Updated Successfully."
+                        ddlBatch.Enabled = True
+                        ddlStudent.Enabled = True
+                        ddlBranch.Enabled = True
+                    End If
+                ElseIf btnSave.Text = "ADD" Then
+                    El.ID = 0
+                    Dt1 = DLExamStudRegistration.GetDuplData(El)
+                    If Dt1.Rows.Count > 0 Then
+                        If DLExamStudRegistration.CountData(El.ExamBatchId).Tables(0).Rows(0).Item(0) = "Y" Then
+                            DisplayGrid(0)
+                            lblmsgifo.Text = ""
+                            lblerrmsg.Text = "Data already exists."
+                            GrdExamStudRegister.Enabled = False
+                        Else
+                            DisplayGrid(0)
+                            lblmsgifo.Text = ""
+                            lblerrmsg.Text = "Data already exists."
+                            GrdExamStudRegister.Enabled = True
+                        End If
+
+
+                    Else
+                        If El.StdId <> 0 Then
+                            El.ID = 1
+                        Else
+                            El.ID = 0
+                        End If
+                        'El.ID = 0
+                        BL.InsertRecord(El)
+                        lblerrmsg.Text = ""
+                        ViewState("PageIndex") = 0
+                        GrdExamStudRegister.PageIndex = 0
+                        DisplayGrid(0)
+                        lblerrmsg.Text = ""
+                        lblmsgifo.Text = "Data Saved Successfully."
+                        ddlBatch.Enabled = True
+                        ddlStudent.Enabled = True
+                        ddlBranch.Enabled = True
+                    End If
+                    End If
+            Catch e1 As Exception
+                lblerrmsg.Text = "Enter Correct Data."
+                lblmsgifo.Text = ""
+            End Try
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot add/update data."
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+    Sub DisplayGrid(ByVal Id As Integer)
+        btnPublish.Enabled = True
+        El.ExamBatchId = ddlExamBatch.SelectedValue
+        El.BatchId = ddlBatch.SelectedValue
+        El.StdId = ddlStudent.SelectedValue
+        El.Branchcode = ddlBranch.SelectedValue
+        Dt1 = BL.GetGridData(El, Id)
+        If Dt1.Rows.Count = 0 Then
+            GrdExamStudRegister.DataSource = Nothing
+            GrdExamStudRegister.DataBind()
+            lblmsgifo.Text = ""
+            lblerrmsg.Text = "No records to display."
+        Else
+            GrdExamStudRegister.DataSource = Dt1
+            GrdExamStudRegister.DataBind()
+            GrdExamStudRegister.Enabled = True
+            GrdExamStudRegister.Visible = True
+            LinkButton.Focus()
+        End If
+    End Sub
+    Protected Sub btnView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnView.Click
+        Try
+            lblerrmsg.Text = ""
+            lblmsgifo.Text = ""
+            btnPublish.Enabled = True
+            If btnView.Text <> "BACK" Then
+                ViewState("PageIndex") = 0
+                GrdExamStudRegister.PageIndex = 0
+                El.ExamBatchId = ddlExamBatch.SelectedValue
+                If DLExamStudRegistration.CountData(El.ExamBatchId).Tables(0).Rows(0).Item(0) = "Y" Then
+
+                    DisplayGrid(0)
+                    ddlBatch.Enabled = True
+                    ddlStudent.Enabled = True
+                    ddlBranch.Enabled = True
+                    GrdExamStudRegister.Visible = True
+                    GrdExamStudRegister.Enabled = False
+                Else
+                    GrdExamStudRegister.Enabled = True
+                    DisplayGrid(0)
+                    ddlBatch.Enabled = True
+                    ddlStudent.Enabled = True
+                    ddlBranch.Enabled = True
+                    GrdExamStudRegister.Visible = True
+                End If
+            Else
+                btnView.Text = "VIEW"
+                btnSave.Text = "ADD"
+                GrdExamStudRegister.PageIndex = ViewState("PageIndex")
+
+                GrdExamStudRegister.Enabled = True
+                DisplayGrid(0)
+                ddlBatch.Enabled = True
+                ddlStudent.Enabled = True
+                ddlBranch.Enabled = True
+
+
+
+
+            End If
+        Catch ex As Exception
+            lblerrmsg.Text = "No Records to display."
+            GrdExamStudRegister.Visible = False
+            lblmsgifo.Text = ""
+        End Try
+
+    End Sub
+    Protected Sub GrdExamStudRegister_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GrdExamStudRegister.RowDeleting
+
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            El.id = CType(GrdExamStudRegister.Rows(e.RowIndex).Cells(1).FindControl("lblId"), Label).Text
+            If BL.ChangeFlag(El) Then
+                lblerrmsg.Text = ""
+                lblmsgifo.Text = "Data Deleted Successfully."
+                GrdExamStudRegister.PageIndex = ViewState("PageIndex")
+                DisplayGrid(0)
+                GrdExamStudRegister.Enabled = True
+                ddlBatch.Enabled = True
+                ddlStudent.Enabled = True
+                ddlBranch.Enabled = True
+            End If
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot delete data."
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+    Protected Sub GrdExamStudRegister_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles GrdExamStudRegister.PageIndexChanging
+        GrdExamStudRegister.PageIndex = e.NewPageIndex
+        ViewState("PageIndex") = GrdExamStudRegister.PageIndex
+        'DisplayGrid(0)
+    End Sub
+    Protected Sub GrdExamStudRegister_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GrdExamStudRegister.RowEditing
+        lblerrmsg.Text = ""
+        lblmsgifo.Text = ""
+        ddlExamBatch.SelectedValue = CType(GrdExamStudRegister.Rows(e.NewEditIndex).FindControl("lblExamBatchId"), Label).Text
+        ViewState("id") = CType(GrdExamStudRegister.Rows(e.NewEditIndex).FindControl("lblId"), Label).Text
+        ddlBranch.SelectedValue = CType(GrdExamStudRegister.Rows(e.NewEditIndex).FindControl("lblBranchCode"), Label).Text
+        ddlBatch.Items.Clear()
+        ddlBatch.DataSourceID = "ObjBatch"
+        ddlBatch.DataBind()
+        ddlBatch.SelectedValue = CType(GrdExamStudRegister.Rows(e.NewEditIndex).FindControl("lblBatchId"), Label).Text
+        ddlStudent.Items.Clear()
+        ddlStudent.DataSourceID = "ObjStudent"
+        ddlStudent.DataBind()
+        ddlStudent.SelectedValue = CType(GrdExamStudRegister.Rows(e.NewEditIndex).FindControl("lblStdid"), Label).Text
+        'txtEligibility.Text = CType(GrdExamStudRegister.Rows(e.NewEditIndex).FindControl("lblEligibility"), Label).Text
+        btnSave.Text = "UPDATE"
+        btnView.Text = "BACK"
+        El.id = ViewState("id")
+        El.ExamBatchId = ddlExamBatch.SelectedValue
+        El.BatchId = (ddlBatch.SelectedValue)
+        El.StdId = ddlStudent.SelectedValue
+        El.Branchcode = ddlBranch.SelectedValue
+        Dt1 = BL.GetGridData(El, El.ID)
+        GrdExamStudRegister.DataSource = Dt1
+        GrdExamStudRegister.DataBind()
+        GrdExamStudRegister.Enabled = False
+        btnPublish.Enabled = False
+        ddlBatch.Enabled = False
+        ddlStudent.Enabled = False
+        ddlBranch.Enabled = False
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim heading As String
+        heading = Session("RptFrmTitleName")
+        Me.Lblheading.Text = heading
+        If Not Page.IsPostBack Then
+            ddlBatch.Enabled = True
+            ddlStudent.Enabled = True
+            ddlBranch.Enabled = True
+        End If
+    End Sub
+
+    'Protected Sub ddlResName_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlResName.SelectedIndexChanged
+    '    El.id = ddlResName.SelectedValue
+    '    Dt2 = DLExamResources.GetCapacityAutoFill(El)
+    '    If Dt2.Rows.Count > 0 Then
+
+    '        If Dt2.Rows(0).Item("Capacity").ToString = "" Then
+    '            txtCapacity.Text = 0
+    '        Else
+    '            txtCapacity.Text = (Dt2.Rows(0).Item("Capacity"))
+    '        End If
+    '    End If
+    'End Sub
+
+    Protected Sub btnPublish_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnPublish.Click
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Dim msg As String = ""
+            '"<Table><tr><td> ResourceName ,  capacity,    ExamBatch,    ResourceType </ td></ tr>"
+            El.ExamBatchId = ddlExamBatch.SelectedValue
+            El.BatchId = ddlBatch.SelectedValue
+            El.StdId = ddlStudent.SelectedValue
+            El.Branchcode = ddlBranch.SelectedValue
+            Dt1 = DLExamStudRegistration.GetPublishData(El)
+            If Dt1.Rows.Count = 0 Then
+                lblmsgifo.Text = ""
+                lblerrmsg.Text = "No records to Publish."
+            Else
+
+                msg = "<table><br> <tr style=""border-style: solid; border-width: thin""> " + msg
+                msg = msg + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Branch" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Exam Batch" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Batch" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Student Code" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Student Name" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Eligibility" + "</td>" + "</tr><br><tr style=""border-style: solid: solid; border-width: thin"">"
+                For i As Integer = 0 To Dt1.Rows.Count - 1
+                    For j As Integer = 0 To Dt1.Columns.Count - 1
+
+                        msg = msg + "<td  style=""border-style: solid; border-width: thin"">" + Dt1.Rows(i)(j).ToString + "</td>"
+
+                    Next
+                    msg = msg + "</tr><br><tr style=""border-style: solid: solid; border-width: thin"">"
+
+                Next
+                msg = msg + "</table>"
+                DLExamResources.publish(msg)
+                lblmsgifo.Text = "Data is published in Notice Board."
+                lblerrmsg.Text = ""
+            End If
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot publish data."
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+
+    Protected Sub ddlStudent_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlStudent.SelectedIndexChanged
+        'If ddlStudent.SelectedValue = 0 Then
+        '    txtEligibility.Text = ""
+        '    txtEligibility.Enabled = False
+        'Else
+        '    El.StdId = ddlStudent.SelectedValue
+        '    Dt1 = DLExamStudRegistration.GetEligibility(El)
+        '    If Dt1.Rows.Count > 0 Then
+        '        txtEligibility.Text = Dt1.Rows(0).Item("Eligibility")
+        '    Else
+        '        txtEligibility.Text = ""
+        '    End If
+
+        'End If
+    End Sub
+
+    Protected Sub btnClear_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnClear.Click
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Try
+                El.ExamBatchId = ddlExamBatch.SelectedValue
+                El.BatchId = ddlBatch.SelectedValue
+                El.StdId = ddlStudent.SelectedValue
+                'El.Eligibility = ddlEligibility.SelectedValue
+                El.Branchcode = ddlBranch.SelectedValue
+                lblerrmsg.Text = ""
+                lblmsgifo.Text = ""
+
+                If ddlExamBatch.SelectedValue = 0 Then
+                    lblmsgifo.Text = ""
+                    lblerrmsg.Text = "Exam Batch field is Mandatory. "
+                Else
+
+
+
+                    If DLExamStudRegistration.CountData(El.ExamBatchId).Tables(0).Rows.Count > 0 Then
+
+                        If DLExamStudRegistration.CountData(El.ExamBatchId).Tables(0).Rows(0).Item(0) = "Y" Then
+                            lblmsgifo.Text = ""
+                            lblerrmsg.Text = "Records are locked, cannot be cleared."
+                        Else
+                            Dim clearcount As Integer = DLExamStudRegistration.ClearData(El)
+                            If clearcount > 0 Then
+                                lblmsgifo.Text = ""
+                                lblerrmsg.Text = " Records are cleared."
+                                'pnllabel.Visible = False
+                                GrdExamStudRegister.Visible = False
+                            Else
+                                lblmsgifo.Text = ""
+                                lblerrmsg.Text = "No records to Clear."
+                                GrdExamStudRegister.Visible = False
+                            End If
+
+                        End If
+                    Else
+                        lblmsgifo.Text = ""
+                        lblerrmsg.Text = "No records to Clear."
+                        GrdExamStudRegister.Visible = False
+                    End If
+                End If
+            Catch ex As Exception
+                lblerrmsg.Text = "Exam Batch field is Mandatory."
+                GrdExamStudRegister.Visible = False
+            End Try
+            'End If
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot clear data."
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+
+    Protected Sub btnPassword_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnPassword.Click
+        Dim Check As String
+        If txtPassword.Text = Session("Password") Then
+            Dim ExamBatchId As Integer
+            ExamBatchId = ddlExamBatch.SelectedValue
+            '1
+            If DLExamStudRegistration.CountData(ExamBatchId).Tables(0).Rows(0).Item(0) = "N" Then
+                Dim roweffected As Integer = DLExamStudRegistration.LockData(ExamBatchId)
+                If roweffected > 0 Then
+                    ControlsPanel.Visible = True
+                    PasswordPanel.Visible = False
+                    lblerrmsg.Text = ""
+                    lblmsgifo.Text = " Records are Locked."
+                    GrdExamStudRegister.Enabled = False
+                    Image1.Visible = True
+                    Image2.Visible = True
+                End If
+                '1
+            Else
+
+                Dim role As String
+                role = Session("UserRole")
+                'Dim checkUnlock As String
+                ' dt1 = DLNew_StudentMarks.CheckUnlockStatus(role)
+                '2
+                If Session("SecurityCheck") = "Security Check" Then
+
+                    Dt1 = DLExamStudRegistration.GetunlockData(role)
+                    '3
+                    If Dt1.Rows.Count < 1 Then
+                        lblerrmsg.Text = "You don't have Unlock Permission."
+                        lblmsgifo.Text = ""
+                        ControlsPanel.Visible = True
+                        PasswordPanel.Visible = False
+                        GrdExamStudRegister.Enabled = False
+                        Image1.Visible = True
+                        Image2.Visible = True
+                    Else
+                        Check = Dt1.Rows(0)("Result").ToString.Trim
+
+                        'check = dt.Rows(0)("Result").ToString.Trim
+                        '4
+                        If Check = "" Then
+
+                            lblerrmsg.Text = "You don't have Unlock Permission."
+                            lblmsgifo.Text = ""
+                            ControlsPanel.Visible = True
+                            PasswordPanel.Visible = False
+                            GrdExamStudRegister.Enabled = False
+                            Image1.Visible = True
+                            Image2.Visible = True
+                            '4
+                        Else
+                            Dim roweffected As Integer = DLExamStudRegistration.UnLockData(ExamBatchId)
+                            If roweffected > 0 Then
+                                ControlsPanel.Visible = True
+                                PasswordPanel.Visible = False
+                                lblerrmsg.Text = ""
+                                lblmsgifo.Text = " Records Unlocked."
+                                GrdExamStudRegister.Enabled = True
+                                Image1.Visible = True
+                                Image2.Visible = True
+                            End If
+                            '4
+                        End If
+                        '3
+                    End If
+                    '2
+                Else
+                    Dim roweffected As Integer = DLExamStudRegistration.UnLockData(ExamBatchId)
+                    If roweffected > 0 Then
+                        ControlsPanel.Visible = True
+                        PasswordPanel.Visible = False
+                        lblerrmsg.Text = ""
+                        lblmsgifo.Text = roweffected.ToString + " records Unlocked."
+                        GrdExamStudRegister.Enabled = True
+                        Image1.Visible = True
+                        Image2.Visible = True
+                    End If
+                    '2
+                End If
+                '1
+            End If
+        ElseIf txtPassword.Text = "" Or txtPassword.Text <> Session("Password") Then
+            ControlsPanel.Visible = True
+            PasswordPanel.Visible = False
+            lblmsgifo.Text = ""
+            lblerrmsg.Text = ""
+            lblerrmsg.Text = "Enter correct password"
+            Image1.Visible = True
+            Image2.Visible = True
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+
+    Protected Sub btnLockunlk_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnLockunlk.Click
+        Dim ExamBatchId As Integer
+        ExamBatchId = ddlExamBatch.SelectedValue
+        Dim dt3 As DataSet
+        dt3 = DLExamStudRegistration.CountData(ExamBatchId)
+        If dt3.Tables(0).Rows.Count > 0 Then
+
+            ControlsPanel.Visible = False
+            PasswordPanel.Visible = True
+            txtPassword.Focus()
+            lblpassError.Text = ""
+            Image1.Visible = False
+            Image2.Visible = False
+        Else
+            ControlsPanel.Visible = True
+            PasswordPanel.Visible = False
+            lblmsgifo.Text = ""
+            lblerrmsg.Text = ""
+            lblerrmsg.Text = "No Records to Lock/Unlock."
+            Image1.Visible = True
+            Image2.Visible = True
+
+        End If
+    End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+    Public Property dir() As SortDirection
+        Get
+            If ViewState("dirState") Is Nothing Then
+                ViewState("dirState") = SortDirection.Descending
+            End If
+            Return DirectCast(ViewState("dirState"), SortDirection)
+        End Get
+        Set(ByVal value As SortDirection)
+            ViewState("dirState") = Value
+        End Set
+    End Property
+
+    Protected Sub GrdExamStudRegister_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles GrdExamStudRegister.Sorting
+        Dim sortingDirection As String = String.Empty
+        If dir() = SortDirection.Ascending Then
+            dir = SortDirection.Descending
+            sortingDirection = "Desc"
+        Else
+            dir = SortDirection.Ascending
+            sortingDirection = "Asc"
+        End If
+        El.ExamBatchId = ddlExamBatch.SelectedValue
+        El.BatchId = ddlBatch.SelectedValue
+        El.StdId = ddlStudent.SelectedValue
+        El.Branchcode = ddlBranch.SelectedValue
+        Dim ID As Integer = 0
+        Dt1 = BL.GetGridData(El, ID)
+        Dim sortedView As New DataView(Dt1)
+        sortedView.Sort = Convert.ToString(e.SortExpression) & " " & sortingDirection
+        GrdExamStudRegister.DataSource = sortedView
+        GrdExamStudRegister.DataBind()
+        'For Each grid As GridViewRow In GrdExamStudRegister.Rows
+        '    lblBatchAns.Text = CType(grid.FindControl("LabelBatch"), Label).Text
+        '    lblSemesterAns.Text = CType(grid.FindControl("LabelSemester"), Label).Text
+        '    lblClassTypeAns.Text = CType(grid.FindControl("LabelClass"), Label).Text()
+        '    lblSubjectAns.Text = CType(grid.FindControl("LabelSubject"), Label).Text()
+        '    lblAssessmentTypeAns.Text = CType(grid.FindControl("LabelAsst"), Label).Text
+        '    pnllabel.Visible = True
+        'Next
+    End Sub
+End Class

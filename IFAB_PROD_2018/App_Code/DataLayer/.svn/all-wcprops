@@ -1,0 +1,2045 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/ifab_source_2013_11_18/!svn/ver/225/IFAB_20131118_SRC/App_Code/DataLayer
+END
+LateralEntryDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/LateralEntryDB.vb
+END
+DLTestTrace.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTestTrace.vb
+END
+DLClassTeacher.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLClassTeacher.vb
+END
+DLHostelDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLHostelDetails.vb
+END
+PartyLedgerDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/PartyLedgerDB.vb
+END
+Mfg_DLDescription.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLDescription.vb
+END
+EmpTransD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/EmpTransD.vb
+END
+DLTimesheetDatewise.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTimesheetDatewise.vb
+END
+DLBiometric.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBiometric.vb
+END
+StudentIndHostelAdmissionDetailsDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StudentIndHostelAdmissionDetailsDL.vb
+END
+DLResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLResult.vb
+END
+DLCreateExamBatch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCreateExamBatch.vb
+END
+DLTransportationMfg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTransportationMfg.vb
+END
+DLAuctionLot.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/220/IFAB_20131118_SRC/App_Code/DataLayer/DLAuctionLot.vb
+END
+BranchDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BranchDB.vb
+END
+DLStudentCategory.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStudentCategory.vb
+END
+CertificateMasterDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CertificateMasterDB.vb
+END
+LeaveregisterDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/LeaveregisterDB.vb
+END
+DlLeaveRegisterRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DlLeaveRegisterRpt.vb
+END
+DLClientContractMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLClientContractMaster.vb
+END
+Mfg_DLCreditNote.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLCreditNote.vb
+END
+SupplierDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/19/IFAB_20131118_SRC/App_Code/DataLayer/SupplierDB.vb
+END
+DLTransportReg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTransportReg.vb
+END
+DLBuyerDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/225/IFAB_20131118_SRC/App_Code/DataLayer/DLBuyerDetails.vb
+END
+EmpAttdDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/EmpAttdDL.vb
+END
+DBatchReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DBatchReport.vb
+END
+Mfg_DLStockAudit.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLStockAudit.vb
+END
+AssetTypeDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AssetTypeDB.vb
+END
+DLLogin.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLLogin.vb
+END
+DLFeeStructDup.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFeeStructDup.vb
+END
+DLStdReportCard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStdReportCard.vb
+END
+DLGeneralPartyLedger.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLGeneralPartyLedger.vb
+END
+DLRptTransportationMode.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptTransportationMode.vb
+END
+DLSubjectFacultyUtilization.vb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSubjectFacultyUtilization.vb
+END
+DLBatchReportCardElect.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBatchReportCardElect.vb
+END
+EmailSMSRateDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/EmailSMSRateDL.vb
+END
+OtherpartyDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/OtherpartyDB.vb
+END
+DLRptFlowerDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptFlowerDetails.vb
+END
+DLErrorLog.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLErrorLog.vb
+END
+ElectiveMapDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ElectiveMapDL.vb
+END
+Mfg_DLSaleExecutive.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLSaleExecutive.vb
+END
+BankDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BankDB.vb
+END
+DLIfabReportsR.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/175/IFAB_20131118_SRC/App_Code/DataLayer/DLIfabReportsR.vb
+END
+ServiceResponseD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ServiceResponseD.vb
+END
+DlMedicalDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DlMedicalDetails.vb
+END
+Mfg_DLProductReceipe.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLProductReceipe.vb
+END
+DLLIC.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLLIC.vb
+END
+DLInvestmentMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLInvestmentMaster.vb
+END
+AdmissionCriteriaDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AdmissionCriteriaDL.vb
+END
+AssetDetailsDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AssetDetailsDB.vb
+END
+DLFeeHeadReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFeeHeadReport.vb
+END
+DLTreeviewForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTreeviewForm.vb
+END
+DLReportsP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLReportsP.vb
+END
+DLCoursePlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCoursePlanner.vb
+END
+TreeViewDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/TreeViewDB.vb
+END
+DLRpt_BuyerDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRpt_BuyerDetails.vb
+END
+ManufacturerDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ManufacturerDB.vb
+END
+RouteDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/RouteDB.vb
+END
+DLExamStudRegistration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLExamStudRegistration.vb
+END
+Mfg_RptPurchaseOrderDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_RptPurchaseOrderDL.vb
+END
+ResourceDl.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ResourceDl.vb
+END
+DLAttenSummary.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAttenSummary.vb
+END
+MachineMaintenanceDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/MachineMaintenanceDB.vb
+END
+AcademicYearDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AcademicYearDB.vb
+END
+ProspectusDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ProspectusDB.vb
+END
+DLHouseMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLHouseMaster.vb
+END
+RoomTypeD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/RoomTypeD.vb
+END
+EmployeeDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/EmployeeDB.vb
+END
+ICardD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ICardD.vb
+END
+BatchDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BatchDB.vb
+END
+DLApprovalForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLApprovalForm.vb
+END
+ProjectMasterDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ProjectMasterDB.vb
+END
+LetterPadDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/LetterPadDB.vb
+END
+DLBudget.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBudget.vb
+END
+MonthlyPayDetailD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/MonthlyPayDetailD.vb
+END
+ExperienceDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ExperienceDB.vb
+END
+DLRoleMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRoleMaster.vb
+END
+GeneralLedgerDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/GeneralLedgerDB.vb
+END
+DepartmentDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DepartmentDB.vb
+END
+DLExamAttempt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLExamAttempt.vb
+END
+FeeDetailsDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeeDetailsDB.vb
+END
+DLSemFinalResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSemFinalResult.vb
+END
+DLSalesOrderMfg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSalesOrderMfg.vb
+END
+ConfigurationDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ConfigurationDB.vb
+END
+ServiceRequestD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ServiceRequestD.vb
+END
+EntranceExamResultDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/EntranceExamResultDB.vb
+END
+DLExamHallTicket.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLExamHallTicket.vb
+END
+DLAppointmentCRM.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAppointmentCRM.vb
+END
+WelfareActivityDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/WelfareActivityDL.vb
+END
+TutorialDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/TutorialDL.vb
+END
+DLFaculityTimeUtilize.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFaculityTimeUtilize.vb
+END
+VehicleDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/VehicleDB.vb
+END
+MediumDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/MediumDB.vb
+END
+Mfg_DLDebitNote.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLDebitNote.vb
+END
+Mfg_DLAreaDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLAreaDetails.vb
+END
+DLProjectMasterRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLProjectMasterRpt.vb
+END
+DLRptSubTeacherMAp.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptSubTeacherMAp.vb
+END
+DLAnnualSalaryStatment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAnnualSalaryStatment.vb
+END
+DLNoDue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLNoDue.vb
+END
+DLStudentProgress.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStudentProgress.vb
+END
+UserRequestD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/UserRequestD.vb
+END
+BRSDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BRSDB.vb
+END
+SemesterDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/SemesterDB.vb
+END
+LessonPlanDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/LessonPlanDL.vb
+END
+DLTableConfiguration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTableConfiguration.vb
+END
+LeaveApplicationDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/LeaveApplicationDL.vb
+END
+DLExtraCharges.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLExtraCharges.vb
+END
+Mfg_DLBatchDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLBatchDetails.vb
+END
+Mfg_DLStockStatus.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLStockStatus.vb
+END
+BLBudgetReport1.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BLBudgetReport1.vb
+END
+DLRpt_SellerDetailReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRpt_SellerDetailReport.vb
+END
+DataPayroll.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DataPayroll.vb
+END
+DLFlowerCategory.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFlowerCategory.vb
+END
+DLRptMarksAtten.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptMarksAtten.vb
+END
+DLNewSemesterMarks.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLNewSemesterMarks.vb
+END
+DiaryEventDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DiaryEventDB.vb
+END
+DLslssbhierarchytreeview.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLslssbhierarchytreeview.vb
+END
+DLSourceOfInfo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSourceOfInfo.vb
+END
+DLEligiblityPromotion.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLEligiblityPromotion.vb
+END
+PurchaseIDCardDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/PurchaseIDCardDB.vb
+END
+FeedBackFormDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeedBackFormDL.vb
+END
+UserDetailsDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/87/IFAB_20131118_SRC/App_Code/DataLayer/UserDetailsDB.vb
+END
+DLProctorialRecord.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLProctorialRecord.vb
+END
+ErrorMessage.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ErrorMessage.vb
+END
+DLUnsoldFlower.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLUnsoldFlower.vb
+END
+DLAchievementAndAward.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAchievementAndAward.vb
+END
+DLStudentIDCard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStudentIDCard.vb
+END
+DLDailyBalanceRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLDailyBalanceRpt.vb
+END
+DLGenerateHallTicket.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLGenerateHallTicket.vb
+END
+DlDeptdtl.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DlDeptdtl.vb
+END
+LeaveTypesDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/LeaveTypesDB.vb
+END
+StudentPerformanceDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StudentPerformanceDL.vb
+END
+VehicleMaintenanceDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/VehicleMaintenanceDB.vb
+END
+DLStdMarksElective.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStdMarksElective.vb
+END
+DA16a.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DA16a.vb
+END
+Mfg_DLProcessDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLProcessDetails.vb
+END
+StdResultD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StdResultD.vb
+END
+DriverDetDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DriverDetDB.vb
+END
+DLRptStudParenUserMgmt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptStudParenUserMgmt.vb
+END
+DLParentMngt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLParentMngt.vb
+END
+DLQualficationDtsRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLQualficationDtsRpt.vb
+END
+MfgSORpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/MfgSORpt.vb
+END
+DLExamResources.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLExamResources.vb
+END
+Mfg_DLmanufacturer.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLmanufacturer.vb
+END
+DLCashBillDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCashBillDetails.vb
+END
+CourseTypeDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CourseTypeDB.vb
+END
+BookIssueDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BookIssueDB.vb
+END
+ConfigProcessDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ConfigProcessDB.vb
+END
+MultiCurrencyDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/MultiCurrencyDB.vb
+END
+BookMasterDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BookMasterDB.vb
+END
+DLEndowmentReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLEndowmentReport.vb
+END
+Mfg_DLPaymentMade.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLPaymentMade.vb
+END
+DLGradeMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLGradeMaster.vb
+END
+Mfg_DLStockEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLStockEntry.vb
+END
+DLRptSupplierDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptSupplierDetails.vb
+END
+DLSendMsg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSendMsg.vb
+END
+DHostelMaster11.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DHostelMaster11.vb
+END
+ZoneDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ZoneDB.vb
+END
+HostelAdmissionDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/HostelAdmissionDL.vb
+END
+DLchangepassword.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLchangepassword.vb
+END
+DLCreateExamCalendar.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCreateExamCalendar.vb
+END
+MaintenanceTypeDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/MaintenanceTypeDB.vb
+END
+DLCommunicationModule.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCommunicationModule.vb
+END
+Mfg_DLBuyerwiseSale.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLBuyerwiseSale.vb
+END
+rptBatchPlannerDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/rptBatchPlannerDB.vb
+END
+EnquiryDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/EnquiryDB.vb
+END
+AttendenceEligibilityCriteriaDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AttendenceEligibilityCriteriaDL.vb
+END
+DLCashBookReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCashBookReport.vb
+END
+SemesterdateDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/SemesterdateDL.vb
+END
+Data_PaymentMethod.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Data_PaymentMethod.vb
+END
+DLOpeningBalanceEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLOpeningBalanceEntry.vb
+END
+DLPrincipalDashboard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLPrincipalDashboard.vb
+END
+MfgSaleInvoiceDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/MfgSaleInvoiceDL.vb
+END
+RecoverDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/RecoverDB.vb
+END
+DLResetPwd.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLResetPwd.vb
+END
+DLTransportRegDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTransportRegDetails.vb
+END
+DLFacutlyDevelopment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFacutlyDevelopment.vb
+END
+DLIncomeAndExpenditure.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLIncomeAndExpenditure.vb
+END
+DLReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLReport.vb
+END
+IncomeTaxDA.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/IncomeTaxDA.vb
+END
+DLReceiveAssetReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLReceiveAssetReport.vb
+END
+DLRpt_AuctionSheet.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRpt_AuctionSheet.vb
+END
+DLReportsR.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLReportsR.vb
+END
+Mfg_DLPurchaseInvoice.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLPurchaseInvoice.vb
+END
+DLBankBookReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBankBookReport.vb
+END
+DLEndowmentReportV.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLEndowmentReportV.vb
+END
+SubjectDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/SubjectDB.vb
+END
+DLSubjectSubgroup.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSubjectSubgroup.vb
+END
+DLRptBidCancelReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptBidCancelReport.vb
+END
+UserRoleDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/UserRoleDB.vb
+END
+DLAccountHeadLedgerRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAccountHeadLedgerRpt.vb
+END
+DLCompareCourseAcrossBranches.vb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCompareCourseAcrossBranches.vb
+END
+DLIndividualFormMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLIndividualFormMaster.vb
+END
+DLNoticeBoard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLNoticeBoard.vb
+END
+DLCommissionBillDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/207/IFAB_20131118_SRC/App_Code/DataLayer/DLCommissionBillDetails.vb
+END
+DLSemesterResultAnalysis.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSemesterResultAnalysis.vb
+END
+DLEmpQualification.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLEmpQualification.vb
+END
+DLGradePointResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLGradePointResult.vb
+END
+DLRptEmpMedicalDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptEmpMedicalDetails.vb
+END
+stdAttndance.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/stdAttndance.vb
+END
+DLIdCardIssue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLIdCardIssue.vb
+END
+StudentResultrptD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StudentResultrptD.vb
+END
+DLBranchDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBranchDB.vb
+END
+AdminExamDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AdminExamDL.vb
+END
+DL_IP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DL_IP.vb
+END
+DLCompanyRegister.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCompanyRegister.vb
+END
+Mfg_DLSaleReturn.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLSaleReturn.vb
+END
+CourcePlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CourcePlanner.vb
+END
+DLHandlingCharges.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLHandlingCharges.vb
+END
+DLDefault.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLDefault.vb
+END
+DLHostelRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLHostelRpt.vb
+END
+DLInstitute.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLInstitute.vb
+END
+DLAssetTransferNew.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAssetTransferNew.vb
+END
+PlacementDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/PlacementDB.vb
+END
+DLRolemap.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRolemap.vb
+END
+DLRptSEDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptSEDetails.vb
+END
+ExtraCurricularAchivementsDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ExtraCurricularAchivementsDL.vb
+END
+DLExchangeRateTable.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLExchangeRateTable.vb
+END
+mfg_RptPurchaseInvoiceDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/mfg_RptPurchaseInvoiceDL.vb
+END
+DLInstituteWiseBranchCount.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLInstituteWiseBranchCount.vb
+END
+DLRptFacultyTimeUtilization.vb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptFacultyTimeUtilization.vb
+END
+Mfg_DLUnit.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLUnit.vb
+END
+StudentListDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StudentListDB.vb
+END
+feeCollectionDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/feeCollectionDL.vb
+END
+DLFacultyAllocation.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFacultyAllocation.vb
+END
+DayBookDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DayBookDB.vb
+END
+IdentityDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/IdentityDB.vb
+END
+TimeTableRPTDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/TimeTableRPTDB.vb
+END
+FeeHeadsDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeeHeadsDB.vb
+END
+AssetUsageDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AssetUsageDB.vb
+END
+DLJobOpening.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLJobOpening.vb
+END
+loanmasterDA.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/loanmasterDA.vb
+END
+DLEndowment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLEndowment.vb
+END
+SMSTempleteDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/SMSTempleteDL.vb
+END
+FeedbackSeminarDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeedbackSeminarDL.vb
+END
+Mfg_DLPurchaseReturn.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLPurchaseReturn.vb
+END
+DLSendUserCredentials.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSendUserCredentials.vb
+END
+TimeTableDl.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/TimeTableDl.vb
+END
+DLTravelEnquiry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTravelEnquiry.vb
+END
+DLRpt_AuctionCatlogReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRpt_AuctionCatlogReport.vb
+END
+BatchSemesterMapDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BatchSemesterMapDB.vb
+END
+FeedbackReportDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeedbackReportDL.vb
+END
+DLAssetType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAssetType.vb
+END
+LeaveDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/LeaveDB.vb
+END
+DLProjectMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLProjectMaster.vb
+END
+DBStudentDashboard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DBStudentDashboard.vb
+END
+DLCCMonthlyRun.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCCMonthlyRun.vb
+END
+DLEnquiryLogin.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLEnquiryLogin.vb
+END
+Mfg_DLStockIssue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLStockIssue.vb
+END
+CerRecD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CerRecD.vb
+END
+FeeStructD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeeStructD.vb
+END
+DLbookissuerpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLbookissuerpt.vb
+END
+Mfg_RptPurchaseReturnDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_RptPurchaseReturnDL.vb
+END
+DLStateMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStateMaster.vb
+END
+StdAttendancewitclasstypeDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StdAttendancewitclasstypeDL.vb
+END
+DLBranchType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBranchType.vb
+END
+DLAssesmentResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAssesmentResult.vb
+END
+DLStudentLogBook.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStudentLogBook.vb
+END
+CategoryDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CategoryDB.vb
+END
+DLRpt_AttendenceDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRpt_AttendenceDetails.vb
+END
+AssetDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AssetDB.vb
+END
+DLCreateBatch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCreateBatch.vb
+END
+StdAttendanceD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StdAttendanceD.vb
+END
+DLCRMLead.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLCRMLead.vb
+END
+StudentDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/StudentDB.vb
+END
+DLElectivesMapReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLElectivesMapReport.vb
+END
+QualificationDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/QualificationDB.vb
+END
+ContactDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ContactDB.vb
+END
+DLRptExchangeRate.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptExchangeRate.vb
+END
+DLProductDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLProductDetails.vb
+END
+DLStudentLeaveApplication.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLStudentLeaveApplication.vb
+END
+FeedBackParamsDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeedBackParamsDL.vb
+END
+DLRptTaxDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptTaxDetails.vb
+END
+RptStudentAdmissionDetailsDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/RptStudentAdmissionDetailsDL.vb
+END
+SponsorDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/SponsorDB.vb
+END
+DLNewCoursePlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLNewCoursePlanner.vb
+END
+DLBatchPlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBatchPlanner.vb
+END
+DLRollOver.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRollOver.vb
+END
+BookSearchD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BookSearchD.vb
+END
+DLFlowerMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFlowerMaster.vb
+END
+DLRptAssetAllocation.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptAssetAllocation.vb
+END
+DLRptBatchDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptBatchDetails.vb
+END
+DLBranchCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBranchCombo.vb
+END
+InstituteDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/InstituteDB.vb
+END
+Mfg_DLProductDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLProductDetails.vb
+END
+DataMonthlySalary.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DataMonthlySalary.vb
+END
+feeStructureDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/feeStructureDL.vb
+END
+InvestmentDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/InvestmentDB.vb
+END
+CourseDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CourseDB.vb
+END
+DLBatchSemester.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBatchSemester.vb
+END
+DHolidayMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DHolidayMaster.vb
+END
+BatchPerformanceRptDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BatchPerformanceRptDL.vb
+END
+DesignationDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DesignationDB.vb
+END
+Mfg_DLTaxDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLTaxDetails.vb
+END
+DLNew_StudentMarks.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLNew_StudentMarks.vb
+END
+DLSubjectSubGrpMapping.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSubjectSubGrpMapping.vb
+END
+DLSemesterResultTable.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSemesterResultTable.vb
+END
+DLFlowerType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLFlowerType.vb
+END
+DLHolidayMasterReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLHolidayMasterReport.vb
+END
+DLReportsD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLReportsD.vb
+END
+DlLoginReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DlLoginReport.vb
+END
+AccountHeadDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AccountHeadDB.vb
+END
+DLInvestmentMasterReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLInvestmentMasterReport.vb
+END
+FeeStructureDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/FeeStructureDB.vb
+END
+InDockDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/190/IFAB_20131118_SRC/App_Code/DataLayer/InDockDL.vb
+END
+DLBranchAccessLevel.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLBranchAccessLevel.vb
+END
+DLBiddersList.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/5/IFAB_20131118_SRC/App_Code/DataLayer/DLBiddersList.vb
+END
+AssetTransferDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AssetTransferDB.vb
+END
+DLUserManagement.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLUserManagement.vb
+END
+Mfg_DLPaymentReceived.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLPaymentReceived.vb
+END
+ThemeManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/ThemeManager.vb
+END
+DLAreaDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLAreaDetails.vb
+END
+DLDynamicReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLDynamicReport.vb
+END
+DLRptManufacturer.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptManufacturer.vb
+END
+VisitingDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/VisitingDB.vb
+END
+AttendanceD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AttendanceD.vb
+END
+CompanyDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CompanyDB.vb
+END
+mfg_PurchaseOrderDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/mfg_PurchaseOrderDL.vb
+END
+IdentityDB1.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/IdentityDB1.vb
+END
+frmCompanyDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/frmCompanyDetails.vb
+END
+DLTableMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTableMaster.vb
+END
+DLDeptDashboard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLDeptDashboard.vb
+END
+DLSalaryScaleGrade.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSalaryScaleGrade.vb
+END
+DepreciationRateDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DepreciationRateDB.vb
+END
+AssessmentD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/AssessmentD.vb
+END
+DLRptUnitDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptUnitDetails.vb
+END
+DLSystemConfiguration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLSystemConfiguration.vb
+END
+BookReturnD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/BookReturnD.vb
+END
+Mfg_AgeStockStatementDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_AgeStockStatementDL.vb
+END
+DiaryEntryDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DiaryEntryDB.vb
+END
+DLDBDeleteCount.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLDBDeleteCount.vb
+END
+DLTrialBookReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLTrialBookReport.vb
+END
+DLReceiveBookRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLReceiveBookRpt.vb
+END
+CertificateIssuedD.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/CertificateIssuedD.vb
+END
+Mfg_DLInventoryShortage.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLInventoryShortage.vb
+END
+DLRptIndividualEmployeeDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLRptIndividualEmployeeDetails.vb
+END
+Mfg_DLBuyerDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/19/IFAB_20131118_SRC/App_Code/DataLayer/Mfg_DLBuyerDetails.vb
+END
+selfdetailsDB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/selfdetailsDB.vb
+END
+DLDashBoard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/DLDashBoard.vb
+END
+TimeSheetDL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/DataLayer/TimeSheetDL.vb
+END

@@ -1,0 +1,9 @@
+﻿Imports Microsoft.VisualBasic
+Imports System.Collections.Generic
+Imports System.Data
+
+Public Class BLFlowerType
+    Public Function GetFlowerTypeDDL() As DataTable
+        Return DLFlowerType.GetFlowerCategoryDDL()
+    End Function
+End Class

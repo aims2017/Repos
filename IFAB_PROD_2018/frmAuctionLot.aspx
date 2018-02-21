@@ -1,0 +1,208 @@
+﻿<%@ Page Title="Auction Lot" Language="VB" MasterPageFile="~/PopUp.master" AutoEventWireup="false"
+    CodeFile="frmAuctionLot.aspx.vb" Inherits="frmAuctionLot" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<script type = "text/javascript">
+    var GridId = "<%=GVAuctionLot.ClientID %>";
+    var ScrollHeight = 300;
+    function grid() {
+        var grid = document.getElementById(GridId);
+        var gridWidth = grid.offsetWidth;
+        var gridHeight = grid.offsetHeight;
+        var headerCellWidths = new Array();
+        for (var i = 0; i < grid.getElementsByTagName("TH").length; i++) {
+            headerCellWidths[i] = grid.getElementsByTagName("TH")[i].offsetWidth;
+        }
+        grid.parentNode.appendChild(document.createElement("div"));
+        var parentDiv = grid.parentNode;
+
+        var table = document.createElement("table");
+        for (i = 0; i < grid.attributes.length; i++) {
+            if (grid.attributes[i].specified && grid.attributes[i].name != "id") {
+                table.setAttribute(grid.attributes[i].name, grid.attributes[i].value);
+            }
+        }
+        table.style.cssText = grid.style.cssText;
+        table.style.width = gridWidth + "px";
+        table.appendChild(document.createElement("tbody"));
+        table.getElementsByTagName("tbody")[0].appendChild(grid.getElementsByTagName("TR")[0]);
+        var cells = table.getElementsByTagName("TH");
+
+        var gridRow = grid.getElementsByTagName("TR")[0];
+        for (var i = 0; i < cells.length; i++) {
+            var width;
+            if (headerCellWidths[i] > gridRow.getElementsByTagName("TD")[i].offsetWidth) {
+                width = headerCellWidths[i];
+            }
+            else {
+                width = gridRow.getElementsByTagName("TD")[i].offsetWidth;
+            }
+            cells[i].style.width = parseInt(width ) + "px";
+            gridRow.getElementsByTagName("TD")[i].style.width = parseInt(width - 3) + "px";
+        }
+        parentDiv.removeChild(grid);
+
+        var dummyHeader = document.createElement("div");
+        dummyHeader.appendChild(table);
+        parentDiv.appendChild(dummyHeader);
+        var scrollableDiv = document.createElement("div");
+        if (parseInt(gridHeight) > ScrollHeight) {
+            gridWidth = parseInt(gridWidth) + 10;
+        }
+        scrollableDiv.style.cssText = "overflow:auto;height:" + ScrollHeight + "px;width:" + gridWidth + "px";
+        scrollableDiv.appendChild(grid);
+        parentDiv.appendChild(scrollableDiv);
+    }
+</script>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <center>
+                <h1 class="headingTxt">
+                    <%--<asp:Label ID="Lblheading" runat="server"></asp:Label>--%>
+                    AUCTION LOTS
+                </h1>
+            </center>
+            <asp:DropDownList ID="ddlGrowerType" runat="server" AppendDataBoundItems="true" DataSourceID="objGrowerType"
+                DataTextField="GrowerType" SkinID="ddlRsz" Height="25px" Width="130px" TabIndex="1">
+            </asp:DropDownList>
+            &nbsp;
+            <asp:Button ID="BtnLoadAuctionLot" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                SkinID="btnRsz" TabIndex="2" Text="LOAD LOTS" Width="100px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lblDate" runat="server" Text="DATE :&nbsp;" SkinID="lblRsz"></asp:Label>
+            <asp:TextBox ID="txtDate" runat="server" SkinID="txtRsz" TabIndex="3" Width="100px" Height="17px"></asp:TextBox>
+            <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server"
+                FilterMode="InvalidChars" FilterType="Numbers" InvalidChars="'" TargetControlID="txtDate"
+                Enabled="True">
+            </ajaxToolkit:FilteredTextBoxExtender>
+            <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" Animated="False"
+                Format="dd-MMM-yyyy" TargetControlID="txtDate" Enabled="True">
+            </ajaxToolkit:CalendarExtender>
+             <asp:Button ID="BtnView" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                SkinID="btnRsz" TabIndex="4" Text="VIEW" Width="80px" />
+            <br />
+            <br />
+            <center>
+                <div>
+                    <asp:Panel ID="panel1" runat="server" ScrollBars="Auto" Width="102%" Height="400px">
+                        <asp:GridView ID="GVAuctionLot" runat="server" SkinID="GridView" Visible="true" AllowPaging="true"
+                            AutoGenerateColumns="False" PageSize="300" CssClass="gridViewHeader" >
+                            <Columns>
+                            <asp:TemplateField HeaderText="Select">
+                                    <HeaderTemplate>
+                                        <asp:CheckBox ID="ChkAll" Visible="True" runat="server" AutoPostBack="true" OnCheckedChanged="CheckAll" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <asp:CheckBox ID="ChkSelect" runat="server" />
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="SL.No" ControlStyle-Width="60px">
+                                    <ItemTemplate>
+                                        <%--<asp:Label ID="lblSLNo" runat="server" Text='<%#Container.DataItemIndex+1 %>'></asp:Label>--%>
+                                        <asp:Label ID="lblSLNo" runat="server" Text='<%#Bind("sequenceno") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Auction Date" ControlStyle-Width="80px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="AuctionDate" runat="server" Text='<%#Bind("AuctionDate","{0:dd-MMM-yyyy}") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Lot Number" ControlStyle-Width="60px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblLotNumber" runat="server" Visible="false" Text='<%#Bind("LotNumber") %>'></asp:Label>
+                                        <asp:Label ID="lblLotNumber2" runat="server" Text='<%#Bind("LotNumber2") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Grower" ControlStyle-Width="110px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblComapany" runat="server" Text='<%#Bind("Supp_Name") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Category" ControlStyle-Width="80px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblCategory" runat="server" Text='<%#Bind("FlowerCategory") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Item" HeaderStyle-Width="100px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblFlowerId" runat="server" Text='<%#Bind("FlowerName") %>'></asp:Label>
+                                        <asp:Label ID="lblAuctionId" Visible="false" runat="server" Text='<%#Bind("IndockAutoId") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Stem length">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblStemLength" runat="server" Text='<%#Bind("StemLength") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Min Price">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblMinPrice" runat="server" Text='<%#Bind("MinPrice","{0:n2}") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Max Price" ItemStyle-HorizontalAlign="Center">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="TxtMaxPrice" Width="45px" TabIndex="15" runat="server" Text='<%#Bind("MaxPrice","{0:n2}")  %>'></asp:TextBox>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Quantity">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblQuantity" runat="server" Text='<%#Bind("Quantity") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Qty Balance">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblQtyBalance" runat="server" Text='<%#Bind("Balance") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Auction Status(D/N/C)" HeaderStyle-Width="100px">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblAuctionStatus" runat="server" Text='<%#Bind("AuctionStatus") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="Reason">
+                                    <ItemTemplate>
+                                        <asp:Label ID="lblReason" runat="server" Visible="false" Text='<%#Bind("Remarks") %>'></asp:Label>
+                                        <asp:Label ID="lblReasonId" runat="server" Visible="false" Text='<%#Bind("ReasonId") %>'></asp:Label>
+                                        <asp:DropDownList ID="ddlReason" runat="server" AppendDataBoundItems="true" DataSourceID="objReason"
+                                            DataTextField="Reason" DataValueField="ReasonId" SkinID="ddlRsz" Width="150px">
+                                        </asp:DropDownList>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                
+                            </Columns>
+                            <%-- <PagerStyle CssClass="TableClass"></PagerStyle>--%>
+                        </asp:GridView>
+                    </asp:Panel>
+                </div>
+            </center>
+            <center>
+                <asp:Label ID="lblErrorMsg" runat="server" SkinID="lblRed"></asp:Label>
+                <asp:Label ID="lblgreen" runat="server" SkinID="lblGreen"></asp:Label>
+            </center>
+            <center>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Button ID="BtnAuction" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                                SkinID="btnRsz" TabIndex="5" Text="AUCTION LOT" Width="110px" />
+                            <asp:Button ID="BtnReAuction" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                                SkinID="btnRsz" TabIndex="6" Text="REAUCTION" Width="110px" />
+                            <asp:Button ID="BtnUpdateMaxPrice" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                                SkinID="btnRsz" TabIndex="7" Text="UPDATE" Width="110px" />
+                            <asp:Button ID="BtnCancelLot" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                                SkinID="btnRsz" TabIndex="8" Text="CANCEL LOT" Width="110px" />
+                            <asp:Button ID="BtnRefresh" runat="server" CausesValidation="true" CssClass="ButtonClass"
+                                SkinID="btnRsz" Text="REFRESH" Width="110px" TabIndex="9" />
+                            <asp:Button ID="BtnClose" runat="server" CausesValidation="False" CssClass="ButtonClass"
+                                SkinID="btnRsz" TabIndex="10" Text="CLOSE" Width="110px" />
+                        </td>
+                    </tr>
+                </table>
+            </center>
+            <asp:ObjectDataSource ID="objReason" runat="server" SelectMethod="GetReasonDDL" TypeName="DLAuctionLot">
+            </asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="ObjGrowerType" runat="server" SelectMethod="GetGrowerType"
+                TypeName="DLAuctionLot"></asp:ObjectDataSource>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

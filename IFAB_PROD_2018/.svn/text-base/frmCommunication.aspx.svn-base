@@ -1,0 +1,342 @@
+<%@ Page Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="frmCommunication.aspx.vb"
+    Inherits="frmCommunication" Title="Communication" ValidateRequest="false" EnableEventValidation="false" %>
+
+<%@ Register Assembly="FreeTextBox" Namespace="FreeTextBoxControls" TagPrefix="FTB" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <script language="JavaScript" type="text/javascript">
+        function Valid() {
+            var msg;
+
+            msg = Communication(document.getElementById("<%=txtFrom.ClientID %>"), 'From');
+            if (msg != "") {
+                document.getElementById("<%=txtFrom.ClientID %>").focus();
+                return msg;
+            }
+
+            msg = NameField100C(document.getElementById("<%=txtmsg.ClientID %>"), 'Message');
+            if (msg != "") {
+                document.getElementById("<%=txtmsg.ClientID %>").focus();
+                return msg;
+            }
+
+            msg = DropDownForZero(document.getElementById("<%=ddlGroup.ClientID %>"), 'Group');
+            if (msg != "") {
+                document.getElementById("<%=ddlGroup.ClientID %>").focus();
+                return msg;
+            }
+
+            return true;
+        }
+
+        function Validate() {
+            var msg = Valid();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=lblcorrect.ClientID %>").innerText = "";
+                    document.getElementById("<%=lblerror.ClientID %>").innerText = msg;
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=lblcorrect.ClientID %>").innerText = "";
+                    document.getElementById("<%=lblerror.ClientID %>").textContent = msg;
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    </script>
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <a name="top">
+                <div align="right">
+                    <a href="#bottom">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="Images/down.png" Width="30px" Height="30px" /></a>
+                </div>
+            </a>
+            <%--     <center>
+                <h1 class="headingTxt">
+                    COMMUNICATION CENTER
+                </h1>
+            </center>--%>
+            <center>
+                <h1 class="headingTxt">
+                    <asp:Label ID="Lblheading" runat="server"></asp:Label>
+                </h1>
+            </center>
+            <center>
+                <table class="TimeTable">
+                    <tr>
+                        <%--<td align="center" style="width: 0">
+                            &nbsp;
+                        </td>--%>
+                        <td align="left" colspan="2">
+                            <asp:Label ID="Label1" runat="server" Width="469px">
+                                <asp:BulletedList runat="server">
+                                <asp:ListItem>Group means &quot;Batch&quot;, &quot;Employee&quot;, Parents&quot;, &quot;Course&quot;, &quot;Public&quot;.</asp:ListItem>
+                                
+<asp:ListItem>Select name will allow to pick a single name from the group.</asp:ListItem>
+                                
+<asp:ListItem>Public notice means anyone can see it. (Students, Teachers, Staff, Parents)</asp:ListItem>
+
+<asp:ListItem>Notice Board is for All Groups.</asp:ListItem>                               
+                            </asp:BulletedList>
+                            
+                            </asp:Label>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:Button ID="btnPublish" TabIndex="8" runat="server" CssClass="ButtonClass" OnClientClick="return Validate();"
+                                SkinID="btn" Text="PUBLISH" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <asp:LinkButton ID="LinkViewStatus" runat="server" Text="View Message Status" cssproperty="Btnclass"
+                                Font-Underline="true"></asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <asp:UpdateProgress runat="server" ID="PageUpdateProgress">
+                                <ProgressTemplate>
+                                    <div class="PleaseWait">
+                                        <asp:Label ID="lblprocess" runat="server" Text="Processing your request..Please wait..."
+                                            SkinID="lblBlackRsz" Width="300" Visible="True"></asp:Label>
+                                    </div>
+                                </ProgressTemplate>
+                            </asp:UpdateProgress>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <asp:Label ID="lblError" runat="server" SkinID="lblRed"></asp:Label>
+                            <asp:Label ID="lblcorrect" runat="server" SkinID="lblGreen"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+            <table>
+                <tr>
+                    <td align="left">
+                        <asp:Label ID="lblFrom" runat="server" SkinID="lbl" Text="From* :&nbsp;"></asp:Label>
+                    </td>
+                    <td align="left">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2">
+                        &nbsp;
+                    </td>
+                    <td align="right">
+                        &nbsp;
+                    </td>
+                    <td align="right">
+                        &nbsp;
+                    </td>
+                    <td align="right" valign="top">
+                        <asp:Label ID="Label2" runat="server" SkinID="lblRsz" Text="Date* :&nbsp;&nbsp;"
+                            Width="62px"></asp:Label>
+                    </td>
+                    <td align="left" valign="top">
+                        <asp:TextBox ID="txtDate" TabIndex="6" runat="server" SkinID="txt"></asp:TextBox>
+                        <ajaxToolkit:CalendarExtender ID="CalendarExtender3" runat="server" Animated="False"
+                            Format="dd-MMM-yyyy" TargetControlID="txtDate">
+                        </ajaxToolkit:CalendarExtender>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top" rowspan="2">
+                        <asp:TextBox ID="txtFrom" TabIndex="1" runat="server" Height="60px" TextMode="MultiLine"
+                            Width="240px"></asp:TextBox>
+                        <ajaxToolkit:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server"
+                            SkinID="watermark" TargetControlID="txtFrom" WatermarkText=" Enter publisher Details">
+                        </ajaxToolkit:TextBoxWatermarkExtender>
+                    </td>
+                    <td align="left" rowspan="2" valign="top">
+                        <asp:CheckBox ID="CheckSMS" runat="server" TabIndex="3" Text="SMS" Value="1" />
+                        <br />
+                        <asp:CheckBox ID="CheckEmail" runat="server" TabIndex="4" Text="Email" Value="2" />
+                        <br />
+                        <asp:CheckBox ID="CheckNotice" runat="server" TabIndex="5" Text="Notice Board" Value="3" />
+                        <br />
+                    </td>
+                    <td align="left" rowspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" rowspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" rowspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="7" rowspan="3" valign="top">
+                    </td>
+                    <td align="right" valign="top">
+                        <asp:Label ID="lblTo" runat="server" SkinID="lblRsz" Text="To* :&nbsp;&nbsp;" Width="50px"></asp:Label>
+                    </td>
+                    <td align="left" valign="top">
+                        <asp:DropDownList ID="ddlGroup" TabIndex="7" runat="server" AppendDataBoundItems="true"
+                            AutoPostBack="True" SkinID="ddl">
+                            <asp:ListItem Selected="True" Value="0">Select Group</asp:ListItem>
+                            <asp:ListItem Value="1">Batch</asp:ListItem>
+                            <asp:ListItem Value="2">Employees</asp:ListItem>
+                            <asp:ListItem Value="3">Parents</asp:ListItem>
+                            <asp:ListItem Value="4">Course</asp:ListItem>
+                            <asp:ListItem Value="5">Public</asp:ListItem>
+                            <asp:ListItem Value="6">Transport</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" colspan="2" rowspan="6" valign="top">
+                        <asp:Panel ID="GVPanel" runat="server" Height="300px" ScrollBars="Auto" Width="236px">
+                            <asp:GridView ID="GVName" runat="server" AllowPaging="True" AutoGenerateColumns="False"
+                                DataKeyNames="ID" PageSize="100" SkinID="GridView" Width="280px">
+                                <Columns>
+                                    <asp:TemplateField ControlStyle-Width="20px" HeaderStyle-HorizontalAlign="Center">
+                                        <HeaderTemplate>
+                                            <asp:CheckBox ID="ChkAll" runat="server" AutoPostBack="true" OnCheckedChanged="CheckAll"
+                                                Text="ALL" Width="20px" />
+                                        </HeaderTemplate>
+                                        <ItemTemplate>
+                                            <asp:CheckBox ID="ChkIndividual" runat="server" />
+                                        </ItemTemplate>
+                                        <ItemStyle HorizontalAlign="Center" />
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Select Name" Visible="true">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblID" runat="server" Text='<%# Bind("ID") %>' Visible="false"></asp:Label>
+                                            <asp:Label ID="lblName" runat="server" Text='<%# Bind("Name") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle Wrap="false" />
+                                        <HeaderStyle Wrap="false" />
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Group Name" Visible="true">
+                                        <ItemTemplate>
+                                            <asp:Label ID="lblGroupName" runat="server" Text='<%# Bind("GroupName") %>'></asp:Label>
+                                        </ItemTemplate>
+                                        <ItemStyle Wrap="false" />
+                                        <HeaderStyle Wrap="false" />
+                                    </asp:TemplateField>
+                                </Columns>
+                            </asp:GridView>
+                        </asp:Panel>
+                        <%--<asp:ObjectDataSource ID="ObjName" runat="server" SelectMethod="GetNameCombo" TypeName="BLCommunication">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="ddlGroup" Name="GroupID" PropertyName="SelectedValue"
+                                    Type="Int16" />
+                            </SelectParameters>
+                        </asp:ObjectDataSource>--%>&nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top">
+                        <asp:Label ID="lblSMSTemplate" runat="server" SkinID="lbl" Text="SMS Template&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                    </td>
+                    <td align="left" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" valign="top">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top">
+                        <asp:DropDownList ID="ddlSMSTemplate" runat="server" SkinID="ddlRsz" DataSourceID="ObjSMSTemplate"
+                            DataTextField="TemplateName" DataValueField="STIDAuto" AutoPostBack="true" Width="245px">
+                        </asp:DropDownList>
+                        <asp:ObjectDataSource ID="ObjSMSTemplate" runat="server" SelectMethod="GetSMSTemplate"
+                            TypeName="BLCommunication"></asp:ObjectDataSource>
+                    </td>
+                    <td align="left" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" valign="top" colspan="2">
+                        &nbsp;
+                    </td>
+                    <td align="right">
+                        &nbsp;
+                    </td>
+                    <td align="left">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top">
+                        <asp:Label ID="lblMsg" runat="server" SkinID="lbl" Text="Message* :&nbsp;"></asp:Label>
+                    </td>
+                    <td align="left" colspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="3" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" colspan="2" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="left" valign="top">
+                        &nbsp;
+                    </td>
+                    <td align="right">
+                        &nbsp;
+                    </td>
+                    <td align="left">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" colspan="12">
+                        <FTB:FreeTextBox ID="txtmsg" runat="server" AllowHtmlMode="True" BreakMode="LineBreak"
+                            ButtonSet="Office2003" EnableHtmlMode="false" HtmlModeDefaultsToMonoSpaceFont="True"
+                            ShowTagPath="False" Width="400px" EditorBorderColorDark="Black" EditorBorderColorLight="Wheat">
+                        </FTB:FreeTextBox>
+                    </td>
+                </tr>
+            </table>
+            <a name="bottom">
+                <div align="right">
+                    <a href="#top">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="Images/top.png" Width="30px" Height="30px" /></a>
+                    <asp:LinkButton ID="LinkButton" runat="server"></asp:LinkButton>
+                </div>
+            </a>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

@@ -1,0 +1,127 @@
+﻿<%@ Page Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="RptStudentIndividualAdmissionDetails.aspx.vb"
+    Inherits="RptStudentIndividualAdmissionDetails" Title="Student Admission Details" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <script language="JavaScript" type="text/javascript">
+        function Valid() {
+            var msg;
+            msg = DropDownForZero(document.getElementById("<%=ddlAcdemicYear.ClientID%>"), 'Academic Year');
+            if (msg != "") {
+                document.getElementById("<%=ddlAcdemicYear.ClientID%>");
+                return msg;
+            }
+            msg = DropDownForZero(document.getElementById("<%=ddlCourse.ClientID%>"), 'Course');
+            if (msg != "") {
+                document.getElementById("<%=ddlCourse.ClientID%>");
+                return msg;
+            }
+            msg = DropDownForZero(document.getElementById("<%=ddlBatch.ClientID%>"), 'Batch');
+            if (msg != "") {
+                document.getElementById("<%=ddlBatch.ClientID%>");
+                return msg;
+            }
+
+            return true;
+        }
+        function Validate() {
+            var msg = Valid();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=msginfo.ClientID %>").innerText = msg;
+                    document.getElementById("<%=lblmsg.ClientID %>").innerText = "";
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                document.getElementById("<%=msginfo.ClientID %>").textContent = msg;
+                    document.getElementById("<%=lblmsg.ClientID %>").innerText = "";
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+    <center>
+        <h1 class="headingTxt">
+            STUDENT ADMISSION DETAILS
+        </h1>
+        <br />
+        <table>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="Label1" runat="server" Text="Academic Year* :&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                </td>
+                <td align="left">
+                    <asp:DropDownList ID="ddlAcdemicYear" runat="server" DataSourceID="ObjAY" DataTextField="AcademicYear"
+                        SkinID="ddl" AutoPostBack="true" AppendDataBoundItems="true" DataValueField="A_Code"
+                        TabIndex="1">
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjAY" runat="server" SelectMethod="GetAcademicYear" TypeName="RptStudentAdmissionDetailsBL">
+                    </asp:ObjectDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="Label2" runat="server" Text="Course* :&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                </td>
+                <td align="left">
+                    <asp:DropDownList ID="ddlCourse" runat="server" DataTextField="CourseName"  SkinID="ddlRsz" width="250" 
+                        DataSourceID="ObjCourse" AutoPostBack="true" DataValueField="Courseid" TabIndex="2">
+                    </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjCourse" runat="server" SelectMethod="GetCourse" TypeName="RptStudentAdmissionDetailsBL">
+                    </asp:ObjectDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="Label5" runat="server" Text="Batch* :&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                </td>
+                <td align="left">
+                    <asp:DropDownList ID="ddlBatch" runat="server" DataTextField="Batch_No"  SkinID="ddlRsz" width="250" 
+                        AutoPostBack="true" AppendDataBoundItems="true" DataValueField="BatchID" TabIndex="3">
+                        <asp:ListItem Value="0">Select</asp:ListItem>
+                    </asp:DropDownList>
+                
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    <asp:Label ID="Label6" runat="server" Text="Student :&nbsp;&nbsp;" SkinID="lblRsz"></asp:Label>
+                </td>
+                <td align="left">
+                   <asp:DropDownList ID="ddlStudent" runat="server" 
+                        DataTextField="Name"  SkinID="ddlRsz" width="250"  DataSourceID="ObjStudent"  
+                        DataValueField="Std_Id" TabIndex="4" >  
+                          <asp:ListItem Value="0"> ALL</asp:ListItem>                      
+                    </asp:DropDownList>
+                  <asp:ObjectDataSource ID="ObjStudent" runat="server" SelectMethod="GetStudent"
+                        TypeName="RptStudentAdmissionDetailsBL">
+                        <SelectParameters>
+                            <asp:ControlParameter ControlID="ddlBatch" Name="BatchID" PropertyName="SelectedValue"
+                                Type="Int32" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="left">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <asp:Button ID="Btnreport" runat="server" CausesValidation="True" OnClientClick="return Validate();"
+                        Text="REPORT" SkinID="btn" TabIndex="5" CssClass="ButtonClass " />&nbsp;
+                    <asp:Button ID="Btnback" runat="server" CausesValidation="True" SkinID="btn" TabIndex="6"
+                        Text="BACK" CssClass="ButtonClass " />
+                </td>
+            </tr>
+        </table>
+        <asp:Label ID="msginfo" runat="server" SkinID="lblRed" Visible="true"></asp:Label>
+        <asp:Label ID="lblmsg" runat="server" SkinID="lblGreen" Visible="true"></asp:Label>
+    </center>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

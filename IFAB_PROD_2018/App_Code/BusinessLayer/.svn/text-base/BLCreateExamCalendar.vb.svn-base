@@ -1,0 +1,25 @@
+﻿Imports Microsoft.VisualBasic
+
+Public Class BLCreateExamCalendar
+    Public Function Insert(ByVal b As ELCreateExamCalendar) As Integer
+        Return DLCreateExamCalendar.Insert(b)
+    End Function
+
+    Public Function Update(ByVal b As ELCreateExamCalendar) As Integer
+        Return DLCreateExamCalendar.Insert(b)
+    End Function
+    Public Function GetAddCreateExamCalender(ByVal e As String) As Data.DataTable
+        Return DLCreateExamCalendar.GetAddCreateExamCalender(e)
+    End Function
+    Public Function GetCreateExamCalender(ByVal b As ELCreateExamCalendar) As Data.DataTable
+        Return DLCreateExamCalendar.GetCreateExamCalender(b)
+    End Function
+
+    Public Function GetPublishCreateExamCalender(ByVal b As ELCreateExamCalendar) As Data.DataTable
+        Return DLCreateExamCalendar.GetPublishCreateExamCalender(b)
+    End Function
+
+    Public Function Delete(ByVal EL As ELCreateExamCalendar) As Integer
+        Return DLCreateExamCalendar.delete(EL)
+    End Function
+End Class

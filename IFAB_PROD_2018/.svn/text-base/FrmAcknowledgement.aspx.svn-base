@@ -1,0 +1,66 @@
+<%@ Page Language="VB" MasterPageFile="~/PopUp.master" AutoEventWireup="false" CodeFile="FrmAcknowledgement.aspx.vb"
+    Inherits="FrmAcknowledgement" Title="ACKNOWLEDGEMENT" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <script language="JavaScript" type="text/javascript">
+    </script>
+
+    <asp:UpdatePanel ID="UpdatePanel" runat="server">
+        <ContentTemplate>
+            <center>
+                <h1 class="headingTxt">
+                    ACKNOWLEDGMENT</h1>
+            </center>
+            <center>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LKReport" runat="server" Text="<u>Print Acknowledgement</u>"></asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LKMail" runat="server" Text="<u>Send Acknowledgement by E-Mail</u>"></asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:LinkButton ID="LKSMS" runat="server" Text="<u>Send Acknowledgement by SMS</u>"></asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblmsg" runat="server" SkinID="lblred"></asp:Label>
+                            <asp:Label ID="lblmsgg" runat="server" SkinID="lblGreen"></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Button ID="BtnClose" CssClass="ButtonClass" SkinID="btn" runat="server" Text="CLOSE">
+                            </asp:Button>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+            <center>
+                <table>
+                    <tr>
+                        <td align="right" style="width: 413px">
+                            <asp:Label ID="Label1" runat="server"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </center>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

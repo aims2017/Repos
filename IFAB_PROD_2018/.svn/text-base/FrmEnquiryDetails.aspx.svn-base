@@ -1,0 +1,207 @@
+<%@ Page Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="FrmEnquiryDetails.aspx.vb"
+    Inherits="EnquiryDetails" Title="Enquiry Details" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <script language="JavaScript" type="text/javascript">
+
+        function Valid() {
+            var msg;
+            msg = ValidateDate(document.getElementById("<%=txtFromDateExt.ClientID %>"), 'From Date');
+            if (msg != "") return msg;
+            msg = ValidateDate(document.getElementById("<%=txtToDateExt.ClientID %>"), 'To Date');
+            if (msg != "") return msg;
+
+            return true;
+        }
+        function Validate() {
+            var msg = Valid();
+            if (msg != true) {
+                if (navigator.appName == "Microsoft Internet Explorer") {
+                    document.getElementById("<%=lblErrorMsg.ClientID %>").innerText = msg;
+
+                    return false;
+                }
+                else if (navigator.appName == "Netscape") {
+                    document.getElementById("<%=lblErrorMsg.ClientID %>").textContent = msg;
+
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function ShowImage() {
+            GlbShowSImage(document.getElementById("<%=txtstdname.ClientID%>"));
+
+        }
+        function HideImage() {
+            GlbHideSImage(document.getElementById("<%=txtstdname.ClientID%>"));
+        }
+    </script>
+
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <div>
+                <center>
+                    <h1 class="headingTxt">
+                        ENQUIRY DETAILS
+                    </h1>
+                </center>
+                <center>
+                    <table class="custTable">
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblFromDate" runat="server" SkinID="lbl" Text="From Date* :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtFromDateExt" runat="server" SkinID="txt" TabIndex="1"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <ajaxToolkit:CalendarExtender ID="FromDateExt" runat="server" TargetControlID="txtFromDateExt"
+                            Format="dd-MMM-yyyy">
+                        </ajaxToolkit:CalendarExtender>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblToDate" runat="server" SkinID="lbl" Text="To Date* :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="txtToDateExt" runat="server" SkinID="txt" TabIndex="2"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <ajaxToolkit:CalendarExtender ID="ToDateExt" runat="server" TargetControlID="txtToDateExt"
+                            Format="dd-MMM-yyyy">
+                        </ajaxToolkit:CalendarExtender>
+                        <tr align="right">
+                            <td align="right">
+                                <asp:Label ID="Label15" runat="server" SkinID="lbl" Text="Branch&nbsp;:&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:DropDownList ID="ddlBranch" runat="server" AutoPostBack="True" DataSourceID="ObjBranch"
+                                    DataTextField="BranchName" DataValueField="BranchCode" SkinID="ddlL" TabIndex="3">
+                                    <%--<asp:ListItem Value="0" Text=" All"></asp:ListItem>--%>
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr align="right">
+                            <td>
+                                <asp:Label ID="lblCourse" runat="server" SkinID="lbl" Text="Course :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:DropDownList ID="ddlCourse" runat="server" DataSourceID="ObjCourse" DataTextField="CourseName"
+                                    DataValueField="Courseid" SkinID="ddlRsz" TabIndex="4" Width="250px">
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr align="right">
+                            <td>
+                                <asp:Label ID="Label13" runat="server" SkinID="lbl" Text="Student Name  :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtstdname" runat="server" SkinID="txt" AutoPostBack="True" TabIndex="5"></asp:TextBox>
+                                <ajaxToolkit:AutoCompleteExtender ID="AutoCompleteExtender2" runat="Server" TargetControlID="txtstdname"
+                                    ServiceMethod="getEnquiryExt" ServicePath="TextBoxExt.asmx" MinimumPrefixLength="3"
+                                    OnClientPopulated="HideImage" OnClientPopulating="ShowImage" CompletionInterval="1000"
+                                    FirstRowSelected="true" EnableCaching="True" CompletionListCssClass="completeListStyle">
+                                </ajaxToolkit:AutoCompleteExtender>
+                                <ajaxToolkit:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender3" WatermarkText="Type first 3 characters"
+                                    runat="server" SkinID="watermark" TargetControlID="txtstdname">
+                                </ajaxToolkit:TextBoxWatermarkExtender>
+                            </td>
+                        </tr>
+                        <tr align="right">
+                            <td>
+                                <asp:Label ID="lblAdmitted" runat="server" SkinID="lbl" Text="Admitted :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:DropDownList ID="ddlAdmitted" runat="server" SkinID="ddl" TabIndex="6">
+                                    <asp:ListItem Text="ALL" Value="A"></asp:ListItem>
+                                    <asp:ListItem Text="Yes" Value="Y"></asp:ListItem>
+                                    <asp:ListItem Text="No" Value="N"></asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="Label7" runat="server" Text="Source of Information :&nbsp;&nbsp;"
+                                    SkinID="lblRsz" Width="200px"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="ddlSource" TabIndex="7" runat="server" SkinID="ddl" DataTextField="SourceofInfo"
+                                    DataValueField="SIMIDAuto" DataSourceID="ObjSourceofInfo" AppendDataBoundItems="true">
+                                    <asp:ListItem Value="0" Text="ALL"></asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:ObjectDataSource ID="ObjSourceofInfo" runat="server" TypeName="EnquiryDB" OldValuesParameterFormatString="original_{0}"
+                                    SelectMethod="SourceofInfo"></asp:ObjectDataSource>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="btnTd">
+                                <asp:Button ID="btnReport" runat="server" SkinID="btn" TabIndex="8" CausesValidation="true"
+                                    OnClientClick="return Validate();" Text="REPORT" CssClass="ButtonClass" />
+                                <asp:Button ID="btnSave" runat="server" CssClass="ButtonClass" SkinID="btn" TabIndex="9"
+                                    Text="BACK" ValidationGroup="save" />
+                            </td>
+                        </tr>
+                        <caption>
+                            <br />
+                            <br />
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>
+                                        <asp:Label ID="lblErrorMsg" runat="server" BackColor="Red" ForeColor="White"></asp:Label>
+                                    </center>
+                                </td>
+                            </tr>
+                            <caption>
+                                <br />
+                                <tr>
+                                    <td>
+                                        <asp:ObjectDataSource ID="ObjBranch" runat="server" OldValuesParameterFormatString="original_{0}"
+                                            SelectMethod="GetBranchByUID" TypeName="BLBranchAccessLevel"></asp:ObjectDataSource>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <asp:ObjectDataSource ID="ObjCourse" runat="server" OldValuesParameterFormatString="original_{0}"
+                                            SelectMethod="GetBranchCourse" TypeName="DLReportsR">
+                                            <SelectParameters>
+                                                <asp:ControlParameter ControlID="ddlBranch" Name="BranchCode" PropertyName="SelectedValue" />
+                                            </SelectParameters>
+                                        </asp:ObjectDataSource>
+                                    </td>
+                                </tr>
+                            </caption>
+                        </caption>
+                    </table>
+                </center>
+            </div>
+            <style type="text/css">
+                .completeListStyle
+                {
+                    height: 100px;
+                    width: 50px;
+                    overflow: auto;
+                    list-style-type: disc;
+                    padding-left: 17px;
+                    background-color: #FFF;
+                    border: 1px solid DarkGray;
+                    text-align: left;
+                    font-size: small;
+                    color: black;
+                }
+            </style>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

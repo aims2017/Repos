@@ -1,0 +1,95 @@
+﻿
+Partial Class rptDetailed
+    Inherits System.Web.UI.Page
+    Dim bll As New StudentB
+    Dim dtM As New Data.DataTable
+    Dim Prop As New QureyStringP
+    Dim obj As New SelfDetailsB
+    Dim dt1, dt As New DataTable
+    'Protected Sub ReportViewer2_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReportViewer2.Init
+
+    '    Dim dm As New Microsoft.Reporting.WebForms.ReportDataSource
+    '    Dim office As String = Request.QueryString("Office")
+    '    Dim BranchCode As String = Request.QueryString("BranchCode")
+    '    Dim BatchNo As Integer = Request.QueryString("BatchNo")
+
+
+    '    dt1 = bll.GetDetailedRpt(BatchNo)
+    '    If dt1.Rows.Count > 0 Then
+    '        Re.LocalReport.ReportPath = "rptDetailed.rdlc"
+    '        dm = New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_New_STDRegisterDetail", dt1)
+
+    '        ReportViewer2.LocalReport.DataSources.Clear()
+    '        Me.ReportViewer2.LocalReport.DataSources.Add(dm)
+    '        ReportViewer2.LocalReport.Refresh()
+
+    '        dt = obj.RPT_GetSelfDeatilsByBranch(Request.QueryString(1))
+    '        AddHandler ReportViewer2.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+
+    '    Else
+    '        lblErrorMsg.Text = "No Records to display"
+    '    End If
+    'End Sub
+    Sub SubreportProcessingEvent(ByVal sender As Object, ByVal e As Microsoft.Reporting.WebForms.SubreportProcessingEventArgs)
+        Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_RPT_GetSelfDetailByUID", dt)
+        e.DataSources.Add(rptDataSource)
+    End Sub
+
+    Protected Sub RepViewer1_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles RepViewer1.Init
+        Dim dm As New Microsoft.Reporting.WebForms.ReportDataSource
+        Dim office As String = Request.QueryString("Office")
+        Dim BranchCode As String = Request.QueryString("BranchCode")
+        Dim BatchNo As Integer = Request.QueryString("BatchNo")
+        Dim CourseId As Integer = Request.QueryString("CourseId")
+        Dim Ayear As String = Request.QueryString("Ayear")
+        Dim DojDob As Integer = Request.QueryString.Get("DojDob")
+        Dim FromDate As Date = Request.QueryString.Get("FromDate")
+        Dim ToDate As Date = Request.QueryString.Get("ToDate")
+        Dim Sort As Integer = Request.QueryString.Get("Sort")
+        Dim Semid As Integer = Request.QueryString.Get("Semid")
+
+        If Sort = 0 Then
+            dt1 = bll.GetDetailedRpt(BranchCode, CourseId, BatchNo, Ayear, DojDob, FromDate, ToDate, Semid)
+            If dt1.Rows.Count > 0 Then
+                RepViewer1.LocalReport.ReportPath = "rptDetailed.rdlc"
+                dm = New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_New_STDRegisterDetail", dt1)
+                Dim paramList As New Generic.List(Of Microsoft.Reporting.WebForms.ReportParameter)
+                paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("Ayear", Ayear, False))
+
+                RepViewer1.LocalReport.SetParameters(paramList)
+
+                RepViewer1.LocalReport.DataSources.Clear()
+                Me.RepViewer1.LocalReport.DataSources.Add(dm)
+                RepViewer1.LocalReport.Refresh()
+
+                dt = obj.RPT_GetSelfDeatilsByBranch(Request.QueryString(1))
+                AddHandler RepViewer1.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+
+            Else
+                lblErrorMsg.Text = "No Records to display."
+            End If
+
+        Else
+            dt1 = bll.GetDetailedRptSort(BranchCode, CourseId, BatchNo, Ayear, DojDob, FromDate, ToDate, Semid)
+            If dt1.Rows.Count > 0 Then
+                RepViewer1.LocalReport.ReportPath = "rptDetailedSort.rdlc"
+                dm = New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_New_STDRegisterDetailSort", dt1)
+                Dim paramList As New Generic.List(Of Microsoft.Reporting.WebForms.ReportParameter)
+                paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("Ayear", Ayear, False))
+
+                RepViewer1.LocalReport.SetParameters(paramList)
+
+                RepViewer1.LocalReport.DataSources.Clear()
+                Me.RepViewer1.LocalReport.DataSources.Add(dm)
+                RepViewer1.LocalReport.Refresh()
+
+                dt = obj.RPT_GetSelfDeatilsByBranch(Request.QueryString(1))
+                AddHandler RepViewer1.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+
+            Else
+                lblErrorMsg.Text = "No Records to display."
+            End If
+        End If
+    End Sub
+End Class
+

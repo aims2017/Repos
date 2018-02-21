@@ -1,0 +1,239 @@
+﻿Imports System.IO
+Imports System.Data
+Imports System.Collections.Generic
+Imports Microsoft.VisualBasic.Strings
+Partial Class FrmStudentLogBook
+    Inherits BasePage
+    Dim EL As New ELStudentLogBook
+    Dim BL As New BLStudentLogBook
+    Dim dt As New DataTable
+    Protected Sub btnadd_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnadd.Click
+
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Try
+                msginfo.Text = ""
+                ddlBatch.Focus()
+                EL.BatchID = ddlBatch.SelectedValue
+                EL.STID = ddlStudent.SelectedValue
+                EL.EmpID = DdlLecture.SelectedValue
+                If Txtdate.Text = "" Then
+                    EL.LogDate = "01-01-1900"
+                Else
+                    EL.LogDate = Txtdate.Text
+                End If
+                EL.LogType = ddlLogtype.SelectedValue
+                EL.Feedback = TxtFeedback.Text
+                If TxtFeedback.Text = "" Then
+                    msginfo.Text = "Feedback Field is Mandatory."
+                    Exit Sub
+                End If
+                If btnadd.Text = "UPDATE" Then
+                    EL.ID = ViewState("Std_LogBook_AutoId")
+                    'dt = BL.CheckDuplicate(EL)
+                    If EL.LogDate <> "1/1/1900" Then
+                        If CDate(Txtdate.Text) > CDate(Today.Date) Then
+                            lblmsg.Text = ""
+                            msginfo.Text = "Log Date Can't be greater than Today's Date."
+                            Txtdate.Focus()
+                            Exit Sub
+                        End If
+                    End If
+                    If dt.Rows.Count > 0 Then
+                        msginfo.Text = "Data already exists."
+                        lblmsg.Text = ""
+                    Else
+                        BL.UpdateRecord(EL)
+                        msginfo.Text = ""
+                        btnadd.Text = "ADD"
+                        btndetails.Text = "VIEW"
+                        lblmsg.Text = "Data Updated Successfully."
+                        DisplayStudentLogBook()
+                        GVLogBook.PageIndex = ViewState("PageIndex")
+                        'Displ()
+                        clear()
+                    End If
+                ElseIf btnadd.Text = "ADD" Then
+                    EL.ID = 0
+                    'dt = BL.CheckDuplicate(EL)
+                    If EL.LogDate <> "1/1/1900" Then
+                        If CDate(Txtdate.Text) > CDate(Today.Date) Then
+                            lblmsg.Text = ""
+                            msginfo.Text = "Log Date Can't be greater than Today's Date."
+                            Txtdate.Focus()
+                            Exit Sub
+                        End If
+                    End If
+                    If dt.Rows.Count > 0 Then
+                        msginfo.Text = "Data already exists."
+                        lblmsg.Text = ""
+                    Else
+                        BL.InsertRecord(EL)
+                        msginfo.Text = ""
+                        btnadd.Text = "ADD"
+                        lblmsg.Text = "Data Saved successfully."
+                        ViewState("PageIndex") = 0
+                        GVLogBook.PageIndex = 0
+                        DisplayStudentLogBook()
+                        clear()
+                        DisplayStudentLogBook()
+                    End If
+                End If
+            Catch ex As Exception
+                lblmsg.Text = ""
+                msginfo.Text = "Enter correct date."
+            End Try
+
+        Else
+            msginfo.Text = "You do not belong to this branch, Cannot add/update data."
+            lblmsg.Text = ""
+        End If
+
+    End Sub
+    Sub DisplayStudentLogBook()
+        Dim dt As New DataTable
+        EL.ID = 0
+        dt = BL.Display(EL)
+        GVLogBook.DataSource = dt
+        GVLogBook.DataBind()
+
+        GVLogBook.Visible = True
+        GVLogBook.Enabled = True
+        LinkButton.Focus()
+        If dt.Rows.Count = 0 Then
+            lblmsg.Text = ""
+
+            msginfo.Text = "No records to display."
+            'msginfo.Visible = True
+        End If
+    End Sub
+    Sub clear()
+        Txtdate.Text = Format(Today, "dd-MMM-yyyy")
+        TxtFeedback.Text = ""
+    End Sub
+    Protected Sub GVLogBook_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles GVLogBook.PageIndexChanging
+        GVLogBook.PageIndex = e.NewPageIndex
+        ViewState("PageIndex") = GVLogBook.PageIndex
+        DisplayStudentLogBook()
+    End Sub
+
+    Protected Sub btndetails_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btndetails.Click
+        msginfo.Text = ""
+        LinkButton.Focus()
+
+        If btndetails.Text <> "BACK" Then
+            EL.BatchID = ddlBatch.SelectedValue
+            EL.STID = ddlStudent.SelectedValue
+            EL.EmpID = DdlLecture.SelectedValue
+            EL.LogType = ddlLogtype.SelectedValue
+            lblmsg.Text = ""
+            msginfo.Text = ""
+            ViewState("PageIndex") = 0
+            GVLogBook.PageIndex = 0
+            DisplayStudentLogBook()
+            GVLogBook.Visible = True
+
+        Else
+            lblmsg.Text = ""
+            msginfo.Text = ""
+            btndetails.Text = "VIEW"
+            btnadd.Text = "ADD"
+            clear()
+            GVLogBook.Visible = True
+            GVLogBook.PageIndex = ViewState("PageIndex")
+            DisplayStudentLogBook()
+        End If
+    End Sub
+    Protected Sub GVLogBook_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GVLogBook.RowDeleting
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            ViewState("Std_LogBook_AutoId") = CType(GVLogBook.Rows(e.RowIndex).Cells(1).FindControl("IID"), HiddenField).Value
+            EL.ID = ViewState("Std_LogBook_AutoId")
+            BL.ChangeFlag(EL)
+            DisplayStudentLogBook()
+            GVLogBook.Visible = True
+            msginfo.Text = ""
+            lblmsg.Text = "Data Deleted Successfully."
+            ddlBatch.Focus()
+            GVLogBook.PageIndex = ViewState("PageIndex")
+            If Txtdate.Text = "" Then
+                EL.LogDate = "01-01-1900"
+            Else
+                EL.LogDate = CDate(Txtdate.Text)
+            End If
+            If TxtFeedback.Text = "" Then
+                EL.Feedback = 0
+            Else
+                EL.Feedback = TxtFeedback.Text
+            End If
+            dt = BL.Display(EL)
+            GVLogBook.DataSource = dt
+            GVLogBook.DataBind()
+            GVLogBook.Enabled = True
+            GVLogBook.Visible = True
+        Else
+            msginfo.Text = "You do not belong to this branch, Cannot delete data."
+            lblmsg.Text = ""
+        End If
+
+    End Sub
+
+    Protected Sub GVLogBook_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GVLogBook.RowEditing
+        lblmsg.Text = ""
+        msginfo.Text = ""
+        EL.ID = ViewState("Std_LogBook_AutoId")
+        Txtdate.Text = CType(GVLogBook.Rows(e.NewEditIndex).FindControl("lbl1"), Label).Text
+        ddlLogtype.SelectedValue = CType(GVLogBook.Rows(e.NewEditIndex).FindControl("LblLog"), Label).Text
+        ddlBatch.SelectedValue = CType(GVLogBook.Rows(e.NewEditIndex).FindControl("StdBatch"), HiddenField).Value
+        ddlStudent.Items.Clear()
+        ddlStudent.DataSourceID = "ObjStudent"
+        ddlStudent.DataBind()
+        ddlStudent.SelectedValue = CType(GVLogBook.Rows(e.NewEditIndex).FindControl("StdHidden"), HiddenField).Value
+        DdlLecture.Items.Clear()
+        DdlLecture.DataSourceID = "objLecturer"
+        DdlLecture.DataBind()
+        DdlLecture.SelectedValue = CType(GVLogBook.Rows(e.NewEditIndex).FindControl("FacultyHidden"), HiddenField).Value
+        TxtFeedback.Text = CType(GVLogBook.Rows(e.NewEditIndex).FindControl("Lbl5"), Label).Text
+        ViewState("Std_LogBook_AutoId") = CType(GVLogBook.Rows(e.NewEditIndex).FindControl("IID"), HiddenField).Value
+        btnadd.Text = "UPDATE"
+        btndetails.Text = "BACK"
+        EL.ID = ViewState("Std_LogBook_AutoId")
+        dt = BL.Display(EL)
+        GVLogBook.DataSource = dt
+        GVLogBook.DataBind()
+        GVLogBook.Enabled = False
+
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim heading As String
+        heading = Session("RptFrmTitleName")
+        Me.Lblheading.Text = heading
+        If Not IsPostBack Then
+            Txtdate.Text = Format(Today, "dd-MMM-yyyy")
+        End If
+    End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+    Protected Sub ddlBatch_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlBatch.TextChanged
+        msginfo.Text = ""
+        ddlBatch.Focus()
+    End Sub
+
+    Protected Sub ddlStudent_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlStudent.TextChanged
+        msginfo.Text = ""
+        ddlStudent.Focus()
+    End Sub
+
+    Protected Sub DdlLecture_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DdlLecture.TextChanged
+        msginfo.Text = ""
+        DdlLecture.Focus()
+    End Sub
+
+    Protected Sub ddlLogtype_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlLogtype.TextChanged
+        msginfo.Text = ""
+        ddlLogtype.Focus()
+    End Sub
+End Class
+

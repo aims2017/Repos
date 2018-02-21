@@ -1,0 +1,58 @@
+Imports Microsoft.VisualBasic
+
+Public Class Experience
+    Private _id As Long
+    Public Property ExpId() As Long
+        Get
+            Return _id
+        End Get
+        Set(ByVal value As Long)
+            _id = value
+        End Set
+    End Property
+    Private _std_code As String
+    Public Property Std_code() As String
+        Get
+            Return _std_code
+        End Get
+        Set(ByVal value As String)
+            _std_code = value
+        End Set
+    End Property
+    Private _qname As String
+    Public Property Name() As String
+        Get
+            Return _qname
+        End Get
+        Set(ByVal value As String)
+            _qname = value
+        End Set
+    End Property
+    Private _noOfYears As String
+    Public Property NoOfYears() As String
+        Get
+            Return _noOfYears
+        End Get
+        Set(ByVal value As String)
+            _noOfYears = value
+        End Set
+    End Property
+    Private _natureofjob As String
+    Public Property Natureofjob() As String
+        Get
+            Return _natureofjob
+        End Get
+        Set(ByVal value As String)
+            _natureofjob = value
+        End Set
+    End Property
+    Public Sub New(ByVal id As Long, ByVal std_code As String, ByVal name As String, ByVal noOfYears As String, ByVal natureofjob As String)
+        _id = id
+        _std_code = std_code
+        _qname = name
+        _noOfYears = noOfYears
+        _natureofjob = natureofjob
+    End Sub
+    Public Sub New()
+    End Sub
+End Class

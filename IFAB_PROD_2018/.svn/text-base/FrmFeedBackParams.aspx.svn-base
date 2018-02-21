@@ -1,0 +1,89 @@
+﻿<%@ Page Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false" CodeFile="FrmFeedBackParams.aspx.vb"
+    Inherits="FrmFeedBackParams" Title="FeedBack Parameters" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <a name="Top">
+                <div align="right">
+                    <a href="#Bottom">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="Images/down.png" Width="30px" Height="30px" /></a>
+                </div>
+            </a>
+            <center>
+                <h1 class="headingTxt">
+                    <asp:Label ID="Lblheading" runat="server"></asp:Label>
+                </h1>
+            </center>
+            <br />
+            <br />
+            <center>
+                <table>
+                    <tr>
+                        <td colspan="4">
+                            <asp:Button ID="btnGenrate" runat="server" Text="GENERATE" CssClass="ButtonClass"
+                              Commandname="GENERATE"  CausesValidation="true" SkinID="btnRsz" TabIndex="4" OnClientClick="return Validate();" />
+                            <asp:Button ID="btnView" runat="server" CausesValidation="false" Text="VIEW" CssClass="ButtonClass"
+                               Commandname="VIEW"  SkinID="btn" />
+                            <asp:Button ID="btnClear" runat="server" CausesValidation="false" Text="CLEAR" CssClass="ButtonClass"
+                               Commandname="CLEAR" SkinID="btn" />
+                            <asp:Button ID="BtnUpdate" runat="server" CausesValidation="false" Text="UPDATE"
+                                 Commandname="UPDATE" CssClass="ButtonClass" SkinID="btn" />
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <br />
+                <asp:Label ID="lblMsg" runat="server" SkinID="lblGreen"></asp:Label>
+                <asp:Label ID="msginfo" runat="server" SkinID="lblRed" />
+            </center>
+            <div>
+                <center>
+                    <asp:Panel ID="panel1" runat="server" ScrollBars="Auto" Width="650px" Height="300px">
+                        <asp:GridView ID="GVFeedBack" runat="server" SkinID="GridView" DataKeyNames="" AllowPaging="true"
+                            AutoGenerateColumns="false" PageSize="100" AllowSorting="True" EnableSortingAndPagingCallbacks="True">
+                            <Columns>
+                                <asp:TemplateField HeaderText="SL. No.">
+                                    <ItemTemplate>
+                                        <asp:HiddenField ID="lblFeedbackId" runat="server" Value='<%# Bind("FeedBack_IDAuto") %>' />
+                                        <asp:Label ID="lblSlNo" runat="server" Text='<%# Bind("PNo") %>'></asp:Label>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="ATTRIBUTES" SortExpression="ParameterName">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="txtParameterName" TextMode="MultiLine" runat="server" Width="400px"
+                                            Text='<%# Bind("ParameterName") %>'></asp:TextBox>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="MAX">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="txtMax" runat="server" Width="50px" Text='<%# Bind("Max") %>'></asp:TextBox>
+                                        <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server"
+                                            FilterMode="validChars" validChars="0123456789" TargetControlID="txtMax">
+                                        </ajaxToolkit:FilteredTextBoxExtender>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                                <asp:TemplateField HeaderText="MIN">
+                                    <ItemTemplate>
+                                        <asp:TextBox ID="txtMin" runat="server" Width="50px" Text='<%# Bind("Min") %>'></asp:TextBox>
+                                        <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender2" runat="server"
+                                            FilterMode="validChars" validChars="0123456789" TargetControlID="txtMin">
+                                        </ajaxToolkit:FilteredTextBoxExtender>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
+                            </Columns>
+                        </asp:GridView>
+                    </asp:Panel>
+                </center>
+            </div>
+            <br />
+            <a name="Bottom">
+                <div align="right">
+                    <a href="#Top">
+                        <asp:Image ID="Image2" runat="server" ImageUrl="Images/top.png" Width="30px" Height="30px" /></a>
+                    <asp:LinkButton ID="LinkButton1" runat="server"></asp:LinkButton>
+                </div>
+            </a>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

@@ -1,0 +1,241 @@
+﻿
+Partial Class MfgFrmStockIssue
+    Inherits BasePage
+    Dim EL As New Mfg_ElStockIssue
+    Dim dt As New DataTable
+    Dim BL As New Mfg_BLStockIssue
+
+    Protected Sub btnAdddet_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAdddet.Click
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            EL.EntryDate = txtExpiryDate.Text
+            EL.CV = txtConvNo.Text
+            EL.PID = DDLPRODUCT.SelectedValue
+            EL.SE = DdlSE.SelectedValue
+            If txtReturnedQty.Text = "" Then
+                EL.QtyReturned = 0
+            Else
+                EL.QtyReturned = txtReturnedQty.Text
+            End If
+            If txtQtyIssued.Text = "" Then
+                EL.QtyIssued = 0
+            Else
+                EL.QtyIssued = txtQtyIssued.Text
+            End If
+
+            If btnAdddet.Text = "UPDATE" Then
+                EL.id = ViewState("Recepe_Code")
+                'dt = BL.GetDuplicate(EL)
+                If dt.Rows.Count > 0 Then
+                    lblGreen.Text = ""
+                    lblRed.Text = "Data already exists"
+                Else
+                    BL.UpdateProductReceipe(EL)
+                    GVStockIssueDetails.Visible = True
+                    btnAdddet.Text = "ADD"
+                    btnView.Text = "VIEW"
+                    clear()
+                    lblRed.Text = ""
+                    GVStockIssueDetails.PageIndex = ViewState("PageIndex")
+                    display()
+                    lblGreen.Text = "Data Updated Successfully."
+
+                    display()
+                End If
+            ElseIf btnAdddet.Text = "ADD" Then
+                EL.id = 0
+                'dt = BL.GetDuplicate(EL)
+                If dt.Rows.Count > 0 Then
+                    lblGreen.Text = ""
+                    lblRed.Text = "Data already exists"
+                Else
+                    BL.InsertProductReceipe(EL)
+                    btnAdddet.Text = "ADD"
+                    display()
+                    clear()
+                    lblRed.Text = ""
+                    ViewState("PageIndex") = 0
+                    GVStockIssueDetails.PageIndex = 0
+                    lblGreen.Text = "Data Saved Successfully."
+                    TabPanel2.Enabled = True
+                    TabPanel1.Enabled = False
+                End If
+            End If
+        Else
+            lblRed.Text = "You do not belong to this branch, Cannot add data."
+            lblGreen.Text = ""
+        End If
+    End Sub
+
+    Protected Sub btnDetails_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDetails.Click
+        If DdlSE.SelectedValue = 0 Then
+            lblRedM.Text = "Please select Sale Executive first."
+            lblGreenM.Text = ""
+            Exit Sub
+        Else
+            TabContainer1.ActiveTab = TabPanel2
+            TabPanel2.Enabled = True
+            TabPanel1.Enabled = False
+            lblGreenM.Text = ""
+            lblRedM.Text = ""
+            txtConvNo.Text = "1.00"
+            txtReturnedQty.Visible = False
+            lblReturnQty.Visible = False
+            'btnAdddet.Enabled = True
+            GVStockIssueDetails.Visible = False
+
+            'If HidInvoice.Text = "" Then
+            '    dt = BL.GetInvoiceNo()
+            '    HidInvoice.Text = dt.Rows(0).Item("InvoiceId").ToString
+            '    HidInvoiceNO.Text = dt.Rows(0).Item("InvoiceNo").ToString
+            'Else
+            '    EL.InvoiceID = HidInvoice.Text
+            'End If
+
+        End If
+    End Sub
+    Sub display()
+        Dim dt As New DataTable
+        EL.id = 0
+        EL.SE = DdlSE.SelectedValue
+        dt = BL.getProductDetailsReceipe(EL)
+        If dt.Rows.Count <> 0 Then
+            GVStockIssueDetails.DataSource = dt
+            GVStockIssueDetails.DataBind()
+            GVStockIssueDetails.Visible = True
+            GVStockIssueDetails.Enabled = True
+            TabPanel2.Enabled = True
+            TabPanel1.Enabled = False
+            btnDetails.Text = "ADD DETAILS"
+        Else
+            lblGreen.Text = ""
+            lblRed.Text = "No Records to display."
+            GVStockIssue.Visible = False
+            TabPanel2.Enabled = True
+            TabPanel1.Enabled = False
+        End If
+    End Sub
+   
+
+    Protected Sub btnView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnView.Click
+        If btnView.Text <> "BACK" Then
+            lblGreenM.Text = ""
+            lblRedM.Text = ""
+            ViewState("PageIndex") = 0
+            GVStockIssue.PageIndex = 0
+            display1()
+            'TabPanel2.Enabled = True
+            'TabPanel1.Enabled = False
+          
+        Else
+            display1()
+            lblGreenM.Text = ""
+            lblRedM.Text = ""
+            GVStockIssue.Enabled = True
+            GVStockIssue.PageIndex = ViewState("PageIndex")
+            clear()
+            'TabPanel2.Enabled = True
+            'TabPanel1.Enabled = False
+
+        End If
+    End Sub
+    Sub Display1()
+        Dim dt As New DataTable
+        EL.id = 0
+        EL.SE = DdlSE.SelectedValue
+        dt = BL.getProductReceipe(EL)
+        If dt.Rows.Count <> 0 Then
+            GVStockIssue.DataSource = dt
+            GVStockIssue.DataBind()
+            GVStockIssue.Visible = True
+            GVStockIssue.Enabled = True
+            lblGreenM.Text = ""
+            lblRedM.Text = ""
+        Else
+            lblGreenM.Text = ""
+            lblRedM.Text = "No Records to display."
+            GVStockIssue.Visible = False
+            'TabPanel2.Enabled = False
+            'TabPanel1.Enabled = True
+        End If
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        txtConvNo.Text = "1.00"
+        txtReturnedQty.Visible = False
+        lblReturnQty.Visible = False
+    End Sub
+
+    Protected Sub DDLPRODUCT_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles DDLPRODUCT.SelectedIndexChanged
+        Try
+            EL.PID = DDLPRODUCT.SelectedValue
+            dt = BL.getProductExpiry(EL)
+            txtExpiryDate.Text = Format(dt.Rows(0).Item("Expiry"), "dd-MMM-yyy")
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Protected Sub BtnViewDetails_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnViewDetails.Click
+        If BtnViewDetails.Text <> "BACK" Then
+            lblGreen.Text = ""
+            lblRed.Text = ""
+            ViewState("PageIndex") = 0
+            GVStockIssue.PageIndex = 0
+            display()
+            TabPanel2.Enabled = True
+            TabPanel1.Enabled = False
+        Else
+            display()
+            lblGreen.Text = ""
+            lblRed.Text = ""
+            GVStockIssue.Enabled = True
+            GVStockIssue.PageIndex = ViewState("PageIndex")
+            clear()
+            BtnViewDetails.Text = "VIEW"
+            btnAdddet.Text = "ADD"
+            TabPanel2.Enabled = True
+            TabPanel1.Enabled = False
+        End If
+    End Sub
+    Sub clear()
+        txtConvNo.Text = ""
+        txtQtyIssued.Text = ""
+        txtReturnedQty.Text = ""
+    End Sub
+
+    Protected Sub BtnClose_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnClose.Click
+        TabPanel2.Enabled = False
+        TabPanel1.Enabled = True
+    End Sub
+
+    Protected Sub GVStockIssueDetails_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GVStockIssueDetails.RowEditing
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            lblGreen.Text = ""
+            lblRed.Text = ""
+            DDLPRODUCT.SelectedValue = CType(GVStockIssueDetails.Rows(e.NewEditIndex).FindControl("lblARM1"), Label).Text
+            txtConvNo.Text = CType(GVStockIssueDetails.Rows(e.NewEditIndex).FindControl("lblUnit1"), Label).Text
+            txtQtyIssued.Text = CType(GVStockIssueDetails.Rows(e.NewEditIndex).FindControl("lblConv1"), Label).Text
+            txtReturnedQty.Text = CType(GVStockIssueDetails.Rows(e.NewEditIndex).FindControl("lblQuantity1"), Label).Text
+            txtExpiryDate.Text = CType(GVStockIssueDetails.Rows(e.NewEditIndex).FindControl("lblSequence1"), Label).Text
+            ViewState("Recepe_Code") = CType(GVStockIssueDetails.Rows(e.NewEditIndex).FindControl("HiddenField1"), HiddenField).Value
+            btnAdddet.Text = "UPDATE"
+            EL.id = ViewState("Recepe_Code")
+            EL.SE = DdlSE.SelectedValue
+            dt = BL.getProductDetailsReceipe(EL)
+            GVStockIssueDetails.DataSource = dt
+            GVStockIssueDetails.DataBind()
+            e.Cancel = True
+            GVStockIssueDetails.Enabled = False
+            GVStockIssueDetails.Visible = True
+            BtnViewDetails.Text = "BACK"
+            BtnViewDetails.Visible = True
+            TabPanel2.Visible = True
+            TabPanel1.Enabled = False
+            txtReturnedQty.Visible = True
+            lblReturnQty.Visible = True
+
+        Else
+            lblRed.Text = "You do not belong to this branch, Cannot edit data."
+            lblGreen.Text = ""
+        End If
+    End Sub
+End Class

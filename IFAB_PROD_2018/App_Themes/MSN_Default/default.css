@@ -1,0 +1,285 @@
+/* Common tags                 */
+/*-----------------------------*/
+
+
+body
+{
+	font-family: Verdana;
+	font-size: small;
+	color: #000000;
+	margin: 0 auto;
+	padding: 0;
+	margin-right: 30;
+	text-align: left;
+	width: 1024px;
+	height: 768px;
+}
+.ContentPlaceHolder
+{
+	background-color: #FFF8C6;
+}
+.MenuLeft
+{
+	width: 185px;
+	background-color: #B35900;
+	text-align: left;
+	color: White;
+	height: 20px;
+}
+/*D4B08D;*/.Body
+{
+	background-color: #D4B08D;
+}
+.tdclass
+{
+	background-color: #E8B28E;
+	height: 741px;
+	width: 100px;
+}
+
+/* 6F3700 */
+.headingTxt
+{
+	font: Arial;
+	color: #6F3700;
+	font-size: large;
+	margin: 10px 0px 10px 0px;
+	font-style: italic;
+	width: 660px;
+}
+.headingTxtRsz
+{
+	font: Arial;
+	color: #6F3700;
+	font-size: large;
+	margin: 10px 0px 10px 0px;
+	font-style: italic;
+	width: 325px;
+}
+.headingTxtReport
+{
+	text-align: center;
+	font: Arial;
+	color: #6F3700;
+	font-size: medium;
+	margin: 10px 0px 10px 0px;
+	font-style: italic;
+}
+
+A:link
+{
+	color: #004040;
+	text-decoration: none;
+}
+A:visited
+{
+	color: #004040;
+	text-decoration: none;
+}
+A:active
+{
+	color: #004040;
+	cursor: hand;
+	text-decoration: none;
+}
+A:hover
+{
+	color: #CF5518;
+	cursor: hand;
+	text-decoration: "underline";
+}
+
+A.bodyLink:link
+{
+	color: #004040;
+	text-decoration: none;
+	font-weight: bold;
+}
+A.bodyLink:visited
+{
+	color: #004040;
+	text-decoration: none;
+	font-weight: bold;
+}
+A.bodyLink:active
+{
+	color: #004040;
+	cursor: hand;
+	text-decoration: none;
+	font-weight: bold;
+}
+A.bodyLink:hover
+{
+	color: #CF5518;
+	cursor: hand;
+	text-decoration: "underline";
+	font-weight: bold;
+}
+
+p
+{
+	line-height: 1.4em;
+}
+
+.title
+{
+	text-transform: uppercase;
+	font-family: verdana;
+	font-size: large;
+	font-weight: bold;
+	color: #004040;
+}
+
+hr
+{
+	border: 0;
+	border-top: 2px solid #004040;
+	height: 2px;
+}
+
+img
+{
+	border-width: 0;
+}
+
+ul
+{
+	list-style-image: url(Images/bullet.jpg);
+	list-style-position: outside;
+	list-style-type: disc;
+	color: #000000;
+	font-family: verdana;
+}
+
+.menutextindent
+{
+	font-size: x-small;
+}
+
+/* Headings                    */
+/*-----------------------------*/
+h1
+{
+	font-size: large;
+	color: #004040;
+}
+
+h2
+{
+	font-family: Verdana;
+	font-size: medium;
+	margin-top: 30;
+	color: #0F9143;
+	margin-bottom: -15;
+}
+
+h3
+{
+	font-family: Verdana;
+	font-size: small;
+	margin-bottom: -15;
+	color: #0F9143;
+	padding-left: 15;
+}
+
+h1, h2, h3, h4
+{
+	margin: 0;
+	font-family: Verdana;
+}
+
+/* Tables                      */
+/*-----------------------------*/
+table
+{
+	font-size: 1em;
+}
+
+table.header
+{
+	background-color: #004040;
+}
+
+td.logo
+{
+	text-align: left;
+	width: 184px;
+}
+
+td.title
+{
+	text-align: center;
+	font-family: verdana;
+	font-size: x-large;
+	font-weight: bolder;
+	color: #FFFFFF;
+}
+
+td.headerbar
+{
+	background-image: url(Images/bar.jpg);
+	text-align: right;
+	height: 24px;
+}
+
+td.menu
+{
+	background-color: #004040;
+	width: 184px;
+	height: 500px;
+	vertical-align: top;
+}
+
+td.footer
+{
+	margin-left: 30;
+	font-family: Verdana;
+	font-size: xx-small;
+	font-weight: normal;
+	color: #004040;
+	text-align: right;
+}
+
+.btnStyle
+{
+	margin: 0px 2px 0px 3px;
+}
+.buttons
+{
+	font-family: "Trebuchet MS";
+	color: #FFF;
+	font-weight: bold;
+	background-image: url(Images/button.jpg);
+	background-repeat: repeat-x;
+	border-style: solid;
+	border: 3px;
+	width: auto;
+	height: 25px;
+}
+.buttonshover
+{
+	color: #000000;
+	font-family: "Trebuchet MS";
+	font-weight: bold;
+	background-image: url(Images/button_hover.jpg);
+	background-repeat: repeat-x;
+	border-style: solid;
+	border: 3px;
+	width: auto;
+	height: 25px;
+}
+.GridBorder
+{
+	border-right: 5px solid blue;
+}
+.pagination
+{
+	font-size: 80%;
+}
+.pagination a
+{
+	text-decoration: none;
+	color: Maroon;
+	border: solid 1px #AAE;
+}
+

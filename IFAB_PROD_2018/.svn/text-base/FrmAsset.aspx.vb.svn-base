@@ -1,0 +1,404 @@
+Partial Class FrmAsset
+    Inherits BasePage
+    Dim AssetManager As New AssetManager
+    Dim Asset As New AssetManager
+    Dim Ast As New Asset
+    Dim dt As New DataTable
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim heading As String
+        heading = Session("RptFrmTitleName")
+        Me.Lblheading.Text = heading
+        If IsPostBack = False Then
+            lblErrorMsg.Text = ""
+            txtIssueDate.Text = Format(Today, "dd-MMM-yyyy")
+            txtCode.Focus()
+        End If
+    End Sub
+
+    Protected Sub btnsave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnsave.Click
+        txtCode.Focus()
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Try
+                If btnsave.Text = "UPDATE" Then
+                    Ast.Code = txtCode.Text
+                    Ast.Name = txtAssetName.Text
+                    Ast.Remarks = txtRemarks.Text
+                    If (txtIssueDate.Text = "") Then
+                        Ast.IssueDate = "#1/1/3000#"
+                    Else
+                        Ast.IssueDate = txtIssueDate.Text
+                    End If
+                    If txtIssueDate.Text > Date.Today Then
+                        msginfo.Text = ""
+                        lblErrorMsg.Text = "Issue Date should lesser than Current Date."
+
+                        Exit Sub
+                    End If
+
+                    If (txtReturndate.Text = "") Then
+                        Ast.ReturnDate = "#1/1/3000#"
+                        Dim id As Integer = ViewState("Asset_IDAuto")
+                        dt = AssetManager.GetDuplicate(id, Ast)
+
+                        If dt.Rows.Count > 0 Then
+                            lblErrorMsg.Visible = True
+                            lblErrorMsg.Text = "Data already exists."
+                            msginfo.Text = ""
+                        Else
+                            Ast.Asset_ID = ViewState("Asset_ID")
+                            Ast.IssuedTo = HidECode.Value
+                            AssetManager.UpdateRecord(Ast)
+                            btnsave.Text = "ADD"
+                            GridView1.DataBind()
+                            GridView1.Visible = True
+                            btndetails.Text = "VIEW"
+                            msginfo.Visible = True
+                            lblErrorMsg.Text = ""
+                            msginfo.Text = "Data Updated Successfully."
+                            btndetails.Text = "VIEW"
+                            txtIssueDate.Text = Format(Today, "dd-MMM-yyyy")
+                            clear()
+                            GridView1.PageIndex = ViewState("PageIndex")
+                            display()
+                        End If
+                    Else
+                        Ast.ReturnDate = txtReturndate.Text
+                        Dim id As Integer = ViewState("Asset_IDAuto")
+                        dt = AssetManager.GetDuplicate(id, Ast)
+
+                        If dt.Rows.Count > 0 Then
+                            lblErrorMsg.Visible = True
+                            lblErrorMsg.Text = "Data already exists."
+                            msginfo.Text = ""
+                        Else
+                            If (CDate(txtIssueDate.Text) > CDate(txtReturndate.Text)) Then
+                                lblErrorMsg.Text = " Return date should be greater than Issued date. "
+                                txtReturndate.Focus()
+                                msginfo.Text = ""
+                            Else
+
+                                Ast.Asset_ID = ViewState("Asset_ID")
+                                Ast.IssuedTo = HidECode.Value
+                                AssetManager.UpdateRecord(Ast)
+                                btnsave.Text = "ADD"
+                                GridView1.DataBind()
+                                GridView1.Visible = True
+                                btndetails.Text = "VIEW"
+                                msginfo.Visible = True
+                                lblErrorMsg.Text = ""
+                                msginfo.Text = "Data Updated Successfully."
+                                btndetails.Text = "VIEW"
+                                txtIssueDate.Text = Format(Today, "dd-MMM-yyyy")
+                                clear()
+                                GridView1.PageIndex = ViewState("PageIndex")
+                                display()
+                            End If
+                        End If
+                    End If
+                ElseIf btnsave.Text = "ADD" Then
+
+                    Ast.Code = txtCode.Text
+                    Ast.Name = txtAssetName.Text
+                    Ast.Remarks = txtRemarks.Text
+                    Ast.IssuedTo = HidECode.Value
+                    If (txtIssueDate.Text = "") Then
+                        Ast.IssueDate = "#1/1/3000#"
+                    Else
+                        Ast.IssueDate = txtIssueDate.Text
+                    End If
+
+                    If (txtReturndate.Text = "") Then
+                        Ast.ReturnDate = "#1/1/3000#"
+                        Dim id As Integer = ViewState("Asset_IDAuto")
+                        dt = AssetManager.GetDuplicate(id, Ast)
+
+                        If dt.Rows.Count > 0 Then
+                            lblErrorMsg.Visible = True
+                            lblErrorMsg.Text = "Data already exists."
+                            msginfo.Text = ""
+                            btnsave.Text = "ADD"
+                            btndetails.Text = "VIEW"
+                        Else
+                            AssetManager.InsertRecord(Ast)
+                            btnsave.Text = "ADD"
+                            lblErrorMsg.Text = ""
+                            msginfo.Visible = True
+                            msginfo.Text = "Data saved Successfully."
+                            clear()
+                            ViewState("PageIndex") = 0
+                            GridView1.PageIndex = 0
+                            display()
+                        End If
+                    Else
+                        Ast.ReturnDate = txtReturndate.Text
+                        If (CDate(txtIssueDate.Text) > CDate(txtReturndate.Text)) Then
+                            lblErrorMsg.Text = "  Return date should be greater than Issued date."
+                            txtReturndate.Focus()
+                            msginfo.Text = ""
+                        Else
+                            Dim id As Integer = ViewState("Asset_IDAuto")
+                            dt = AssetManager.GetDuplicate(id, Ast)
+                            If dt.Rows.Count > 0 Then
+                                lblErrorMsg.Visible = True
+                                lblErrorMsg.Text = "Data already exists."
+                                msginfo.Text = ""
+                                btnsave.Text = "ADD"
+                                btndetails.Text = "VIEW"
+                            Else
+                                AssetManager.InsertRecord(Ast)
+                                btnsave.Text = "ADD"
+                                lblErrorMsg.Text = ""
+                                msginfo.Visible = True
+                                msginfo.Text = "Data saved Successfully."
+                                clear()
+                                ViewState("PageIndex") = 0
+                                GridView1.PageIndex = 0
+                                display()
+                            End If
+                        End If
+                    End If
+                End If
+            Catch ex As Exception
+                lblErrorMsg.Text = "Enter correct date."
+                msginfo.Text = ""
+            End Try
+        Else
+            lblErrorMsg.Text = "You do not belong to this branch, Cannot add/update data."
+            msginfo.Text = ""
+        End If
+
+    End Sub
+    Protected Sub BtnDetails_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btndetails.Click
+        txtCode.Focus()
+        If btndetails.Text = "VIEW" Then
+            txtIssueDate.Text = Format(Today, "dd-MMM-yyyy")
+            lblErrorMsg.Text = ""
+            msginfo.Text = ""
+            ViewState("PageIndex") = 0
+            GridView1.PageIndex = 0
+            display()
+        ElseIf btndetails.Text = "BACK" Then
+            btnsave.Text = "ADD"
+            btndetails.Text = "VIEW"
+            clear()
+            GridView1.PageIndex = ViewState("PageIndex")
+            display()
+            lblErrorMsg.Text = ""
+            msginfo.Text = ""
+        End If
+    End Sub
+    Protected Sub GridView1_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles GridView1.PageIndexChanging
+        GridView1.PageIndex = e.NewPageIndex
+        ViewState("PageIndex") = GridView1.PageIndex
+        display()
+        GridView1.Visible = True
+        lblErrorMsg.Visible = False
+        GridView1.Columns(1).Visible = True
+    End Sub
+    Sub display()
+        Dim dt As New DataTable
+        If txtAssetName.Text = "" Then
+            Ast.Name = 0
+        Else
+            Ast.Name = txtAssetName.Text
+        End If
+        If txtIssued.Text = "" Then
+            Ast.IssuedTo = 0
+        Else
+            Ast.IssuedTo = HidECode.Value
+        End If
+        Ast.Asset_ID = ViewState("Asset_ID")
+        Ast.Asset_ID = 0
+        GridView1.Enabled = True
+        GridView1.Visible = True
+        dt = AssetManager.GetCommName(Ast)
+        If dt.Rows.Count > 0 Then
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+            GridView1.Enabled = True
+            GridView1.Visible = True
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblIssuedate"), Label).Text = "01-Jan-3000" Then
+                    CType(rows.FindControl("lblIssuedate"), Label).Text = ""
+                End If
+            Next
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblReturndate"), Label).Text = "01-Jan-3000" Then
+                    CType(rows.FindControl("lblReturndate"), Label).Text = ""
+                End If
+            Next
+            L1.Focus()
+        Else
+            msginfo.Text = ""
+            GridView1.Visible = False
+            lblErrorMsg.Text = "No records to display."
+            lblErrorMsg.Visible = True
+        End If
+        'GridView1.Enabled = True
+
+    End Sub
+    Protected Sub GridView1_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GridView1.RowDeleting
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            ViewState("Asset_ID") = CType(GridView1.Rows(e.RowIndex).Cells(1).FindControl("RRID"), Label).Text
+            Ast.Asset_ID = ViewState("Asset_ID")
+            AssetManager.ChangeFlag(Ast.Asset_ID)
+            GridView1.DataBind()
+            lblErrorMsg.Text = ""
+            msginfo.Text = "Data Deleted Successfully."
+            txtCode.Focus()
+            GridView1.Visible = True
+            GridView1.Enabled = True
+            GridView1.PageIndex = ViewState("PageIndex")
+            If txtAssetName.Text = "" Then
+                Ast.Name = 0
+            Else
+                Ast.Name = txtAssetName.Text
+            End If
+            If txtIssued.Text = "" Then
+                Ast.IssuedTo = 0
+            Else
+                Ast.IssuedTo = HidECode.Value
+            End If
+            Ast.Asset_ID = 0
+            GridView1.Enabled = True
+            GridView1.Visible = True
+            dt = AssetManager.GetCommName(Ast)
+
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+            GridView1.Enabled = True
+            GridView1.Visible = True
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblIssuedate"), Label).Text = "01-Jan-3000" Then
+                    CType(rows.FindControl("lblIssuedate"), Label).Text = ""
+                End If
+            Next
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblReturndate"), Label).Text = "01-Jan-3000" Then
+                    CType(rows.FindControl("lblReturndate"), Label).Text = ""
+                End If
+            Next
+            clear()
+        Else
+            lblErrorMsg.Text = "You do not belong to this branch, Cannot delete data."
+            msginfo.Text = ""
+        End If
+
+    End Sub
+
+    Protected Sub GridView1_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GridView1.RowEditing
+        'If (Session("BranchCode") = Session("ParentBranch")) Then
+        msginfo.Text = ""
+        lblErrorMsg.Text = ""
+        txtCode.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("Label2"), Label).Text.Trim
+        txtAssetName.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("Label3"), Label).Text
+        txtRemarks.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("Label4"), Label).Text
+        txtIssued.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblCommodityName"), Label).Text.Trim
+        txtIssueDate.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblIssuedate"), Label).Text
+        txtReturndate.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblReturndate"), Label).Text
+        'ddlAsstType.SelectedValue = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblRID"), Label).Text
+        ViewState("Asset_ID") = CType(GridView1.Rows(e.NewEditIndex).FindControl("RRID"), Label).Text
+        ViewState("Asset_IDAuto") = CType(GridView1.Rows(e.NewEditIndex).FindControl("HID"), HiddenField).Value
+        HidECode.Value = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblEmpCode"), Label).Text
+        btnsave.Text = "UPDATE"
+        btndetails.Text = "BACK"
+        Ast.Asset_ID = ViewState("Asset_ID")
+        DisplayEdit()
+        'Else
+        'lblErrorMsg.Text = "You do not belong to this branch, Cannot edit data."
+        'msginfo.Text = ""
+        'End If
+        'btndetails.Visible = True
+    End Sub
+    Sub DisplayEdit()
+        Ast.Name = 0
+        Ast.IssuedTo = 0
+        Dim dt As New DataTable
+        dt = AssetManager.GetCommName(Ast)
+        GridView1.DataSource = dt
+        GridView1.DataBind()
+        For Each rows As GridViewRow In GridView1.Rows
+            If CType(rows.FindControl("lblIssuedate"), Label).Text = "01-Jan-3000" Then
+                CType(rows.FindControl("lblIssuedate"), Label).Text = ""
+            End If
+        Next
+        For Each rows As GridViewRow In GridView1.Rows
+            If CType(rows.FindControl("lblReturndate"), Label).Text = "01-Jan-3000" Then
+                CType(rows.FindControl("lblReturndate"), Label).Text = ""
+            End If
+        Next
+        GridView1.Enabled = False
+    End Sub
+    Protected Function GetAssetType(ByVal id As Long) As String
+        Dim AT As New AssetTypeB
+        Dim Ast As AssetType = AT.GetAssetTypeById(id)
+        Return Ast.Name
+    End Function
+    Protected Function GetCommType(ByVal id As Asset) As Data.DataTable
+        Return AssetDB.GetCommName(Ast)
+    End Function
+    Sub Enable()
+        GridView1.Enabled = True
+        btndetails.Visible = True
+    End Sub
+    Sub Disable()
+        GridView1.Enabled = False
+        btndetails.Visible = False
+    End Sub
+    Sub clear()
+        txtAssetName.Text = ""
+        txtCode.Text = ""
+        txtRemarks.Text = ""
+        txtIssued.Text = ""
+        'txtIssueDate.Text = ""
+        txtReturndate.Text = ""
+        'ddlAsstType.SelectedItem.Selected = False
+    End Sub
+
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+    Protected Sub GridView1_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles GridView1.Sorting
+        Dim sortingDirection As String = String.Empty
+        If dir() = SortDirection.Ascending Then
+            dir = SortDirection.Descending
+            sortingDirection = "Desc"
+        Else
+            dir = SortDirection.Ascending
+            sortingDirection = "Asc"
+        End If
+        Dim dt As New DataTable
+        If txtAssetName.Text = "" Then
+            Ast.Name = 0
+        Else
+            Ast.Name = txtAssetName.Text
+        End If
+        If txtIssued.Text = "" Then
+            Ast.IssuedTo = 0
+        Else
+            Ast.IssuedTo = HidECode.Value
+        End If
+        Ast.Asset_ID = ViewState("Asset_ID")
+        Ast.Asset_ID = 0
+        dt = AssetManager.GetCommName(Ast)
+        Dim sortedView As New DataView(dt)
+        sortedView.Sort = Convert.ToString(e.SortExpression) & " " & sortingDirection
+        GridView1.DataSource = sortedView
+        GridView1.DataBind()
+        GridView1.Enabled = True
+        GridView1.Visible = True
+    End Sub
+    Public Property dir() As SortDirection
+        Get
+            If ViewState("dirState") Is Nothing Then
+                ViewState("dirState") = SortDirection.Descending
+            End If
+            Return DirectCast(ViewState("dirState"), SortDirection)
+        End Get
+        Set(ByVal value As SortDirection)
+            ViewState("dirState") = value
+        End Set
+    End Property
+End Class

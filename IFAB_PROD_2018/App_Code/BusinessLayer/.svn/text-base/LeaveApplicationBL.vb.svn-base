@@ -1,0 +1,28 @@
+﻿Imports Microsoft.VisualBasic
+Imports System.Collections.Generic
+Imports System.Data
+
+
+Public Class LeaveApplicationBL
+    Dim DL As New LeaveApplicationDL
+    Public Function getEmpName() As Data.DataTable
+        Return LeaveApplicationDL.getEmpName()
+    End Function
+    Public Function InsertRecord(ByVal El As LeaveApplicationEL) As Integer
+        Return LeaveApplicationDL.InsertRecord(El)
+    End Function
+    Public Function DispGrid(ByVal id As Integer) As Data.DataTable
+        Return LeaveApplicationDL.DispGrid(id)
+    End Function
+    Public Function balanceleave(ByVal leavetype As Integer, ByVal empid As Integer) As Data.DataTable
+        Return LeaveApplicationDL.balanceleave(leavetype, empid)
+    End Function
+    Public Function email() As Data.DataTable
+        Dim dll As New LeaveApplicationDL
+        Return dll.email()
+    End Function
+
+    Public Function CheckDuplicate(ByVal leaveApp As LeaveApplicationEL)
+        Return LeaveApplicationDL.CheckDuplicate(leaveApp)
+    End Function
+End Class

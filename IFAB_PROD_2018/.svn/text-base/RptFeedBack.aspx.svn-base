@@ -1,0 +1,67 @@
+﻿<%@ Page Title="Feedback Report" Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false"
+    CodeFile="RptFeedBack.aspx.vb" Inherits="RptFeedBack" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <div>
+                <center>
+                    <h1 class="headingTxt">
+                        STUDENT'S FEEDBACK ON TEACHING FACULTY</h1>
+                </center>
+                <br />
+            </div>
+            <center>
+                <table>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="lblbatch" runat="server" Text="Batch :&nbsp;" SkinID="lblRsz" Width="100px"></asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:DropDownList ID="ddlbatch" runat="server" DataSourceID="odsbatch" SkinID="ddlRsz"
+                                DataTextField="Batch_No" DataValueField="BatchID" AutoPostBack="true" Width="200">
+                            </asp:DropDownList>
+                            <asp:ObjectDataSource ID="odsbatch" runat="server" SelectMethod="FeedBackBatchDDL"
+                                TypeName="FeedbackReportDL"></asp:ObjectDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <asp:Label ID="lblSemester" runat="server" Text="Semester&nbsp;:&nbsp;" SkinID="lbl"
+                                Width="100px"></asp:Label>
+                        </td>
+                        <td align="left">
+                            <asp:DropDownList ID="ddlSemester" runat="server" SkinID="ddl" DataSourceID="ObjSemester"
+                                DataTextField="SemName" DataValueField="SemCode">
+                            </asp:DropDownList>
+                            <asp:ObjectDataSource ID="ObjSemester" runat="server" OldValuesParameterFormatString="original_{0}"
+                                SelectMethod="FeedBackSemesterDDL" TypeName="FeedbackReportDL">
+                                <SelectParameters>
+                                    <asp:ControlParameter ControlID="ddlbatch" Name="BatchID" Type="Int32" PropertyName="SelectedValue" />
+                                </SelectParameters>
+                            </asp:ObjectDataSource>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <asp:Button ID="btnReport" runat="server" Text="GENERATE REPORT" CssClass="ButtonClass"
+                                CausesValidation="true" SkinID="btnRsz" TabIndex="4" Width="140px" />
+                            <asp:Button ID="BtnBack" runat="server" CausesValidation="false" Text="BACK" CssClass="ButtonClass"
+                                SkinID="btn" />
+                        </td>
+                    </tr>
+                </table>
+            </center>
+            <br />
+            <br />
+            <center>
+                <asp:Label ID="lblMsg" runat="server" SkinID="lblGreen"></asp:Label>
+            </center>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

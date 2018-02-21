@@ -1,0 +1,26 @@
+﻿
+Partial Class frmCoursePlannerRpt
+    Inherits BasePage
+
+    
+    Protected Sub BtnRpt_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnRpt.Click
+       
+        Dim CRS As String = ddlCourse.SelectedValue
+        '& "&Std=" & HidStudentId.Value & "&ID=" & id
+      
+        Dim qrystring As String = "RptCoursePlanner.aspx?" & "&Course=" & CRS
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "message", "<script>window.open('" & qrystring & "',null,'toolbar=no,scrollbars=yes,location=no,resizable =yes,width=800,height=600,left=40,top=80')</script>", False)
+
+
+    End Sub
+
+    Protected Sub BtnBack_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBack.Click
+        Session("GStatus") = ""
+        Response.Redirect("Report.aspx")
+    End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+ 
+End Class

@@ -1,0 +1,311 @@
+﻿Imports Microsoft.VisualBasic
+Imports System.Data.SqlClient
+
+Public Class DLBuyerDetails
+    Shared Function GetBuyer() As System.Data.DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(1) {}
+        arParms(0) = New SqlParameter("@Office", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("Office")
+        arParms(1) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(1).Value = HttpContext.Current.Session("BranchCode")
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Rpt_BuyerDetails", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+
+    Public Function RptGetBuyerPerformance(ByVal FromDate As Date, ByVal ToDate As Date, ByVal BuyerID As Integer) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(4) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@fromdate", SqlDbType.Date)
+        arParms(2).Value = FromDate
+
+        arParms(3) = New SqlParameter("@ToDate", SqlDbType.Date)
+        arParms(3).Value = ToDate
+
+        arParms(4) = New SqlParameter("@BuyerID", SqlDbType.Int)
+        arParms(4).Value = BuyerID
+
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Rpt_BuyerPerformance", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+
+    Public Function RptGetBuyerWiseSales(ByVal FromDate As Date, ByVal ToDate As Date, ByVal BuyerID As Integer) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(4) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@fromdate", SqlDbType.Date)
+        arParms(2).Value = FromDate
+
+        arParms(3) = New SqlParameter("@ToDate", SqlDbType.Date)
+        arParms(3).Value = ToDate
+
+        arParms(4) = New SqlParameter("@BuyerID", SqlDbType.Int)
+        arParms(4).Value = BuyerID
+
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "[Rpt_BuyerWiseSelesDetails]", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+
+    Public Function RptGetGrowerPerformance(ByVal FromDate As Date, ByVal ToDate As Date, ByVal GrowerId As Integer) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(4) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@fromdate", SqlDbType.DateTime)
+        arParms(2).Value = FromDate
+
+        arParms(3) = New SqlParameter("@ToDate", SqlDbType.DateTime)
+        arParms(3).Value = ToDate
+
+        arParms(4) = New SqlParameter("@GrowerID", SqlDbType.Int)
+        arParms(4).Value = GrowerId
+
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Rpt_GrowerPerformance", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+    Public Function RptGetGrowerWiseSales(ByVal FromDate As Date, ByVal ToDate As Date, ByVal GrowerId As Integer) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(4) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@fromdate", SqlDbType.Date)
+        arParms(2).Value = FromDate
+
+        arParms(3) = New SqlParameter("@ToDate", SqlDbType.Date)
+        arParms(3).Value = ToDate
+
+        arParms(4) = New SqlParameter("@GrowerID", SqlDbType.Int)
+        arParms(4).Value = GrowerId
+
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Rpt_GrowerWiseDetails", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+    Public Function GetTinNo() As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(1) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Ifab_GetTinNo", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+    Public Function RptGetGrowerWiseWeekly(ByVal Week As String, ByVal Month As String, ByVal Year As String) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(4) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@Week", SqlDbType.VarChar)
+        arParms(2).Value = Week
+
+        arParms(3) = New SqlParameter("@Month", SqlDbType.VarChar)
+        arParms(3).Value = Month
+
+        arParms(4) = New SqlParameter("@Year", SqlDbType.VarChar)
+        arParms(4).Value = Year
+
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Rpt_GrowerWiseWeeklySales", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+    Public Function RptGetDailyAuction(ByVal FromDate As Date) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(2) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@fromdate", SqlDbType.DateTime)
+        arParms(2).Value = FromDate
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Rpt_DailyAuction", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+    Public Function RptGetCommissionBill(ByVal ToDate As Date, ByVal GrowerID As Integer, ByVal CommissionBillNo As String) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(4) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@AuctionDate", SqlDbType.DateTime)
+        arParms(2).Value = ToDate
+
+        arParms(3) = New SqlParameter("@GrowerId", SqlDbType.Int)
+        arParms(3).Value = GrowerID
+
+        arParms(4) = New SqlParameter("@CommissionBillNo", SqlDbType.VarChar)
+        arParms(4).Value = CommissionBillNo
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "[Rpt_CommisionBillReport]", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+    Public Function RptGetCommissionBillDraft(ByVal GrowerID As Integer, ByVal CommissionBillNo As String) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(3) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@GrowerId", SqlDbType.Int)
+        arParms(2).Value = GrowerID
+
+        arParms(3) = New SqlParameter("@CommissionBillNo", SqlDbType.VarChar)
+        arParms(3).Value = CommissionBillNo
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "[Rpt_CommisionBillReportDraft]", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+
+
+
+    Public Function RptGetCommissionBillDraftDate(ByVal GrowerID As Integer, ByVal CommissionBillNo As String, ByVal AuctionDate As String) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(4) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+        arParms(1) = New SqlParameter("@Office", SqlDbType.VarChar, 20)
+        arParms(1).Value = HttpContext.Current.Session("Office")
+
+        arParms(2) = New SqlParameter("@GrowerId", SqlDbType.Int)
+        arParms(2).Value = GrowerID
+
+        arParms(3) = New SqlParameter("@CommissionBillNo", SqlDbType.VarChar)
+        arParms(3).Value = CommissionBillNo
+
+        arParms(4) = New SqlParameter("@AuctionDate", SqlDbType.Date)
+        arParms(4).Value = AuctionDate
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "[Rpt_CommisionBillReportDraftDate]", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+    Public Function GetAuctionDateFromBillNo(ByVal CommissionBillNo As String) As DataTable
+        Dim connectionString As String = ConfigurationManager.ConnectionStrings("Advant").ConnectionString
+        Dim ds As New DataSet
+        Dim arParms() As SqlParameter = New SqlParameter(1) {}
+        arParms(0) = New SqlParameter("@BranchCode", SqlDbType.VarChar, 50)
+        arParms(0).Value = HttpContext.Current.Session("BranchCode")
+
+
+        arParms(1) = New SqlParameter("@CommBillNo", SqlDbType.VarChar, 20)
+        arParms(1).Value = CommissionBillNo
+
+        Try
+            ds = SqlHelper.ExecuteDataset(connectionString, CommandType.StoredProcedure, "Proc_GetAuctionDateofComBillNo", arParms)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return ds.Tables(0)
+    End Function
+End Class

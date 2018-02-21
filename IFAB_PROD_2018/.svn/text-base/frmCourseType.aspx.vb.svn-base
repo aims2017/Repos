@@ -1,0 +1,289 @@
+Imports System.Data.OleDb
+Partial Class frmCourseType
+    Inherits BasePage
+    Dim dt As New DataTable
+    Dim c As New CourseType
+    Dim CourseTypeB As New CourseTypeB
+    Dim CourseType As New CourseType
+    Protected Sub btnAdd_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAdd.Click
+        CourseTypeTextBox.Focus()
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+
+            If btnAdd.CommandName = "UPDATE" Then
+                CourseType.CourseType = CourseTypeTextBox.Text
+                CourseType.CourseType_ID = ViewState("CourseType_ID")
+                dt = CourseTypeB.Coursetypeduplicate(CourseType)
+                If dt.Rows.Count > 0 Then
+                    msginfo.Visible = True
+                    lblmsg.Text = ValidationMessage(1030)
+                    msginfo.Text = ValidationMessage(1014)
+                Else
+                    CourseTypeB.UpdateMethod(CourseType)
+                    btnAdd.CommandName = "ADD"
+                    btnView.CommandName = "VIEW"
+                    lblmsg.Text = ValidationMessage(1014)
+                    msginfo.Text = ValidationMessage(1017)
+                    clear()
+                    GVCourseType.PageIndex = ViewState("PageIndex")
+                    DispGrid()
+                End If
+            ElseIf btnAdd.CommandName = "ADD" Then
+                'lblmsg.Text = ""
+                CourseType.CourseType = CourseTypeTextBox.Text
+                dt = CourseTypeB.Coursetypeduplicate(CourseType)
+                If dt.Rows.Count > 0 Then
+                    lblmsg.Text = ValidationMessage(1030)
+                    msginfo.Text = ValidationMessage(1014)
+                    DispGrid()
+                    'clear()
+                Else
+                    CourseType.CourseType = CourseTypeTextBox.Text
+                    CourseTypeB.InsertMethod(CourseType)
+                    btnAdd.CommandName = "ADD"
+                    clear()
+                    lblmsg.Text = ValidationMessage(1014)
+                    ViewState("PageIndex") = 0
+                    GVCourseType.PageIndex = 0
+                    DispGrid()
+                    msginfo.Text = ValidationMessage(1020)
+                End If
+            End If
+
+        Else
+            lblmsg.Text = ValidationMessage(1021)
+            msginfo.Text = ValidationMessage(1014)
+        End If
+    End Sub
+    Sub clear()
+        CourseTypeTextBox.Text = ""
+        btnAdd.CommandName = "ADD"
+        btnView.CommandName = "VIEW"
+    End Sub
+    Protected Sub btnView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnView.Click
+        If btnView.CommandName = "VIEW" Then
+            lblmsg.Text = ValidationMessage(1014)
+            msginfo.Text = ValidationMessage(1014)
+            ViewState("PageIndex") = 0
+            GVCourseType.PageIndex = 0
+            DispGrid()
+            clear()
+        ElseIf btnView.CommandName = "BACK" Then
+            btnAdd.CommandName = "ADD"
+            btnView.CommandName = "VIEW"
+            lblmsg.Text = ValidationMessage(1014)
+            clear()
+            GVCourseType.PageIndex = ViewState("PageIndex")
+            DispGrid()
+        End If
+    End Sub
+
+    Protected Sub GVCourseType_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GVCourseType.RowDeleting
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+
+            CourseTypeB.ChangeFlag(CType(GVCourseType.Rows(e.RowIndex).Cells(1).FindControl("CID"), HiddenField).Value)
+            GVCourseType.DataBind()
+            msginfo.Text = ValidationMessage(1028)
+            CourseTypeTextBox.Focus()
+            lblmsg.Text = ValidationMessage(1014)
+            GVCourseType.PageIndex = ViewState("PageIndex")
+            DispGrid()
+        Else
+            lblmsg.Text = ValidationMessage(1029)
+            msginfo.Text = ValidationMessage(1014)
+        End If
+    End Sub
+
+    Protected Sub GVCourseType_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GVCourseType.RowEditing
+        'If (Session("BranchCode") = Session("ParentBranch")) Then
+
+        Dim dt As New DataTable
+        btnAdd.CommandName = "UPDATE"
+        btnView.Visible = True
+        btnView.CommandName = "BACK"
+        lblmsg.Text = ValidationMessage(1014)
+        msginfo.Text = ValidationMessage(1014)
+        GVCourseType.Visible = True
+        ViewState("CourseType_ID") = CType(GVCourseType.Rows(e.NewEditIndex).FindControl("CID"), HiddenField).Value
+        CourseTypeTextBox.Text = CType(GVCourseType.Rows(e.NewEditIndex).FindControl("Label2"), Label).Text
+        c.CourseType_ID = ViewState("CourseType_ID")
+        dt = CourseTypeDB.CourseType(c)
+        GVCourseType.DataSource = dt
+        GVCourseType.DataBind()
+        GVCourseType.Enabled = False
+        Multilingual()
+    End Sub
+    Protected Sub GVCourseType_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles GVCourseType.PageIndexChanging
+        GVCourseType.PageIndex = e.NewPageIndex
+        ViewState("PageIndex") = GVCourseType.PageIndex
+        DispGrid()
+        GVCourseType.Visible = True
+    End Sub
+    Sub DispGrid()
+        Dim dt As New DataTable
+        c.CourseType_ID = 0
+        GVCourseType.Enabled = True
+        dt = CourseTypeDB.CourseType(c)
+        If dt.Rows.Count > 0 Then
+            GVCourseType.DataSource = dt
+            GVCourseType.DataBind()
+            GVCourseType.Visible = True
+            LinkButton.Focus()
+            Multilingual()
+        Else
+            msginfo.Text = ValidationMessage(1014)
+            lblmsg.Text = ValidationMessage(1023)
+        End If
+    End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        CourseTypeTextBox.Focus()
+        Dim heading As String
+        heading = Session("RptFrmTitleName")
+        Me.Lblheading.Text = heading
+        If Not IsPostBack Then
+            Control_Text_Multilingual()
+        End If
+    End Sub
+
+    Protected Sub GVCourseType_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles GVCourseType.Sorting
+        Dim sortingDirection As String = String.Empty
+        If dir() = SortDirection.Ascending Then
+            dir = SortDirection.Descending
+            sortingDirection = "Desc"
+        Else
+            dir = SortDirection.Ascending
+            sortingDirection = "Asc"
+        End If
+        Dim dt As New DataTable
+        c.CourseType_ID = 0
+        GVCourseType.Enabled = True
+        dt = CourseTypeDB.CourseType(c)
+        Dim sortedView As New DataView(dt)
+        sortedView.Sort = Convert.ToString(e.SortExpression) & " " & sortingDirection
+        GVCourseType.DataSource = sortedView
+        GVCourseType.DataBind()
+        GVCourseType.Visible = True
+        LinkButton.Focus()
+        Multilingual()
+    End Sub
+    Public Property dir() As SortDirection
+        Get
+            If ViewState("dirState") Is Nothing Then
+                ViewState("dirState") = SortDirection.Descending
+            End If
+            Return DirectCast(ViewState("dirState"), SortDirection)
+        End Get
+        Set(ByVal value As SortDirection)
+            ViewState("dirState") = value
+        End Set
+    End Property
+    ''Code Written for Multilingual By Ajit Kumar Singh on 12th Aug
+    ''Retriving the text of controls based on Language
+    Sub Multilingual()
+        Dim j As Integer
+        Dim k As Integer
+        Dim dtl As DataTable
+        dtl = Session("Control_Text")
+        Dim i As Integer = dtl.Rows.Count
+        While (i <> 0)
+            If dtl.Rows(i - 1).Item("ControlType") = "Label" Then
+                Dim myLabel As Label = CType(Me.UpdatePanel1.FindControl(dtl.Rows(i - 1).Item("ControlId")), Label)
+                myLabel.Text = dtl.Rows(i - 1).Item("Default_Text")
+                i = i - 1
+            ElseIf dtl.Rows(i - 1).Item("ControlType") = "Button" Then
+                If dtl.Rows(i - 1).Item("ControlCommandName") = btnAdd.CommandName Then
+                    Dim myButton As Button = CType(Me.UpdatePanel1.FindControl(dtl.Rows(i - 1).Item("ControlId")), Button)
+                    myButton.Text = dtl.Rows(i - 1).Item("Default_Text")
+                    i = i - 1
+                ElseIf dtl.Rows(i - 1).Item("ControlCommandName") = btnView.CommandName Then
+                    Dim myButton As Button = CType(Me.UpdatePanel1.FindControl(dtl.Rows(i - 1).Item("ControlId")), Button)
+                    myButton.Text = dtl.Rows(i - 1).Item("Default_Text")
+                    i = i - 1
+                Else
+                    i = i - 1
+                End If
+
+            ElseIf dtl.Rows(i - 1).Item("ControlType") = "GridLabel" Then
+                j = GVCourseType.Columns.Count
+                While (j <> 0)
+                    If GVCourseType.Columns(j - 1).HeaderText = dtl.Rows(i - 1).Item("ControlCommandName") Then
+                        GVCourseType.Columns(j - 1).HeaderText = dtl.Rows(i - 1).Item("Default_Text")
+                    End If
+                    j = j - 1
+                End While
+                i = i - 1
+            ElseIf dtl.Rows(i - 1).Item("ControlType") = "GridButton" Then
+                k = GVCourseType.Rows.Count
+                If dtl.Rows(i - 1).Item("ControlCommandName") = "Acknowledge" Then
+                    While (k <> 0)
+                        Dim lnkCanc As LinkButton = CType(GVCourseType.Rows(k - 1).FindControl(dtl.Rows(i - 1).Item("ControlId")), LinkButton)
+                        lnkCanc.Text = dtl.Rows(i - 1).Item("Default_Text")
+                        k = k - 1
+                    End While
+                ElseIf dtl.Rows(i - 1).Item("ControlCommandName") = "Edit" Then
+                    k = GVCourseType.Rows.Count
+                    While (k <> 0)
+                        Dim lnkCanc As LinkButton = CType(GVCourseType.Rows(k - 1).FindControl(dtl.Rows(i - 1).Item("ControlId")), LinkButton)
+                        lnkCanc.Text = dtl.Rows(i - 1).Item("Default_Text")
+                        k = k - 1
+                    End While
+                ElseIf dtl.Rows(i - 1).Item("ControlCommandName") = "Delete" Then
+                    k = GVCourseType.Rows.Count
+                    While (k <> 0)
+                        Dim lnkCanc As LinkButton = CType(GVCourseType.Rows(k - 1).FindControl(dtl.Rows(i - 1).Item("ControlId")), LinkButton)
+                        lnkCanc.Text = dtl.Rows(i - 1).Item("Default_Text")
+                        k = k - 1
+                    End While
+                End If
+                i = i - 1
+            ElseIf dtl.Rows(i - 1).Item("ControlType") = "CheckBox" Then
+                Dim myCheckbox As CheckBox = CType(Me.UpdatePanel1.FindControl(dtl.Rows(i - 1).Item("ControlId")), CheckBox)
+                myCheckbox.Text = dtl.Rows(i - 1).Item("Default_Text")
+                i = i - 1
+            ElseIf dtl.Rows(i - 1).Item("ControlType") = "RadioButtonList" Then
+                Dim myRadiobutton As RadioButtonList = CType(Me.UpdatePanel1.FindControl(dtl.Rows(i - 1).Item("ControlId")), RadioButtonList)
+                Dim a As Integer = myRadiobutton.Items.Count
+                While (a <> 0)
+                    For Each li As ListItem In myRadiobutton.Items
+                        If li.Value = dtl.Rows(i - 1).Item("ControlCommandName") Then
+                            li.Text = dtl.Rows(i - 1).Item("Default_Text")
+                        End If
+                    Next
+                    a = a - 1
+                End While
+                i = i - 1
+            End If
+        End While
+    End Sub
+    Public Sub Control_Text_Multilingual()
+        Dim dtll As DataTable
+        Dim FormName As String = Session("Code")
+        Dim LanguageID As Integer
+        If Session("LanguageID") = "" Then
+            LanguageID = 0
+        Else
+            LanguageID = Session("LanguageID")
+        End If
+        If LanguageID <> 0 Then
+            dtll = GlobalFunction.GetChangeLanguage(FormName, LanguageID)
+            Session("Control_Text") = dtll
+            Multilingual()
+        End If
+    End Sub
+    Public Function ValidationMessage(ByVal ErrorCode As Integer) As String
+        Dim dt2 As DataTable
+        dt2 = Session("ValidationTable")
+        Dim X As Integer = dt2.Rows.Count() - 1
+        Dim str As String = " "
+        For i As Integer = 0 To X
+            If (dt2.Rows(i).Item("MessageCode").ToString() = ErrorCode) Then
+                Return dt2.Rows(i).Item("MessageText").ToString()
+            End If
+        Next
+        Return 0
+    End Function
+End Class

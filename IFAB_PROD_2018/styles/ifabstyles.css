@@ -1,0 +1,36 @@
+﻿body {
+
+}
+.tableContent tr {
+
+    height:35px;
+    border:none;
+}
+
+.tableContent td {
+    text-align: left;
+    width:250px;
+    /*border:solid;*/
+}
+
+.tableContent td:first-child {
+    width:150px;
+    /*text-align:right;*/
+}
+.a_table {
+    margin-right:auto;
+    border-collapse: collapse;
+   background-color:white;
+    border: 1px solid black;
+}
+
+.a_th {
+    border: 1px solid black;
+}
+.a_td {
+    border: 1px solid black;
+}
+.a_tr {
+    border: 1px solid black;
+}
+

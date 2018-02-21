@@ -1,0 +1,106 @@
+﻿
+Partial Class RptSemAssessmentV
+    Inherits BasePage
+    Dim Bl As New StdAttdance
+    Dim dtM As New Data.DataTable
+    Dim Prop As New QureyStringP
+    Dim obj As New SelfDetailsB
+    Dim dt1, dt, ParentDt, ParentDt1 As New DataTable
+
+    Protected Sub ReportViewer1_Init(ByVal sender As Object, ByVal e As System.EventArgs) Handles ReportViewer1.Init
+        Dim dm As New Microsoft.Reporting.WebForms.ReportDataSource
+
+        Dim Cid, BId, SId, SubId, StudId, ReportType, id, AsstId As Integer
+
+        Try
+            'Aid = Request.QueryString.Get("Aid")
+            Cid = Request.QueryString.Get("Cid")
+            BId = Request.QueryString.Get("BId")
+            SId = Request.QueryString.Get("SId")
+            SubId = Request.QueryString.Get("SubId")
+            AsstId = Request.QueryString.Get("AsstId")
+            StudId = Request.QueryString.Get("StudId")
+            ReportType = Request.QueryString.Get("ReportType")
+            id = Request.QueryString.Get("id")
+
+            QueryStr.GetValue(Page.Request, Prop)
+            dt1 = Bl.GetSemAssessmtRpt(Cid, BId, SId, SubId, StudId, ReportType, AsstId)
+            'To display Marks
+            If id = 0 Then
+                Try
+                    If dt1.Rows.Count > 0 Then
+                        ReportViewer1.LocalReport.ReportPath = "RptSemAssessmt.rdlc"
+                        dm = New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Rpt_SemAssessmt", dt1)
+
+                        'Dim paramList As New Generic.List(Of Microsoft.Reporting.WebForms.ReportParameter)
+                        'paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("fromdate", id, False))
+                        'paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("todate", id, False))
+
+                        'ReportViewer1.LocalReport.SetParameters(paramList)
+
+                        ReportViewer1.LocalReport.DataSources.Clear()
+                        Me.ReportViewer1.LocalReport.DataSources.Add(dm)
+                        ReportViewer1.LocalReport.Refresh()
+                        dt = obj.RPT_GetSelfDeatilsByBranch(Request.QueryString(1))
+                        AddHandler ReportViewer1.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+                    Else
+                        LblError.Text = "No Records to display."
+                    End If
+                Catch ex As Exception
+                    LblError.Text = "Error While loading Report, Enter all Mandatory fields and try again. "
+                End Try
+                ' To display Percentage
+            ElseIf id = 1 Then
+                Try
+                    If dt1.Rows.Count > 0 Then
+                        ReportViewer1.LocalReport.ReportPath = "RptSemAssessmt1.rdlc"
+                        dm = New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Rpt_SemAssessmt", dt1)
+                        'Dim paramList As New Generic.List(Of Microsoft.Reporting.WebForms.ReportParameter)
+                        'paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("fromdate", id, False))
+                        'paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("todate", id, False))
+
+                        'ReportViewer1.LocalReport.SetParameters(paramList)
+                        ReportViewer1.LocalReport.DataSources.Clear()
+                        Me.ReportViewer1.LocalReport.DataSources.Add(dm)
+                        ReportViewer1.LocalReport.Refresh()
+                        dt = obj.RPT_GetSelfDeatilsByBranch(Request.QueryString(1))
+                        AddHandler ReportViewer1.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+                    Else
+                        LblError.Text = "No Records to display."
+                    End If
+                Catch ex As Exception
+                    LblError.Text = "Error While loading Report, Enter all Mandatory fields and try again. "
+                End Try
+                'To Display Grade
+            ElseIf id = 2 Then
+                Try
+                    If dt1.Rows.Count > 0 Then
+                        ReportViewer1.LocalReport.ReportPath = "RptSemAssessmt2.rdlc"
+                        dm = New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Rpt_SemAssessmt", dt1)
+                        'Dim paramList As New Generic.List(Of Microsoft.Reporting.WebForms.ReportParameter)
+                        'paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("fromdate", id, False))
+                        'paramList.Add(New Microsoft.Reporting.WebForms.ReportParameter("todate", id, False))
+
+                        'ReportViewer1.LocalReport.SetParameters(paramList)
+                        ReportViewer1.LocalReport.DataSources.Clear()
+                        Me.ReportViewer1.LocalReport.DataSources.Add(dm)
+                        ReportViewer1.LocalReport.Refresh()
+                        dt = obj.RPT_GetSelfDeatilsByBranch(Request.QueryString(1))
+                        AddHandler ReportViewer1.LocalReport.SubreportProcessing, AddressOf SubreportProcessingEvent
+                    Else
+                        LblError.Text = "No Records to display."
+                    End If
+                Catch ex As Exception
+                    LblError.Text = "Error While loading Report, Enter all Mandatory fields and try again. "
+                End Try
+            End If
+        Catch ex As Exception
+            LblError.Text = "No Records to Display."
+        End Try
+    End Sub
+    Sub SubreportProcessingEvent(ByVal sender As Object, ByVal e As Microsoft.Reporting.WebForms.SubreportProcessingEventArgs)
+        Dim rptDataSource As New Microsoft.Reporting.WebForms.ReportDataSource("GlobalDataSet_Proc_RPT_GetSelfDetailByUID", dt)
+        e.DataSources.Add(rptDataSource)
+    End Sub
+
+End Class

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <InteractiveHeight>11in</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Course">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Course</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="Batch">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Batch</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>8.5in</InteractiveWidth>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <BottomMargin>0.5in</BottomMargin>
+  <rd:ReportID>5a1f7e07-6758-468d-a1c2-5cb8717dac33</rd:ReportID>
+  <PageWidth>12.5in</PageWidth>
+  <Code />
+  <Width>20cm</Width>
+  <Body>
+    <ReportItems>
+      <Subreport Name="subreport5">
+        <Top>6.66667cm</Top>
+        <ReportName>RptFeeCollectionReport</ReportName>
+        <Width>19cm</Width>
+        <ZIndex>4</ZIndex>
+        <Left>0.31746cm</Left>
+      </Subreport>
+      <Subreport Name="subreport4">
+        <Parameters>
+          <Parameter Name="Course">
+            <Value>=Parameters!Course.Value</Value>
+          </Parameter>
+          <Parameter Name="Batch">
+            <Value>=Parameters!Batch.Value</Value>
+          </Parameter>
+        </Parameters>
+        <Top>5.07937cm</Top>
+        <ReportName>RptQualificationDetails</ReportName>
+        <Width>19cm</Width>
+        <ZIndex>3</ZIndex>
+        <Left>0.31746cm</Left>
+        <Height>1.26984cm</Height>
+      </Subreport>
+      <Subreport Name="subreport3">
+        <Parameters>
+          <Parameter Name="FromDate">
+            <Value>01-01-1900</Value>
+          </Parameter>
+          <Parameter Name="ToDate">
+            <Value>01-01-4000</Value>
+          </Parameter>
+        </Parameters>
+        <Top>3.49206cm</Top>
+        <ReportName>RptStudentLogBook</ReportName>
+        <Width>19cm</Width>
+        <ZIndex>2</ZIndex>
+        <Left>0.31746cm</Left>
+        <Height>1.26984cm</Height>
+      </Subreport>
+      <Subreport Name="subreport2">
+        <Top>1.90476cm</Top>
+        <ReportName>StdReportCardMarksGrade</ReportName>
+        <Width>19cm</Width>
+        <ZIndex>1</ZIndex>
+        <Left>0.31746cm</Left>
+        <Height>1.26984cm</Height>
+      </Subreport>
+      <Subreport Name="subreport1">
+        <ReportName>RptStudentIndividualAdmissionDetails</ReportName>
+        <Width>19cm</Width>
+        <Left>0.31746cm</Left>
+        <Height>1.5873cm</Height>
+      </Subreport>
+    </ReportItems>
+    <Height>7.93651cm</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Rectangle Name="rectangle3">
+        <Left>0.31746cm</Left>
+        <ReportItems>
+          <Textbox Name="textbox15">
+            <Width>4.75in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <TextAlign>Center</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>2</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>1.5in</Left>
+            <Value>Software by Advant Techservices India Private Limited (Website: www.advant-tech.com)                                             Ph. No: (+91) 080 28605859</Value>
+          </Textbox>
+          <Textbox Name="textbox3">
+            <Width>1.5in</Width>
+            <Style>
+              <FontSize>8pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <Format>dd-MMM-yyyy hh:mm tt</Format>
+              <TextAlign>Left</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Value>=Now()</Value>
+          </Textbox>
+          <Textbox Name="textbox17">
+            <Style>
+              <FontSize>8pt</FontSize>
+              <FontWeight>700</FontWeight>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>6.25in</Left>
+            <Value>=Globals!PageNumber &amp; "/" &amp; Globals!TotalPages</Value>
+          </Textbox>
+        </ReportItems>
+        <Width>19.04762cm</Width>
+        <Style>
+          <BorderStyle>
+            <Top>Solid</Top>
+          </BorderStyle>
+        </Style>
+      </Rectangle>
+    </ReportItems>
+    <Height>0.95238cm</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>0.5in</TopMargin>
+  <PageHeight>10in</PageHeight>
+</Report>

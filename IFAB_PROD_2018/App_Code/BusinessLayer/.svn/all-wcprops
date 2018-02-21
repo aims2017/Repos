@@ -1,0 +1,1427 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ifab_source_2013_11_18/!svn/ver/189/IFAB_20131118_SRC/App_Code/BusinessLayer
+END
+BLResetPwd.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLResetPwd.vb
+END
+BLSemesterResultTable.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSemesterResultTable.vb
+END
+BLBranchType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLBranchType.vb
+END
+Mfg_BLSaleExecutive.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLSaleExecutive.vb
+END
+BLStudentLogBook.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLStudentLogBook.vb
+END
+LeaveTypes.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/LeaveTypes.vb
+END
+PartyLedger.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/PartyLedger.vb
+END
+InstituteManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/InstituteManager.vb
+END
+BLExchangeRateTable.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLExchangeRateTable.vb
+END
+IdentitycardB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/IdentitycardB.vb
+END
+CourseManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CourseManager.vb
+END
+BLFacultyAllocation.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLFacultyAllocation.vb
+END
+Mfg_BLPaymentReceived.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLPaymentReceived.vb
+END
+StdResultB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/StdResultB.vb
+END
+BLTableConfiguration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLTableConfiguration.vb
+END
+BLCoursePlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCoursePlanner.vb
+END
+StdAttdance.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/StdAttdance.vb
+END
+Depreciation_Rates.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Depreciation_Rates.vb
+END
+BookIssueB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BookIssueB.vb
+END
+BLClientContractMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLClientContractMaster.vb
+END
+BLIndividualFormMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLIndividualFormMaster.vb
+END
+BLTransportReg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLTransportReg.vb
+END
+AttendanceB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AttendanceB.vb
+END
+AcademicYearB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AcademicYearB.vb
+END
+BLGradePointResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLGradePointResult.vb
+END
+ProspectusB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ProspectusB.vb
+END
+BLFlowerCategory.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLFlowerCategory.vb
+END
+EmployeeManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/EmployeeManager.vb
+END
+FeeStructureManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeeStructureManager.vb
+END
+Mfg_BLPaymentMade.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLPaymentMade.vb
+END
+BLGradeMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLGradeMaster.vb
+END
+EmpAttdBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/EmpAttdBL.vb
+END
+ZoneB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ZoneB.vb
+END
+BLslssbhierarchytreeview.vb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLslssbhierarchytreeview.vb
+END
+BLSendMsg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSendMsg.vb
+END
+BLEndowment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLEndowment.vb
+END
+BLNew_stdMarks.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLNew_stdMarks.vb
+END
+BLTableMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLTableMaster.vb
+END
+AdminExamBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AdminExamBL.vb
+END
+ExperienceManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ExperienceManager.vb
+END
+PurchaseIDCardB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/PurchaseIDCardB.vb
+END
+Mfg_RptPurchaseInvoiceBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_RptPurchaseInvoiceBL.vb
+END
+VehicleMaintenanceB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/VehicleMaintenanceB.vb
+END
+AssessmentB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AssessmentB.vb
+END
+ManufacturerManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ManufacturerManager.vb
+END
+BLTravelEnquiry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLTravelEnquiry.vb
+END
+FeeCollectionBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeeCollectionBL.vb
+END
+IncomeTaxB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/IncomeTaxB.vb
+END
+MachineMaintenenceBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/MachineMaintenenceBL.vb
+END
+BLSystemConfiguration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSystemConfiguration.vb
+END
+BLBatchReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLBatchReport.vb
+END
+BLFeeStructDup.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLFeeStructDup.vb
+END
+BookReturnB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BookReturnB.vb
+END
+Mfg_BLProductDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLProductDetails.vb
+END
+B_PaymentMethos.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/B_PaymentMethos.vb
+END
+BLAssetType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLAssetType.vb
+END
+BLProjectMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLProjectMaster.vb
+END
+CertificateIssuedB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CertificateIssuedB.vb
+END
+CourseTypeB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CourseTypeB.vb
+END
+EmailSMSRateBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/EmailSMSRateBL.vb
+END
+BatchSemesterMapBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BatchSemesterMapBL.vb
+END
+BLOpeningBalanceEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLOpeningBalanceEntry.vb
+END
+DiaryEventManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/DiaryEventManager.vb
+END
+ConfigurationB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ConfigurationB.vb
+END
+BLErrorLog.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLErrorLog.vb
+END
+Mfg_BLTaxDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLTaxDetails.vb
+END
+AssetManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AssetManager.vb
+END
+VehicleManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/VehicleManager.vb
+END
+BLSalesOrderMfg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSalesOrderMfg.vb
+END
+BLAssetTransferNew.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLAssetTransferNew.vb
+END
+ElectiveMapBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ElectiveMapBL.vb
+END
+BLFlowerType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLFlowerType.vb
+END
+LetterPadManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/LetterPadManager.vb
+END
+UserRoleBM.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/UserRoleBM.vb
+END
+CoursePlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CoursePlanner.vb
+END
+SemesterManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SemesterManager.vb
+END
+ConfigProcManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ConfigProcManager.vb
+END
+ExtraCurricularAchivementsBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ExtraCurricularAchivementsBL.vb
+END
+Mfg_BLDebitNote.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLDebitNote.vb
+END
+BLInstituteWiseBranchCount.vb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLInstituteWiseBranchCount.vb
+END
+BLInvestmentMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLInvestmentMaster.vb
+END
+Mfg_BLUnit.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLUnit.vb
+END
+AdmissionCriteriaBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AdmissionCriteriaBL.vb
+END
+AssetDetailsB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AssetDetailsB.vb
+END
+LeaveManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/LeaveManager.vb
+END
+BLNoDue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLNoDue.vb
+END
+BLUserManagement.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLUserManagement.vb
+END
+Mfg_BLDescription.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLDescription.vb
+END
+Mfg_BLProcessDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLProcessDetails.vb
+END
+BLTreeviewForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLTreeviewForm.vb
+END
+BLParentMngt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLParentMngt.vb
+END
+BLCreateExamBatch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCreateExamBatch.vb
+END
+Mfg_BLPurchaseInvoice.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLPurchaseInvoice.vb
+END
+SupplierManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SupplierManager.vb
+END
+BLSubjectSubgrp.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSubjectSubgrp.vb
+END
+MultiCurrencyManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/MultiCurrencyManager.vb
+END
+BLStudentCategory.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLStudentCategory.vb
+END
+BLExamStudRegistration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLExamStudRegistration.vb
+END
+Mfg_RptPurchaseOrderBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_RptPurchaseOrderBL.vb
+END
+BL16a.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BL16a.vb
+END
+BLCompareCourseAcrossBranches.vb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCompareCourseAcrossBranches.vb
+END
+BLNoticeBoard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLNoticeBoard.vb
+END
+BLAttenSummary.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLAttenSummary.vb
+END
+Mfg_BLSaleInvoice.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLSaleInvoice.vb
+END
+BLFaculityTimeUtilization.vb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLFaculityTimeUtilization.vb
+END
+Mfg_BLStockEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLStockEntry.vb
+END
+BLIdCardIssue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLIdCardIssue.vb
+END
+StudentResultrptB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/StudentResultrptB.vb
+END
+SMSTempleteBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SMSTempleteBL.vb
+END
+FeedbackSeminarBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeedbackSeminarBL.vb
+END
+TimeTableBl.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/TimeTableBl.vb
+END
+BLchangepassword.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLchangepassword.vb
+END
+BLApprovalForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLApprovalForm.vb
+END
+BLCreateExamCalendar.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCreateExamCalendar.vb
+END
+StudentB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/StudentB.vb
+END
+BLCompanyRegister.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCompanyRegister.vb
+END
+RouteManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/RouteManager.vb
+END
+DriverDetB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/DriverDetB.vb
+END
+BLHandlingCharges.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLHandlingCharges.vb
+END
+SelfDetailsB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SelfDetailsB.vb
+END
+BankManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BankManager.vb
+END
+AssetUsageB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AssetUsageB.vb
+END
+FeeHeadsB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeeHeadsB.vb
+END
+BLBatchSemester.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLBatchSemester.vb
+END
+Mfg_RptPurchaseReturnBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_RptPurchaseReturnBL.vb
+END
+BLRolemap.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLRolemap.vb
+END
+ServiceResponseB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ServiceResponseB.vb
+END
+TutorialBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/TutorialBL.vb
+END
+BLRecover.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLRecover.vb
+END
+BLLIC.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLLIC.vb
+END
+BLBranchAccessLevel.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLBranchAccessLevel.vb
+END
+DiaryEntryManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/DiaryEntryManager.vb
+END
+BRS.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BRS.vb
+END
+BranchManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BranchManager.vb
+END
+BLFacutlyDevelopment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLFacutlyDevelopment.vb
+END
+BLReceiveAssetReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLReceiveAssetReport.vb
+END
+LessonPlanBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/LessonPlanBL.vb
+END
+BLDynamicReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLDynamicReport.vb
+END
+BLExtraCharges.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLExtraCharges.vb
+END
+LeaveApplicationBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/LeaveApplicationBL.vb
+END
+Mfg_BLBatchDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLBatchDetails.vb
+END
+DesignationManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/DesignationManager.vb
+END
+BLExamResources.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLExamResources.vb
+END
+LeaveregisterB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/LeaveregisterB.vb
+END
+OtherPartyB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/OtherPartyB.vb
+END
+FeePaymentDetailsB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeePaymentDetailsB.vb
+END
+FeedBackParamsBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeedBackParamsBL.vb
+END
+Mfg_BLCreditNote.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLCreditNote.vb
+END
+RptStudentAdmissionDetailsBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/RptStudentAdmissionDetailsBL.vb
+END
+BLNewCoursePlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLNewCoursePlanner.vb
+END
+CourseActionPlan.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CourseActionPlan.vb
+END
+MonthlyPayDetailsB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/MonthlyPayDetailsB.vb
+END
+BLHouseMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLHouseMaster.vb
+END
+BHostelMaster11.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BHostelMaster11.vb
+END
+BLSourceOfInfo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSourceOfInfo.vb
+END
+BLBatchPlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLBatchPlanner.vb
+END
+RoomTypeB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/RoomTypeB.vb
+END
+Mfg_BLStockAudit.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLStockAudit.vb
+END
+StudentManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/StudentManager.vb
+END
+BLRollOver.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLRollOver.vb
+END
+BLDeptDashboard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLDeptDashboard.vb
+END
+DayBookManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/DayBookManager.vb
+END
+BLCommunication.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCommunication.vb
+END
+AssetTypeB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AssetTypeB.vb
+END
+BLSendUserCredentials.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSendUserCredentials.vb
+END
+ICardB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ICardB.vb
+END
+FeedBackFormBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeedBackFormBL.vb
+END
+VisitingManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/VisitingManager.vb
+END
+BLFlowerMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLFlowerMaster.vb
+END
+Mfg_BLSaleReturn.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLSaleReturn.vb
+END
+TreeViewB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/TreeViewB.vb
+END
+DepartmentManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/DepartmentManager.vb
+END
+feeStructureBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/feeStructureBL.vb
+END
+BLPayroll.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLPayroll.vb
+END
+SearchManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SearchManager.vb
+END
+CerRecB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CerRecB.vb
+END
+rptBatchPlannerBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/rptBatchPlannerBL.vb
+END
+FeeStructB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/FeeStructB.vb
+END
+BHolidayMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BHolidayMaster.vb
+END
+BLExamAttempt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLExamAttempt.vb
+END
+loanmasterB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/loanmasterB.vb
+END
+BLStateMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLStateMaster.vb
+END
+BLInvestment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLInvestment.vb
+END
+ServiceRequestB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ServiceRequestB.vb
+END
+BLSubjectSubGrpMapping.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSubjectSubGrpMapping.vb
+END
+BLAssesmentResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLAssesmentResult.vb
+END
+MaintenanceTypeManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/MaintenanceTypeManager.vb
+END
+BLHostelDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLHostelDetails.vb
+END
+BLCreateBatch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCreateBatch.vb
+END
+StdAttendanceB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/StdAttendanceB.vb
+END
+BLMonthlySalary.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLMonthlySalary.vb
+END
+Mfg_BLProductReceipe.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLProductReceipe.vb
+END
+BLCRMLead.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLCRMLead.vb
+END
+InDockBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/189/IFAB_20131118_SRC/App_Code/BusinessLayer/InDockBL.vb
+END
+Mfg_BLAreaDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLAreaDetails.vb
+END
+ContactManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ContactManager.vb
+END
+BLStdMarksElective.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLStdMarksElective.vb
+END
+EnquiryManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/EnquiryManager.vb
+END
+UserRequestB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/UserRequestB.vb
+END
+SubjectManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SubjectManager.vb
+END
+Mfg_BLStockStatus.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLStockStatus.vb
+END
+SponsorManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SponsorManager.vb
+END
+BLTransportationMfg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLTransportationMfg.vb
+END
+Mfg_BLmanufacturer.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLmanufacturer.vb
+END
+ProjectManajer.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ProjectManajer.vb
+END
+BLJobOpening.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLJobOpening.vb
+END
+LateralEntryB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/LateralEntryB.vb
+END
+busErrorMessage.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/busErrorMessage.vb
+END
+AccountHeadManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AccountHeadManager.vb
+END
+PlacementB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/PlacementB.vb
+END
+MediumManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/MediumManager.vb
+END
+mfg_PurchaseOrderBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/mfg_PurchaseOrderBL.vb
+END
+Mfg_BLPurchaseReturn.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLPurchaseReturn.vb
+END
+frmCompanyDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/frmCompanyDetails.vb
+END
+BookSearchB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BookSearchB.vb
+END
+BLEligiblityPromotion.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLEligiblityPromotion.vb
+END
+BatchB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BatchB.vb
+END
+HostelAdmissionBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/HostelAdmissionBL.vb
+END
+QualificationManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/QualificationManager.vb
+END
+BLSalaryScaleGrade.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLSalaryScaleGrade.vb
+END
+BookManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BookManager.vb
+END
+AssetTransferB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AssetTransferB.vb
+END
+BLBudget.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLBudget.vb
+END
+BLRoleMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLRoleMaster.vb
+END
+StdAttendancewitclasstype.vb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/StdAttendancewitclasstype.vb
+END
+CertificateMasterB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CertificateMasterB.vb
+END
+GeneralLedger.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/GeneralLedger.vb
+END
+CompanyManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CompanyManager.vb
+END
+AttendenceEligibilityCriteriaBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/AttendenceEligibilityCriteriaBL.vb
+END
+Mfg_BLBuyerDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLBuyerDetails.vb
+END
+Mfg_BLStockIssue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/Mfg_BLStockIssue.vb
+END
+SemesterdateBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/SemesterdateBL.vb
+END
+EmpTranferB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/EmpTranferB.vb
+END
+ResourceMasterB.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/ResourceMasterB.vb
+END
+TimeSheetBL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/TimeSheetBL.vb
+END
+CategoryManager.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/CategoryManager.vb
+END
+BLAchievementAndAward.vb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/BusinessLayer/BLAchievementAndAward.vb
+END

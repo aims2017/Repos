@@ -1,0 +1,199 @@
+﻿
+Partial Class Rpt_BatchReportCardCriteria
+    Inherits BasePage
+    Protected Sub btnReport_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnReport.Click
+        lblErrorMsg.Text = ""
+        Dim QS As String
+        Dim course As String = txtCourseName.SelectedValue
+        Dim Branch As String = txtBranchName.SelectedValue
+        Dim CourseId As Integer = txtCourseName.SelectedValue
+        'Dim AYear As Integer = ddlA_Year.SelectedValue
+        Dim Subjectid As Integer = ddlsubject.SelectedItem.Value
+        Dim SemesterId As Integer = ddlSemester.SelectedItem.Value
+        Dim BatchNo As Integer = ddlbatch.SelectedValue
+        Dim AssessmentId As Integer = ddlassesment.SelectedItem.Value
+        Dim ReportType As String = ddlReportType.SelectedValue
+        Dim SortBY As Integer = ddlSort.SelectedValue
+        'Id is used to distinguish Report and Marks Analysis
+        Dim id As Integer = 1
+
+        'QS = Request.QueryString.Get("QS")
+        'If QS = "Rpt1" Then
+        If txtCourseName.SelectedItem.Text = "Select" Or txtBranchName.SelectedItem.Text = "Select" Or ddlbatch.SelectedItem.Text = " Select" Then
+            lblErrorMsg.Text = "Please enter all Mandatory Fields."
+        Else
+            Dim qrystring As String = "Rpt_BatchReportCardV.aspx?" & QueryStr.Querystring() & "&course=" & course & "&Branch=" & Branch & "&CourseId=" & CourseId & "&Subjectid=" & Subjectid & "&SemesterId=" & SemesterId & "&BatchNo=" & BatchNo & "&AssessmentId=" & AssessmentId & "&SortBy=" & SortBY & "&ReportType=" & ReportType & "&id=" & id
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "message", "<script>window.open('" & qrystring & "',null,'toolbar=no,scrollbars=yes,location=no,resizable =yes,width=1050,height=700,left=0,top=0')</script>", False)
+        End If
+        'End If
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        'Dim heading As String
+        'heading = Session("RptFrmTitleName")
+        'Me.Lblheading.Text = heading
+        Dim QS As String
+        QS = Request.QueryString.Get("QS")
+        Invisible()
+        If QS = "Rpt1" Then
+            lblBranchType.Visible = True
+            txtBranchName.Visible = True
+            lblCourse.Visible = True
+            txtCourseName.Visible = True
+            lblbatch.Visible = True
+            ddlbatch.Visible = True
+            'lblA_Year.Visible = True
+            'ddlA_Year.Visible = True
+            lblsemester.Visible = True
+            ddlSemester.Visible = True
+            lblsubject.Visible = True
+            ddlsubject.Visible = True
+        End If
+        If Not IsPostBack Then
+            'If HttpContext.Current.Session("BranchType_ID") = "04" Or HttpContext.Current.Session("BranchType_ID") = "03" Or HttpContext.Current.Session("BranchType_ID") = "02" Or HttpContext.Current.Session("BranchType_ID") = "01" Then
+            'Else
+            txtBranchName.SelectedValue = HttpContext.Current.Session("BranchCode")
+            'End If
+        End If
+        If RBReport.SelectedValue = 1 Then
+            markspanel.Visible = False
+            btnMarksAnalysis.Visible = False
+            btnReport.Visible = True
+        Else
+            markspanel.Visible = True
+            btnMarksAnalysis.Visible = True
+            btnReport.Visible = False
+
+        End If
+
+    End Sub
+    Sub Invisible()
+        lblBranchType.Visible = True
+        txtBranchName.Visible = True
+        lblCourse.Visible = True
+        txtCourseName.Visible = True
+        lblbatch.Visible = True
+        ddlbatch.Visible = True
+        'lblA_Year.Visible = True
+        'ddlA_Year.Visible = True
+        lblsemester.Visible = True
+        ddlSemester.Visible = True
+        lblsubject.Visible = True
+        ddlsubject.Visible = True
+    End Sub
+
+    Protected Sub btnAdd_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnAdd.Click
+        Response.Redirect("Report.aspx")
+    End Sub
+
+    'Protected Sub ddlassesment_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlassesment.SelectedIndexChanged
+    '    ddlassesment.Items.Clear()
+    '    Me.ddlassesment.Items.Add(New ListItem("All"))
+    '    ddlassesment.DataBind()
+    'End Sub
+
+    Protected Sub txtBranchName_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtBranchName.SelectedIndexChanged
+        txtCourseName.Items.Clear()
+        txtCourseName.DataSourceID = "ObjCourse"
+    End Sub
+
+    'Protected Sub ddlbatch_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlbatch.TextChanged
+    '    ddlbatch.Focus()
+    'End Sub
+
+    'Protected Sub ddlA_Year_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlA_Year.TextChanged
+    '    ddlA_Year.Focus()
+    'End Sub
+
+    'Protected Sub ddlassesment_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlassesment.TextChanged
+    '    ddlassesment.Focus()
+    'End Sub
+    'Protected Sub ddlSemester_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlSemester.TextChanged
+    '    ddlSemester.Focus()
+    'End Sub
+
+    'Protected Sub ddlsubject_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlsubject.TextChanged
+    '    ddlsubject.Focus()
+    'End Sub
+
+    'Protected Sub txtBranchName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtBranchName.TextChanged
+    '    txtBranchName.Focus()
+    'End Sub
+
+    'Protected Sub txtCourseName_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtCourseName.TextChanged
+    '    txtCourseName.Focus()
+    'End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+    Protected Sub btnMarksAnalysis_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnMarksAnalysis.Click
+
+        Dim course As String = txtCourseName.SelectedValue
+        Dim Branch As String = txtBranchName.SelectedValue
+        Dim CourseId As Integer = txtCourseName.SelectedValue
+        'Dim AYear As Integer = ddlA_Year.SelectedValue
+        Dim Subjectid As Integer = ddlsubject.SelectedItem.Value
+        Dim SemesterId As Integer = ddlSemester.SelectedItem.Value
+        Dim BatchNo As Integer = ddlbatch.SelectedValue
+        Dim AssessmentId As Integer = ddlassesment.SelectedItem.Value
+
+        Dim Frm1, Frm2, Frm3, Frm4, To1, To2, To3, To4, RBType As Integer
+        If TxtFrm1.Text = "" Then
+            Frm1 = 0
+        Else
+            Frm1 = TxtFrm1.Text
+        End If
+        If TxtFrm2.Text = "" Then
+            Frm2 = 0
+        Else
+            Frm2 = TxtFrm2.Text
+        End If
+        If TxtFrm3.Text = "" Then
+            Frm3 = 0
+        Else
+            Frm3 = TxtFrm3.Text
+        End If
+        If TxtFrm4.Text = "" Then
+            Frm4 = 0
+        Else
+            Frm4 = TxtFrm4.Text
+        End If
+        If TxtTo1.Text = "" Then
+            To1 = 0
+        Else
+            To1 = TxtTo1.Text
+        End If
+        If TxtTo2.Text = "" Then
+            To2 = 0
+        Else
+            To2 = TxtTo2.Text
+        End If
+        If TxtTo3.Text = "" Then
+            To3 = 0
+        Else
+            To3 = TxtTo3.Text
+        End If
+        If TxtTo4.Text = "" Then
+            To4 = 0
+        Else
+            To4 = TxtTo4.Text
+        End If
+        'RBType is used to distinguish Marks and Percentage Analysis
+        RBType = RBMarks.SelectedValue
+
+        'Id is used to distinguish Report and Marks Analysis
+        Dim id As Integer = 2
+
+        If txtCourseName.SelectedItem.Text = "Select" Or txtBranchName.SelectedItem.Text = "Select" Or ddlbatch.SelectedItem.Text = " Select" Then
+            lblErrorMsg.Text = "Please enter all Mandatory Fields."
+        Else
+            Dim qrystring As String = "Rpt_BatchReportCardV.aspx?" & QueryStr.Querystring() & "&course=" & course & "&Branch=" & Branch & "&CourseId=" & CourseId & "&Subjectid=" & Subjectid & "&SemesterId=" & SemesterId & "&BatchNo=" & BatchNo & "&AssessmentId=" & AssessmentId & "&id=" & id & "&Frm1=" & Frm1 & "&Frm2=" & Frm2 & "&Frm3=" & Frm3 & "&Frm4=" & Frm4 & "&To1=" & To1 & "&To2=" & To2 & "&To3=" & To3 & "&To4=" & To4 & "&RBType=" & RBType
+            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "message", "<script>window.open('" & qrystring & "',null,'toolbar=no,scrollbars=yes,location=no,resizable =yes,width=1050,height=700,left=0,top=0')</script>", False)
+        End If
+
+
+
+    End Sub
+End Class

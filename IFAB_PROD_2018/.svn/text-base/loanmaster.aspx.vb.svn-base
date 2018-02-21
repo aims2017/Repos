@@ -1,0 +1,450 @@
+Imports System.Web.UI.WebControls
+Partial Class loanmaster
+    Inherits BasePage
+    Private Bll As New loanmasterB
+    Private Prop As New loanmasterE
+    Private DAL As New loanmasterDA
+    Dim dt As New DataTable
+    Public LoanId As Int64
+
+    Dim GlobalFunction As New GlobalFunction
+    Protected Sub btnAdd_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAdd.Click
+
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+
+            If BtnAdd.Text = "ADD" Then
+                Try
+                    'Prop.Empid = HidempId.Value
+                    Prop.Empname = ddlEmpName.SelectedValue
+                    If txtBank.Text = "" Then
+                        Prop.bank = 0
+                    Else
+                        Prop.bank = HidBank.Value
+                    End If
+
+                    Prop.branch = txtBranch.Text
+                    Prop.Loanidcode = txtLoanno.Text
+                    Prop.Loantype = ddlLoanType.SelectedValue
+                    If txtLoandate.Text = "" Then
+                        Prop.Loandate = CDate("1/1/1900")
+                    Else
+                        Prop.Loandate = txtLoandate.Text
+                    End If
+                    If txtLoanamount.Text = "" Then
+                        Prop.Loanamount = 0.0
+                    Else
+                        Prop.Loanamount = txtLoanamount.Text
+                    End If
+
+                    If txtInterestrate.Text = "" Then
+                        Prop.Interestrate = 0.0
+                    Else
+                        Prop.Interestrate = txtInterestrate.Text
+                    End If
+                    Prop.ChqNo = txtchqno.Text
+                    If txtChequedate.Text = "" Then
+                        Prop.Chequedate = CDate("1/1/1900")
+                    Else
+                        Prop.Chequedate = txtChequedate.Text
+                    End If
+                    If txtMonthlydeduction.Text = "" Then
+                        Prop.monthlyded = 0.0
+                    Else
+                        Prop.monthlyded = txtMonthlydeduction.Text
+                    End If
+
+                    If txtBalanceloan.Text = "" Then
+                        Prop.Balanceloan = 0.0
+                    Else
+                        Prop.Balanceloan = txtBalanceloan.Text
+                    End If
+
+                    Prop.Startdate = txtStartdate.Text
+                    GridView1.Enabled = True
+                    msginfo.Text = ""
+                    dt = Bll.GetDuplicateLoanMaster(Prop)
+                    If dt.Rows.Count > 0 Then
+
+                        AlertEnterAllFields("Loan Number already exists.")
+                        txtLoanno.Focus()
+
+                    ElseIf (Val(txtMonthlydeduction.Text) > Val(txtLoanamount.Text)) Then
+                        lblmsg.Text = "Monthly Deduction cannot be more than Loan Amount."
+                        txtMonthlydeduction.Focus()
+
+                    ElseIf (Val(txtBalanceloan.Text) > Val(txtLoanamount.Text)) Then
+                        lblmsg.Text = "Balance Loan cannot be more than Loan Amount."
+                        txtBalanceloan.Focus()
+
+                    ElseIf (CDate(txtStartdate.Text) < CDate(txtLoandate.Text)) Then
+                        lblmsg.Text = "Start Date cannot be Smaller than Loan Date."
+                        txtStartdate.Focus()
+
+                    Else
+                        msginfo.Text = ""
+                        Bll.insertRecord(Prop)
+                        AlertEnterAllField("Data Saved Successfully.")
+                        txtChequedate.Text = Format(Today(), "dd-MMM-yyyy")
+
+                        'Prop.Empid = 0
+                        ViewState("PageIndex") = 0
+                        GridView1.PageIndex = 0
+                        Binddata(Prop)
+                        btn_enabled()
+                        clear()
+                        GridView1.Visible = True
+                        ddlEmpName.Focus()
+                        txtStartdate.Text = Format(Today, "dd-MMM-yyyy")
+                    End If
+                Catch ex As Exception
+                    lblmsg.Text = "Enter Correct data."
+                    ddlEmpName.Focus()
+                End Try
+            ElseIf BtnAdd.Text = "UPDATE" Then
+                Try
+                    Prop.Loanid = ViewState("LoanID")
+                    'Prop.Empid = ViewState("EmpId")
+                    'Prop.Empid = HidempId.Value
+                    Prop.Empname = ddlEmpName.SelectedValue
+                    Prop.Loanidcode = txtLoanno.Text
+                    Prop.Loantype = ddlLoanType.SelectedValue
+                    Prop.bank = HidBank.Value
+                    Prop.branch = txtBranch.Text
+                    Prop.Loandate = txtLoandate.Text
+                    Prop.Loanamount = txtLoanamount.Text
+                    If txtInterestrate.Text = "" Then
+                        Prop.Interestrate = 0.0
+                    Else
+                        Prop.Interestrate = txtInterestrate.Text
+                    End If
+                    Prop.ChqNo = txtchqno.Text
+                    If txtChequedate.Text = "" Then
+                        Prop.Chequedate = CDate("1/1/1900")
+                    Else
+                        Prop.Chequedate = txtChequedate.Text
+                    End If
+
+                    If txtMonthlydeduction.Text = "" Then
+                        Prop.monthlyded = 0.0
+                    Else
+                        Prop.monthlyded = txtMonthlydeduction.Text
+                    End If
+
+                    If txtBalanceloan.Text = "" Then
+                        Prop.Balanceloan = 0.0
+                    Else
+                        Prop.Balanceloan = txtBalanceloan.Text
+                    End If
+                    Prop.Startdate = txtStartdate.Text
+
+                    If (Val(txtMonthlydeduction.Text) > Val(txtLoanamount.Text)) Then
+                        lblmsg.Text = "Monthly Deduction cannot be more than Loan Amount."
+                        txtMonthlydeduction.Focus()
+
+                    ElseIf (Val(txtBalanceloan.Text) > Val(txtLoanamount.Text)) Then
+                        lblmsg.Text = "Balance Loan cannot be more than Loan Amount."
+                        txtBalanceloan.Focus()
+
+                    ElseIf (CDate(txtStartdate.Text) < CDate(txtLoandate.Text)) Then
+                        lblmsg.Text = "Start Date cannot be Smaller than Loan Date."
+                        txtStartdate.Focus()
+
+                    Else
+                        Dim i As Int64 = Bll.update(Prop)
+                        If i > 0 Then
+                            AlertEnterAllField("Data Updated Successfully.")
+                            txtChequedate.Text = Format(Today(), "dd-MMM-yyyy")
+                            GridView1.Enabled = True
+                            Prop.Loanid = 0
+                            GridView1.PageIndex = ViewState("PageIndex")
+                            Binddata1(Prop)
+                            btn_enabled()
+                            clear()
+                            GridView1.Visible = True
+                            txtStartdate.Text = Format(Today, "dd-MMM-yyyy")
+                        Else
+                            AlertEnterAllFields("Data Cannot be Updated.")
+                        End If
+                    End If
+                Catch ex As Exception
+                    lblmsg.Text = "Enter Correct data."
+                End Try
+            End If
+        Else
+            lblmsg.Text = "You do not belong to this branch, Cannot add/update data."
+            msginfo.Text = ""
+        End If
+    End Sub
+    Sub clear()
+        ddlEmpName.SelectedValue = 0
+        txtLoanno.Text = ""
+        txtLoandate.Text = ""
+        txtInterestrate.Text = ""
+        txtBank.Text = ""
+        txtBranch.Text = ""
+        txtMonthlydeduction.Text = ""
+        txtchqno.Text = ""
+        txtStartdate.Text = ""
+        ddlLoanType.SelectedValue = 0
+        txtLoanamount.Text = ""
+        txtChequedate.Text = ""
+        txtBalanceloan.Text = ""
+        HidBank.Value = 0
+        txtBank.Text = ""
+    End Sub
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim heading As String
+        heading = Session("RptFrmTitleName")
+        Me.Lblheading.Text = heading
+        If Not Page.IsPostBack Then
+            txtStartdate.Text = Format(Today(), "dd-MMM-yyyy")
+            txtChequedate.Text = Format(Today(), "dd-MMM-yyyy")
+        End If
+        ddlEmpName.Focus()
+    End Sub
+    Protected Sub BtnView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnView.Click
+        If BtnView.Text = "VIEW" Then
+            If ddlEmpName.SelectedItem.Text = "Select" Then
+                Prop.Empid = 0
+            Else
+                Prop.Empid = ddlEmpName.SelectedValue
+            End If
+            If txtLoanno.Text = "" Then
+                Prop.Loanidcode = 0
+            Else
+                Prop.Loanidcode = txtLoanno.Text
+            End If
+            If ddlLoanType.SelectedItem.Text = "Select" Then
+                Prop.Loantype = 0
+            Else
+                Prop.Loantype = ddlLoanType.SelectedValue
+            End If
+            GridView1.Enabled = True
+            lblmsg.Text = ""
+            msginfo.Text = ""
+            'Prop.Empid = 0
+            ViewState("PageIndex") = 0
+            GridView1.PageIndex = 0
+            Binddata(Prop)
+            btn_enabled()
+            GridView1.Visible = True
+        ElseIf BtnView.Text = "BACK" Then
+            clear()
+            GridView1.Enabled = True
+            lblmsg.Text = ""
+            msginfo.Text = ""
+            Prop.Empid = 0
+            GridView1.PageIndex = ViewState("PageIndex")
+            Binddata(Prop)
+            btn_enabled()
+            GridView1.Visible = True
+        End If
+    End Sub
+    Protected Sub GrdLoan_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles GridView1.PageIndexChanging
+        GridView1.Enabled = True
+        GridView1.PageIndex = e.NewPageIndex
+        ViewState("PageIndex") = GridView1.PageIndex
+        Binddata(Prop)
+    End Sub
+    Protected Sub GrdLoan_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GridView1.RowDeleting
+
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+
+            Dim id As Int64 = Int64.Parse(GridView1.DataKeys(e.RowIndex).Value.ToString)
+            GridView1.Enabled = True
+            Bll.delete(id)
+            GridView1.PageIndex = ViewState("PageIndex")
+            Binddata(Prop)
+            AlertEnterAllField("Data Deleted Successfully.")
+            ddlEmpName.Focus()
+        Else
+            lblmsg.Text = "You do not belong to this branch, Cannot delete data."
+            msginfo.Text = ""
+        End If
+
+    End Sub
+
+
+    Protected Sub GridView1_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GridView1.RowEditing
+
+        'If (Session("BranchCode") = Session("ParentBranch")) Then
+
+        lblmsg.Text = ""
+        msginfo.Text = ""
+        btn_disabled()
+        ddlEmpName.SelectedValue = CType(GridView1.Rows(e.NewEditIndex).Cells(1).FindControl("Labelempid"), Label).Text
+        txtLoanno.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(2).FindControl("Label2"), Label).Text
+        ddlLoanType.SelectedValue = CType(GridView1.Rows(e.NewEditIndex).Cells(3).FindControl("Label3"), Label).Text
+        txtLoandate.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(4).FindControl("Label4"), Label).Text
+        txtLoanamount.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(5).FindControl("Label5"), Label).Text
+        txtInterestrate.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(6).FindControl("Label6"), Label).Text
+        txtBank.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(1).FindControl("lblBnk"), Label).Text.Trim()
+        HidBank.Value = CType(GridView1.Rows(e.NewEditIndex).Cells(1).FindControl("Label13"), Label).Text.Trim()
+        txtBranch.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(6).FindControl("lblBrnch"), Label).Text
+        txtchqno.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(7).FindControl("Label7"), Label).Text
+        txtChequedate.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(8).FindControl("Label8"), Label).Text
+        txtMonthlydeduction.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(9).FindControl("Label9"), Label).Text
+        txtBalanceloan.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(10).FindControl("Label10"), Label).Text
+        txtStartdate.Text = CType(GridView1.Rows(e.NewEditIndex).Cells(11).FindControl("Label11"), Label).Text
+        ViewState("LoanID") = CType(GridView1.Rows(e.NewEditIndex).FindControl("HidLoanId"), HiddenField).Value
+        ViewState("EmpId") = CType(GridView1.Rows(e.NewEditIndex).Cells(1).FindControl("Labelempid"), Label).Text
+        HidempId.Value = CType(GridView1.Rows(e.NewEditIndex).Cells(1).FindControl("Labelempid"), Label).Text
+        BtnAdd.Text = "UPDATE"
+        Prop.Loanid = ViewState("LoanID")
+        Binddata(Prop)
+        GridView1.Enabled = False
+        'Else
+        'msginfo.Text = "You do not belong to this branch, Cannot edit data."
+        'lblmsg.Text = ""
+        'End If
+
+    End Sub
+    Sub btn_enabled()
+        BtnAdd.Text = "ADD"
+        BtnView.Text = "VIEW"
+        'txtEmp.Text = ""
+        'txtLoanno.Text = ""
+        'txtloantype.Text = ""
+        'txtLoandate.Text = ""
+        'txtLoanamount.Text = ""
+        'txtInterestrate.Text = ""
+        'txtMonthlydeduction.Text = ""
+        'txtChequedate.Text = ""
+        'txtBalanceloan.Text = ""
+        'txtchqno.Text = ""
+        'txtStartdate.Text = ""
+
+    End Sub
+    Sub btn_disabled()
+        BtnAdd.Text = "UPDATE"
+        BtnView.Text = "BACK"
+        'ddlEmpName.SelectedValue = ""
+        'txtLoanno.Text = ""
+        'ddlLoanType.SelectedItem.Text = ""
+        'txtLoandate.Text = ""
+        'txtLoanamount.Text = ""
+        'txtInterestrate.Text = ""
+        'txtMonthlydeduction.Text = ""
+        'txtChequedate.Text = ""
+        'txtBalanceloan.Text = ""
+        'txtchqno.Text = ""
+        'txtStartdate.Text = ""
+
+    End Sub
+    Sub AlertEnterAllFields(ByVal str As String)
+        msginfo.Text = ""
+        lblmsg.Text = str
+    End Sub
+    Sub AlertEnterAllField(ByVal str As String)
+        lblmsg.Text = ""
+        msginfo.Text = str
+    End Sub
+    Sub Binddata(ByVal id1 As loanmasterE)
+        LinkButton1.Focus()
+        Dim dt As Data.DataTable
+        If ddlEmpName.SelectedItem.Text = "Select" Then
+            Prop.Empname = 0
+        Else
+            Prop.Empname = ddlEmpName.SelectedValue
+        End If
+        If txtLoanno.Text = "" Then
+            Prop.Loanidcode = 0
+        Else
+            Prop.Loanidcode = txtLoanno.Text
+        End If
+        If ddlLoanType.SelectedItem.Text = "Select" Then
+            Prop.Loantype = 0
+        Else
+            Prop.Loantype = ddlLoanType.SelectedValue
+        End If
+        dt = Bll.GetEmp(id1)
+        If dt.Rows.Count > 0 Then
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+        Else
+            GridView1.DataSource = Nothing
+            GridView1.DataBind()
+            AlertEnterAllFields("No records to display.")
+            ddlEmpName.Focus()
+        End If
+    End Sub
+    Sub Binddata1(ByVal id1 As loanmasterE)
+        Dim dt As Data.DataTable
+        If ddlEmpName.SelectedItem.Text = "Select" Then
+            Prop.Empname = 0
+
+        End If
+        If txtLoanno.Text <> "" Then
+            Prop.Loanidcode = 0
+       
+        End If
+        'If txtloantype.Text <> "" Then
+        '    Prop.Loantype = 0
+
+        'End If
+        dt = Bll.GetEmp(id1)
+        If dt.Rows.Count > 0 Then
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+        Else
+            GridView1.DataSource = Nothing
+            GridView1.DataBind()
+            AlertEnterAllFields("No records to display.")
+            ddlEmpName.Focus()
+        End If
+    End Sub
+
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+    
+    Protected Sub GridView1_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles GridView1.Sorting
+        Dim sortingDirection As String = String.Empty
+        If dir() = SortDirection.Ascending Then
+            dir = SortDirection.Descending
+            sortingDirection = "Desc"
+        Else
+            dir = SortDirection.Ascending
+            sortingDirection = "Asc"
+        End If
+
+        LinkButton1.Focus()
+        Dim dt As Data.DataTable
+        If ddlEmpName.SelectedItem.Text = "Select" Then
+            Prop.Empname = 0
+        Else
+            Prop.Empname = ddlEmpName.SelectedValue
+        End If
+        If txtLoanno.Text = "" Then
+            Prop.Loanidcode = 0
+        Else
+            Prop.Loanidcode = txtLoanno.Text
+        End If
+        'If txtloantype.Text = "" Then
+        '    Prop.Loantype = 0
+        'Else
+        '    Prop.Loantype = txtloantype.Text
+        'End If
+        dt = Bll.GetEmp(Prop)
+       
+
+        Dim sortedView As New DataView(dt)
+        sortedView.Sort = Convert.ToString(e.SortExpression) & " " & sortingDirection
+        GridView1.DataSource = sortedView
+        GridView1.DataBind()
+    End Sub
+    Public Property dir() As SortDirection
+        Get
+            If ViewState("dirState") Is Nothing Then
+                ViewState("dirState") = SortDirection.Descending
+            End If
+            Return DirectCast(ViewState("dirState"), SortDirection)
+        End Get
+        Set(ByVal value As SortDirection)
+            ViewState("dirState") = value
+        End Set
+    End Property
+End Class
+

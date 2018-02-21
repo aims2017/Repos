@@ -1,0 +1,14 @@
+<%@ Page Language="VB" AutoEventWireup="false" MasterPageFile="~/Home.master" CodeFile="DatabaseManagement.aspx.vb" Inherits="DatabaseManagement" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <div>
+        &nbsp;<asp:Label ID="Label1" runat="server" Text="Backup Database" Width="192px"></asp:Label>
+        <asp:Button ID="btnBackupDatabase" runat="server" Text="Backup" Width="72px" />&nbsp;<br />
+        &nbsp;
+        <br />
+        &nbsp;<asp:Label ID="Label2" runat="server" Text="Restore Database" Width="192px"></asp:Label>
+        <asp:Button ID="btnRestoreDatabase" runat="server" Text="Restore" />&nbsp;
+    
+    </div>
+</asp:Content>

@@ -1,0 +1,100 @@
+<%@ Page Title="" Language="VB" MasterPageFile="~/Home.master" AutoEventWireup="false"
+    CodeFile="Mfg_rptCreditNote.aspx.vb" Inherits="Mfg_rptCreditNote" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <div>
+                <center>
+                    <h1 class="headingTxt">
+                        CREDIT NOTE
+                        <br />
+                        <br />
+                    </h1>
+                </center>
+                <center>
+                    <table>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblSupplier" runat="server" SkinID="lbl" Text="Supplier/Buyer :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:DropDownList ID="ddlSupplier" runat="server" Width="250px" DataSourceID="ObjSupplier"
+                                    DataTextField="Supplier_Name" SkinID="Rsz" AutoPostBack="true" DataValueField="Supplier_Id"
+                                    TabIndex="1">
+                                </asp:DropDownList>
+                                <asp:ObjectDataSource ID="ObjSupplier" runat="server" SelectMethod="GetSupplier_BuyerDDL"
+                                    TypeName="DLProductDetails"></asp:ObjectDataSource>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblInvoice" runat="server" Text="Invoice No.*&nbsp;:&nbsp;&nbsp;"
+                                    SkinID="lblRsz"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:DropDownList ID="ddlinvoice" SkinID="ddlRsz" runat="server" DataSourceID="ObjInvoiceNo"
+                                    DataTextField="Invoice_Num" DataValueField="Invoice_Id" TabIndex="1" Width="240px"
+                                    AutoPostBack="true">
+                                </asp:DropDownList>
+                                <asp:ObjectDataSource ID="ObjInvoiceNo" runat="server" SelectMethod="GetInvoiceNo"
+                                    TypeName="Mfg_DLCreditNote">
+                                    <%--<SelectParameters>
+                                        <asp:ControlParameter ControlID="ddlSupplier" PropertyName="SelectedValue" Name="Supplier_Name"
+                                            DbType="Int16" />
+                                    </SelectParameters>--%>
+                                </asp:ObjectDataSource>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblstartdate" Width="150px" runat="server" Text="Start Date :&nbsp;&nbsp;"
+                                    SkinID="lblRsz"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtstartdate" runat="server" SkinID="txt" TabIndex="1"></asp:TextBox>
+                                <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender15" runat="server"
+                                    FilterMode="InvalidChars" FilterType="Numbers" InvalidChars="'" TargetControlID="txtstartdate"
+                                    Enabled="True">
+                                </ajaxToolkit:FilteredTextBoxExtender>
+                                <ajaxToolkit:CalendarExtender ID="CalendarExtender2" runat="server" Animated="False"
+                                    Format="dd-MMM-yyyy" TargetControlID="txtstartdate" Enabled="True">
+                                </ajaxToolkit:CalendarExtender>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <asp:Label ID="lblenddate" runat="server" SkinID="lblRsz" Text="End Date :&nbsp;&nbsp;"></asp:Label>
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtenddate" runat="server" SkinID="txt" TabIndex="3"></asp:TextBox>
+                                <ajaxToolkit:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server"
+                                    FilterMode="InvalidChars" FilterType="Numbers" InvalidChars="'" TargetControlID="txtenddate"
+                                    Enabled="True">
+                                </ajaxToolkit:FilteredTextBoxExtender>
+                                <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" Animated="False"
+                                    Format="dd-MMM-yyyy" TargetControlID="txtenddate" Enabled="True">
+                                </ajaxToolkit:CalendarExtender>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="btnTd">
+                                <asp:Button ID="btnReport" TabIndex="2" runat="server" Text="REPORT" SkinID="btn"
+                                    CssClass="ButtonClass"></asp:Button>
+                                <asp:Button ID="btnBack" TabIndex="3" runat="server" Text="BACK" SkinID="btn" CssClass="ButtonClass">
+                                </asp:Button>
+                            </td>
+                        </tr>
+                    </table>
+                    <br />
+                    <asp:Label ID="msginfo" runat="server" SkinID="lblRed" Visible="true"></asp:Label>
+                    <asp:Label ID="lblmsg" runat="server" SkinID="lblGreen" Visible="true"></asp:Label>
+                </center>
+        </ContentTemplate>
+    </asp:UpdatePanel>
+</asp:Content>

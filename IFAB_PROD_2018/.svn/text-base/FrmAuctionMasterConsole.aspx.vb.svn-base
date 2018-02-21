@@ -1,0 +1,78 @@
+﻿Imports System.Diagnostics
+Imports System.IO
+
+
+Partial Class FrmAuctionMasterConsole
+    Inherits BasePage
+
+    Protected Sub BtnBiddersList_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnBiddersList.Click
+        Dim sepWin As String = ""
+        sepWin = "frmBiddersList.aspx?" & SeperateWindow.SepWindow()
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "message", "<script>window.open('" & sepWin & "','mywin','toolbar=no,scrollbars=yes,location=no,resizable =yes,width=950,height=650,left=50,top=50')</script>", False)
+
+    End Sub
+
+    Protected Sub BtnAuctionLot_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAuctionLot.Click
+        Dim sepWin_AL As String = ""
+        sepWin_AL = "frmAuctionLot.aspx?" & SeperateWindow.SepWindow()
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "message", "<script>window.open('" & sepWin_AL & "','mywindow1','toolbar=no,scrollbars=yes,location=no,resizable =yes,width=950,height=650,left=50,top=50')</script>", False)
+    End Sub
+
+    'Protected Sub btnClock_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnClock.Click
+    '    Dim dt As DataTable
+    '    Dim Path As String
+    '    '-------------
+    '    'Dim dirPath As String = Directory.GetCurrentDirectory()
+    '    'Process.Start("D:\IFAB_30_09_2013_Latest\DigitalClock_28Mar\WindowsApplication3\bin\Debug\WindowsApplication3.exe")
+    '    'Shell(dirPath & "D:\IFAB_30_09_2013_Latest\DigitalClock_28Mar\WindowsApplication3\bin\Debug\WindowsApplication3.exe", AppWinStyle.NormalFocus)
+    '    '-------------
+    '    'Dim pstartinfo As New ProcessStartInfo()
+    '    'Dim p As New Process()
+
+    '    'pstartinfo.WorkingDirectory = "D:\IFAB_30_09_2013_Latest\DigitalClock_28Mar\WindowsApplication3\bin\Debug"
+    '    'pstartinfo.FileName = "WindowsApplication3.exe"
+    '    'pstartinfo.CreateNoWindow = False
+
+    '    'p = Process.Start(pstartinfo)
+    '    '-------------
+    '    'Dim str As String = "D:\IFAB_30_09_2013_Latest\DigitalClock_28Mar\WindowsApplication3\bin\Debug\WindowsApplication3.exe"
+    '    'Dim process As New Process()
+    '    'process.StartInfo.FileName = str
+    '    'process.Start()
+    '    '-------------
+    '    'Dim p As New Process()
+    '    'p.StartInfo.FileName = "D:\IFAB_30_09_2013_Latest\DigitalClock_28Mar\WindowsApplication3\bin\Debug\WindowsApplication3.exe"
+    '    'p.Start()
+    '    '-------------
+    '    dt = DLAuctionLot.GetClockPath()
+    '    Path = dt.Rows(0).Item(0)
+    '    'Path = "D:\IFAB_30_09_2013_Latest\DigitalClock_28Mar\WindowsApplication3\bin\Debug"
+    '    Dim MyProcess As New System.Diagnostics.Process()
+    '    MyProcess.StartInfo.CreateNoWindow = True
+    '    MyProcess.StartInfo.UseShellExecute = True
+    '    MyProcess.StartInfo.WorkingDirectory = Path
+    '    MyProcess.StartInfo.FileName = "WindowsApplication3.exe"
+    '    MyProcess.StartInfo.Arguments = "MyArgument"
+    '    MyProcess.Start()
+    'End Sub
+
+    Protected Sub BtnAuctionSheet_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles BtnAuctionSheet.Click
+        Dim sepWin2 As String = ""
+        sepWin2 = "frmAuctionSheet.aspx?" & SeperateWindow.SepWindow()
+        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "message", "<script>window.open('" & sepWin2 & "','mywindow2','toolbar=no,scrollbars=yes,location=no,resizable =yes,width=950,height=650,left=50,top=50')</script>", False)
+    End Sub
+
+    Protected Sub btnClock_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnClock.Click
+
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim dt As DataTable
+        Dim Path As String
+        dt = DLAuctionLot.GetClockPath()
+        Path = dt.Rows(0).Item(0)
+        Session("Path") = Path
+
+    End Sub
+
+End Class

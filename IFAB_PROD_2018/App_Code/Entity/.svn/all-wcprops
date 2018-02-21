@@ -1,0 +1,1415 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/ifab_source_2013_11_18/!svn/ver/20/IFAB_20131118_SRC/App_Code/Entity
+END
+Bank.vb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Bank.vb
+END
+Mfg_ELSaleInvoice.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELSaleInvoice.vb
+END
+ELInvestment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELInvestment.vb
+END
+CourseActionPlanE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CourseActionPlanE.vb
+END
+BranchTypeCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BranchTypeCombo.vb
+END
+Medium.vb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Medium.vb
+END
+ELEndowment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELEndowment.vb
+END
+EHostelMaster11.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EHostelMaster11.vb
+END
+TutorialEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TutorialEL.vb
+END
+ELCommunication.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELCommunication.vb
+END
+IndividualFormMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/IndividualFormMaster.vb
+END
+Qualification.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Qualification.vb
+END
+TransportReg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TransportReg.vb
+END
+DepreiciationRate.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DepreiciationRate.vb
+END
+E16a.vb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/E16a.vb
+END
+Mfg_ELProcessDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELProcessDetails.vb
+END
+LessonPlanEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/LessonPlanEL.vb
+END
+MfgStkstatus.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/MfgStkstatus.vb
+END
+LeaveApplicationEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/LeaveApplicationEL.vb
+END
+StdAttendanceP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/StdAttendanceP.vb
+END
+ELAssetType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELAssetType.vb
+END
+AdminExam.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AdminExam.vb
+END
+FeePaymentDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeePaymentDetails.vb
+END
+EDeptdtl.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EDeptdtl.vb
+END
+MultiCurrency.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/MultiCurrency.vb
+END
+AcademicYear.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AcademicYear.vb
+END
+Prospectus.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Prospectus.vb
+END
+ELJobOpening.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELJobOpening.vb
+END
+MachineMaintenence.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/MachineMaintenence.vb
+END
+EntMonthlySalary.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EntMonthlySalary.vb
+END
+Employee.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Employee.vb
+END
+DesignationP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DesignationP.vb
+END
+ELRollOver.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELRollOver.vb
+END
+ELHostelDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELHostelDetails.vb
+END
+Experience.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Experience.vb
+END
+BatchSemesterMap.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BatchSemesterMap.vb
+END
+ELLIC.vb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELLIC.vb
+END
+Institute.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Institute.vb
+END
+ELRptSubTeacherMap.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELRptSubTeacherMap.vb
+END
+Rolemap.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Rolemap.vb
+END
+Course.vb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Course.vb
+END
+Department.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Department.vb
+END
+AssetTransferP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AssetTransferP.vb
+END
+HostelAdmissionE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/HostelAdmissionE.vb
+END
+QureyStringP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/QureyStringP.vb
+END
+CertificateMasterP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CertificateMasterP.vb
+END
+Asset.vb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Asset.vb
+END
+FeeStructure.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeeStructure.vb
+END
+Globals.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/3/IFAB_20131118_SRC/App_Code/Entity/Globals.vb
+END
+Mfg_ELSupplierDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELSupplierDetails.vb
+END
+ELExamResources..vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELExamResources..vb
+END
+ConfigProcessP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ConfigProcessP.vb
+END
+Semester.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Semester.vb
+END
+DriverDet.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DriverDet.vb
+END
+InDockEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/20/IFAB_20131118_SRC/App_Code/Entity/InDockEL.vb
+END
+EntPayroll.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EntPayroll.vb
+END
+Mfg_ELUnit.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELUnit.vb
+END
+Contact.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Contact.vb
+END
+ExtraCurricularAchievementsEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ExtraCurricularAchievementsEL.vb
+END
+IncomeTaxE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/IncomeTaxE.vb
+END
+Visiting.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Visiting.vb
+END
+ELLeavTypes.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELLeavTypes.vb
+END
+Branch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Branch.vb
+END
+ELTreeviewForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELTreeviewForm.vb
+END
+HouseMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/HouseMaster.vb
+END
+Leaveregister.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Leaveregister.vb
+END
+OtherParty.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/OtherParty.vb
+END
+Sponsor.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Sponsor.vb
+END
+CertificateIssuedE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CertificateIssuedE.vb
+END
+ELExamStudRegistration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELExamStudRegistration.vb
+END
+Mfg_ElStockIssue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ElStockIssue.vb
+END
+ApprovalForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ApprovalForm.vb
+END
+FeedBackForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeedBackForm.vb
+END
+DayBookPartyName.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DayBookPartyName.vb
+END
+Budget.vb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Budget.vb
+END
+ELAttenSummary.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELAttenSummary.vb
+END
+ELStateMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELStateMaster.vb
+END
+RoleMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/RoleMaster.vb
+END
+EntConfiguration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EntConfiguration.vb
+END
+SubjectCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/SubjectCombo.vb
+END
+Mfg_ELSaleExecutive.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELSaleExecutive.vb
+END
+State.vb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/State.vb
+END
+mfg_PurchaseOrderEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/mfg_PurchaseOrderEL.vb
+END
+AssetType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AssetType.vb
+END
+MaintenanceType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/MaintenanceType.vb
+END
+Assessment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Assessment.vb
+END
+EmailSMSRate.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EmailSMSRate.vb
+END
+AttendanceP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AttendanceP.vb
+END
+ELSalaryScaleGrade.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELSalaryScaleGrade.vb
+END
+Mfg_ELAreaDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELAreaDetails.vb
+END
+ELSaleorderMfg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELSaleorderMfg.vb
+END
+Enquiry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Enquiry.vb
+END
+EmpTransE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EmpTransE.vb
+END
+ClientCotract.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ClientCotract.vb
+END
+BranchType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BranchType.vb
+END
+SelfDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/SelfDetails.vb
+END
+ELCreateExamBatch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELCreateExamBatch.vb
+END
+BatchCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BatchCombo.vb
+END
+Mfg_ELPurchaseInvoice.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELPurchaseInvoice.vb
+END
+Mfg_ELStockStatus.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELStockStatus.vb
+END
+ELTreeviewChildForm.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELTreeviewChildForm.vb
+END
+AttendenceEligibilityCriteriaEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AttendenceEligibilityCriteriaEL.vb
+END
+CreateBatch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CreateBatch.vb
+END
+ELEnquiryLogin.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELEnquiryLogin.vb
+END
+ELCCMonthlyRun.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELCCMonthlyRun.vb
+END
+TimeSheetEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TimeSheetEL.vb
+END
+CourseFCPCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CourseFCPCombo.vb
+END
+Entity_PaymentMethod.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Entity_PaymentMethod.vb
+END
+BookReturnP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BookReturnP.vb
+END
+ELFaculityTimeUtilization.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELFaculityTimeUtilization.vb
+END
+Mfg_ELTaxDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELTaxDetails.vb
+END
+TableConfiguration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TableConfiguration.vb
+END
+ElMedicalDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ElMedicalDetails.vb
+END
+ELLoginReport.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELLoginReport.vb
+END
+ELEligiblityPromotion.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELEligiblityPromotion.vb
+END
+AssetDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AssetDetails.vb
+END
+VehicleDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/VehicleDetails.vb
+END
+BRS.vb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BRS.vb
+END
+Student.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Student.vb
+END
+NewCoursePlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/NewCoursePlanner.vb
+END
+ELTravelEnquiry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELTravelEnquiry.vb
+END
+StudentE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/StudentE.vb
+END
+ELCompanyRegister.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELCompanyRegister.vb
+END
+ELParentMngt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELParentMngt.vb
+END
+UserRole.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/UserRole.vb
+END
+slssbhierarchytreeview.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/slssbhierarchytreeview.vb
+END
+ELExtraCharges.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELExtraCharges.vb
+END
+BatchPlanner.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BatchPlanner.vb
+END
+ManufacturerE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ManufacturerE.vb
+END
+Mfg_ELBatchDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELBatchDetails.vb
+END
+ELHandlingCharges.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELHandlingCharges.vb
+END
+ELProjectMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELProjectMaster.vb
+END
+BookIssue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BookIssue.vb
+END
+StudentResultP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/StudentResultP.vb
+END
+DayBookEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DayBookEL.vb
+END
+DiaryEvent.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DiaryEvent.vb
+END
+FlowerMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FlowerMaster.vb
+END
+ELEmpQualification.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELEmpQualification.vb
+END
+ELAchievementAndAward.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELAchievementAndAward.vb
+END
+Zone.vb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Zone.vb
+END
+ELGradePointResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELGradePointResult.vb
+END
+LeavTypes.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/LeavTypes.vb
+END
+BranchCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BranchCombo.vb
+END
+ELSemesterResultTable.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELSemesterResultTable.vb
+END
+Mfg_ELStockEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELStockEntry.vb
+END
+EntNoDue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EntNoDue.vb
+END
+Batch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Batch.vb
+END
+ELSourceOfInfo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELSourceOfInfo.vb
+END
+FeeDueRpt.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeeDueRpt.vb
+END
+Mfg_ELPurchaseReturn.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELPurchaseReturn.vb
+END
+ServiceResponseE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ServiceResponseE.vb
+END
+feeStructureE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/feeStructureE.vb
+END
+TimeTableP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TimeTableP.vb
+END
+ELCreateExamCalendar.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELCreateExamCalendar.vb
+END
+CertificateReceived.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CertificateReceived.vb
+END
+StudentResultrptP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/StudentResultrptP.vb
+END
+ELAssetTansferNew.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELAssetTansferNew.vb
+END
+InstCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/InstCombo.vb
+END
+CoursePlannerP.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CoursePlannerP.vb
+END
+NewStdMarks.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/NewStdMarks.vb
+END
+ELSubjectSubgrp.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELSubjectSubgrp.vb
+END
+EHolidayMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EHolidayMaster.vb
+END
+UserManagement.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/UserManagement.vb
+END
+Category.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Category.vb
+END
+ELSemFinalResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELSemFinalResult.vb
+END
+AccountHead.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AccountHead.vb
+END
+ElectiveMapEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ElectiveMapEL.vb
+END
+ELSubjectSubGrpMapping.vb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELSubjectSubGrpMapping.vb
+END
+ELGradeMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELGradeMaster.vb
+END
+MonthlyPayDetailsE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/MonthlyPayDetailsE.vb
+END
+BookSearch.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BookSearch.vb
+END
+UserRoleCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/UserRoleCombo.vb
+END
+ELAppointmentCRM.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELAppointmentCRM.vb
+END
+VehicleMaintenance.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/VehicleMaintenance.vb
+END
+AccountSubGroup.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AccountSubGroup.vb
+END
+RoomTypeE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/RoomTypeE.vb
+END
+ELStudentLogBook.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELStudentLogBook.vb
+END
+DepreciationCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DepreciationCombo.vb
+END
+ICardE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ICardE.vb
+END
+TimeTableEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TimeTableEL.vb
+END
+ELInvestmentMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELInvestmentMaster.vb
+END
+AdmissionCriteriaEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AdmissionCriteriaEL.vb
+END
+ELFacutlyDevelopment.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELFacutlyDevelopment.vb
+END
+FeeCollectionEl.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeeCollectionEl.vb
+END
+AssetCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AssetCombo.vb
+END
+Subject.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Subject.vb
+END
+EmpCombo.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EmpCombo.vb
+END
+CourseType.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CourseType.vb
+END
+Mfg_ELProductReceipeMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELProductReceipeMaster.vb
+END
+Supplier.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/19/IFAB_20131118_SRC/App_Code/Entity/Supplier.vb
+END
+TableMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TableMaster.vb
+END
+AssetUsage.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/AssetUsage.vb
+END
+FeeHeads.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeeHeads.vb
+END
+BookMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/BookMaster.vb
+END
+Company.vb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Company.vb
+END
+Mfg_ELmanufacturer.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELmanufacturer.vb
+END
+ELOpeningBalanceEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELOpeningBalanceEntry.vb
+END
+changepassword.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/changepassword.vb
+END
+FeeStructE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeeStructE.vb
+END
+ELBatchSemester.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELBatchSemester.vb
+END
+Mfg_ELCreditNote.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELCreditNote.vb
+END
+RouteMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/RouteMaster.vb
+END
+loanmasterE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/loanmasterE.vb
+END
+ElErrorLog.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ElErrorLog.vb
+END
+SystemConfiguration.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/SystemConfiguration.vb
+END
+ELFlowerCategory.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELFlowerCategory.vb
+END
+ELTransportaionMfg.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELTransportaionMfg.vb
+END
+Mfg_ElPaymentMade.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ElPaymentMade.vb
+END
+PlacementDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/PlacementDetails.vb
+END
+ServiceRequestE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ServiceRequestE.vb
+END
+PurchaseIDCard.vb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/PurchaseIDCard.vb
+END
+frmCompanyDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/frmCompanyDetails.vb
+END
+ELAssesmentResult.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELAssesmentResult.vb
+END
+SMSTempleteEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/SMSTempleteEL.vb
+END
+ElResourceMaster.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ElResourceMaster.vb
+END
+FeedbackSeminarEL.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/FeedbackSeminarEL.vb
+END
+LetterPad.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/LetterPad.vb
+END
+Mfg_ELStockAudit.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELStockAudit.vb
+END
+ELExchangeRateTable.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELExchangeRateTable.vb
+END
+ELCRMLead.vb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELCRMLead.vb
+END
+DiaryEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/DiaryEntry.vb
+END
+EntityErrorMessage.vb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/EntityErrorMessage.vb
+END
+Leave.vb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Leave.vb
+END
+UserRequestE.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/UserRequestE.vb
+END
+Mfg_ELDescription.vb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELDescription.vb
+END
+ResetPwd.vb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ResetPwd.vb
+END
+ELFacultyAllocation.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELFacultyAllocation.vb
+END
+Mfg_ELSaleReturn.vb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELSaleReturn.vb
+END
+IDCardIssue.vb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/IDCardIssue.vb
+END
+Mfg_ELProductDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELProductDetails.vb
+END
+TransportRegDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/TransportRegDetails.vb
+END
+CertificateIssuedLateral.vb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/CertificateIssuedLateral.vb
+END
+LateralEntry.vb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/LateralEntry.vb
+END
+Mfg_ELBuyerDetails.vb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/ifab_source_2013_11_18/!svn/ver/19/IFAB_20131118_SRC/App_Code/Entity/Mfg_ELBuyerDetails.vb
+END
+ELStudentLeaveApplication.vb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/ifab_source_2013_11_18/!svn/ver/2/IFAB_20131118_SRC/App_Code/Entity/ELStudentLeaveApplication.vb
+END

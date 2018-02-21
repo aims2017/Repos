@@ -1,0 +1,57 @@
+'Imports Microsoft.VisualBasic
+'Imports System.Data
+'Imports System.IO
+'Imports System.Web
+'Imports System.Data.OleDb
+'Imports System.Web.Security
+'Imports System
+'Imports System.Web.UI
+'Imports System.Web.UI.WebControls
+'Imports System.Web.UI.WebControls.WebParts
+'Imports System.Web.UI.HtmlControls
+
+Public Class BasePage : Inherits System.Web.UI.Page
+    Public new_dbconn1 As New Data.OleDb.OleDbConnection()
+    'Public Shared glbconnString As String = ConfigurationManager.ConnectionStrings("Sahaj_Edu").ConnectionString
+    'Public Shared new_dbconn1 As New Data.OleDb.OleDbConnection(glbconnString)
+    'Dim cmd As New OleDbCommand
+    Protected Overrides Sub OnPreInit(ByVal e As System.EventArgs)
+        MyBase.OnPreInit(e)
+        Dim Theme As String = ConfigurationDB.GetRandomTheme()
+        If Session("MyTheme") = "" Then
+            Session.Add("MyTheme", Theme)
+            Session("MyTheme") = Theme
+            Page.Theme = CStr(Session("MyTheme"))
+        Else
+            Page.Theme = CStr(Session("MyTheme"))
+        End If
+        'If Session("UserName") = "" Then
+        '    FormsAuthentication.RedirectToLoginPage()
+        'End If
+        'If Session("USER") = "" Then
+        '    Response.Redirect("Default.aspx")
+        'End If
+    End Sub
+    Private Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        ' new_dbconn1.ConnectionString = Application("Strcontent")
+    End Sub
+
+    Public Sub ValidateFormView(ByVal frmname As String)
+        'If new_dbconn1.State = ConnectionState.Closed Then new_dbconn1.Open()
+        'Dim sqlT As String
+        'Dim dt As New DataTable
+        'Dim da As New OleDbDataAdapter
+        'sqlT = "Select * from TreeView_Data where Access_Flag=-1 and Title='" + frmname + "'"
+        'da = New OleDbDataAdapter(sqlT, new_dbconn1)
+        'dt.Clear()
+        'da.Fill(dt)
+        'If dt.Rows.Count <> 0 Then
+        '    Response.Redirect("Default.aspx")
+        'End If
+        'If new_dbconn1.State <> ConnectionState.Closed Then new_dbconn1.Close()
+    End Sub
+
+    Private Sub Page_Unload(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Unload
+        'new_dbconn1.Close()
+    End Sub
+End Class

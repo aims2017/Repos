@@ -1,0 +1,277 @@
+﻿
+Partial Class FrmExamResources
+    Inherits BasePage
+    Dim El As New ELExamResources
+    Dim BL As New BLExamResources
+    Dim Dt1, Dt2 As DataTable
+    Protected Sub btnSave_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSave.Click
+
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Try
+
+
+                El.BatchNameId = ddlExamBatch.SelectedValue
+                El.ResTypeId = ddlResType.SelectedItem.Text
+                El.ResNameId = ddlResName.SelectedValue
+                El.Capacity = txtCapacity.Text
+                El.Branchcode = ddlBranch.SelectedValue
+                btnPublish.Enabled = True
+                If btnSave.Text = "UPDATE" Then
+                    El.id = ViewState("id")
+                    Dt1 = DLExamResources.GetDuplData(El)
+                    If Dt1.Rows.Count > 0 Then
+                        DisplayGrid(0)
+                        lblmsgifo.Text = ""
+                        lblerrmsg.Text = "Data already exists."
+                        btnSave.Text = "ADD"
+                        btnView.Text = "VIEW"
+                    Else
+                        El.id = ViewState("id")
+                        BL.UpdateRecord(El)
+                        btnSave.Text = "ADD"
+                        btnView.Text = "VIEW"
+                        GrdExamResources.PageIndex = ViewState("PageIndex")
+                        DisplayGrid(0)
+                        'txtCapacity.Text = ""
+                        lblerrmsg.Text = ""
+                        lblmsgifo.Text = "Data Updated Successfully."
+                    End If
+                ElseIf btnSave.Text = "ADD" Then
+                    El.id = 0
+                    Dt1 = DLExamResources.GetDuplData(El)
+                    If Dt1.Rows.Count > 0 Then
+                        DisplayGrid(0)
+                        lblmsgifo.Text = ""
+                        lblerrmsg.Text = "Data already exists."
+                    Else
+                        El.id = 0
+                        BL.InsertRecord(El)
+                        lblerrmsg.Text = ""
+                        ViewState("PageIndex") = 0
+                        GrdExamResources.PageIndex = 0
+                        DisplayGrid(0)
+                        lblerrmsg.Text = ""
+                        lblmsgifo.Text = "Data Saved Successfully."
+                    End If
+                End If
+            Catch e1 As Exception
+                lblerrmsg.Text = "Enter Correct Data."
+                lblmsgifo.Text = ""
+            End Try
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot add/update data."
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+    Sub DisplayGrid(ByVal Id As Integer)
+        btnPublish.Enabled = True
+        El.BatchNameId = ddlExamBatch.SelectedValue
+        El.ResTypeId = ddlResType.SelectedItem.ToString
+        El.ResNameId = ddlResName.SelectedValue
+        El.Branchcode = ddlBranch.SelectedValue
+        Dt1 = BL.GetGridData(El, Id)
+        If Dt1.Rows.Count = 0 Then
+            GrdExamResources.DataSource = Nothing
+            GrdExamResources.DataBind()
+            lblmsgifo.Text = ""
+            lblerrmsg.Text = "No records to display."
+        Else
+            GrdExamResources.DataSource = Dt1
+            GrdExamResources.DataBind()
+            GrdExamResources.Enabled = True
+            GrdExamResources.Visible = True
+            LinkButton.Focus()
+        End If
+    End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+    Protected Sub btnView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnView.Click
+        lblerrmsg.Text = ""
+        lblmsgifo.Text = ""
+        btnPublish.Enabled = True
+        If btnView.Text <> "BACK" Then
+            ViewState("PageIndex") = 0
+            GrdExamResources.PageIndex = 0
+            DisplayGrid(0)
+            GrdExamResources.Visible = True
+        Else
+            btnView.Text = "VIEW"
+            btnSave.Text = "ADD"
+            GrdExamResources.PageIndex = ViewState("PageIndex")
+            DisplayGrid(0)
+            'txtCapacity.Text = ""
+
+        End If
+
+    End Sub
+    Protected Sub GrdExamResources_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GrdExamResources.RowDeleting
+
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            El.id = CType(GrdExamResources.Rows(e.RowIndex).Cells(1).FindControl("lblId"), Label).Text
+            If BL.ChangeFlag(El) Then
+                lblerrmsg.Text = ""
+                lblmsgifo.Text = "Data Deleted Successfully."
+                GrdExamResources.PageIndex = ViewState("PageIndex")
+                DisplayGrid(0)
+                GrdExamResources.Enabled = True
+            End If
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot delete data."
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+    Protected Sub GrdExamResources_PageIndexChanging(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewPageEventArgs) Handles GrdExamResources.PageIndexChanging
+        GrdExamResources.PageIndex = e.NewPageIndex
+        ViewState("PageIndex") = GrdExamResources.PageIndex
+        DisplayGrid(0)
+    End Sub
+    Protected Sub GrdExamResources_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GrdExamResources.RowEditing
+        lblerrmsg.Text = ""
+        lblmsgifo.Text = ""
+        ddlExamBatch.SelectedValue = CType(GrdExamResources.Rows(e.NewEditIndex).FindControl("lblBatchId"), Label).Text
+        ViewState("id") = CType(GrdExamResources.Rows(e.NewEditIndex).FindControl("lblId"), Label).Text
+        ddlBranch.SelectedValue = CType(GrdExamResources.Rows(e.NewEditIndex).FindControl("lblBranch"), Label).Text
+        ddlResType.Items.Clear()
+        ddlResType.DataSourceID = "ObjResType"
+        ddlResType.DataBind()
+        ddlResType.SelectedValue = CType(GrdExamResources.Rows(e.NewEditIndex).FindControl("lblResType"), Label).Text
+        ddlResName.Items.Clear()
+        ddlResName.DataSourceID = "ObjResName"
+        ddlResName.DataBind()
+        ddlResName.SelectedValue = CType(GrdExamResources.Rows(e.NewEditIndex).FindControl("lblResNameId"), Label).Text
+        txtCapacity.Text = CType(GrdExamResources.Rows(e.NewEditIndex).FindControl("lblCalpacity"), Label).Text
+        btnSave.Text = "UPDATE"
+        btnView.Text = "BACK"
+        El.id = ViewState("id")
+        El.ResTypeId = ddlResType.SelectedItem.ToString
+        El.ResNameId = (ddlResName.SelectedValue)
+        El.Branchcode = ddlBranch.SelectedValue
+        Dt1 = BL.GetGridData(El, El.id)
+        GrdExamResources.DataSource = Dt1
+        GrdExamResources.DataBind()
+        GrdExamResources.Enabled = False
+        btnPublish.Enabled = False
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim heading As String
+        heading = Session("RptFrmTitleName")
+        Me.Lblheading.Text = heading
+        Dim s As String
+        s = ddlExamBatch.SelectedValue
+        If ddlExamBatch.SelectedValue = "0" Then
+            txtCapacity.Text = ""
+        End If
+        'If Not Page.IsPostBack Then
+
+
+        'End If
+    End Sub
+
+    Protected Sub ddlResName_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlResName.SelectedIndexChanged
+        If ddlResName.SelectedValue = "0" Then
+            txtCapacity.Text = ""
+        Else
+
+            El.id = ddlResName.SelectedValue
+            El.Branchcode = ddlBranch.SelectedValue
+            Dt2 = DLExamResources.GetCapacityAutoFill(El)
+            If Dt2.Rows.Count > 0 Then
+
+                If Dt2.Rows(0).Item("Capacity").ToString = "" Then
+                    txtCapacity.Text = 0
+                Else
+                    txtCapacity.Text = (Dt2.Rows(0).Item("Capacity"))
+                End If
+            End If
+        End If
+    End Sub
+
+    Protected Sub btnPublish_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnPublish.Click
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Dim msg As String = ""
+            '"<Table><tr><td> ResourceName ,  capacity,    ExamBatch,    ResourceType </ td></ tr>"
+            El.BatchNameId = ddlExamBatch.SelectedValue
+            El.ResTypeId = ddlResType.SelectedItem.ToString
+            El.ResNameId = ddlResName.SelectedValue
+            El.Branchcode = ddlBranch.SelectedValue
+            Dim ID As Integer = 0
+            Dt1 = DLExamResources.GetpublishGridData(El, ID)
+            If Dt1.Rows.Count = 0 Then
+                lblmsgifo.Text = ""
+                lblerrmsg.Text = "No records to Publish."
+            Else
+
+                msg = "<table><br> <tr style=""border-style: solid; border-width: thin""> " + msg
+                msg = msg + " <td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Branch Name" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Exam Batch" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Resource Type" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Resource Name" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Allocate Capacity" + "</td>" + "</tr><br><tr style=""border-style: solid: solid; border-width: thin"">"
+                For i As Integer = 0 To Dt1.Rows.Count - 1
+                    For j As Integer = 0 To Dt1.Columns.Count - 1
+
+                        msg = msg + "<td  style=""border-style: solid; border-width: thin"">" + Dt1.Rows(i)(j).ToString + "</td>"
+
+                    Next
+                    msg = msg + "</tr><br><tr style=""border-style: solid: solid; border-width: thin"">"
+
+                Next
+                msg = msg + "</table>"
+                DLExamResources.publish(msg)
+                lblmsgifo.Text = "Data is published in Notice Board."
+                lblerrmsg.Text = ""
+            End If
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot publish data."
+            lblmsgifo.Text = ""
+        End If
+    End Sub
+
+    Protected Sub ddlResType_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlResType.SelectedIndexChanged
+        If ddlResName.SelectedValue = "0" Then
+            txtCapacity.Text = ""
+        End If
+    End Sub
+
+    Protected Sub ddlBranch_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlBranch.SelectedIndexChanged
+        ddlResName.SelectedValue = 0
+        'ddlResType.SelectedValue = "Select"
+
+    End Sub
+
+    Protected Sub GrdExamResources_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles GrdExamResources.Sorting
+        Dim sortingDirection As String = String.Empty
+        If dir() = SortDirection.Ascending Then
+            dir = SortDirection.Descending
+            sortingDirection = "Desc"
+        Else
+            dir = SortDirection.Ascending
+            sortingDirection = "Asc"
+        End If
+        btnPublish.Enabled = True
+        El.BatchNameId = ddlExamBatch.SelectedValue
+        El.ResTypeId = ddlResType.SelectedItem.ToString
+        El.ResNameId = ddlResName.SelectedValue
+        El.Branchcode = ddlBranch.SelectedValue
+        Dt1 = BL.GetGridData(El, 0)
+        
+        Dim sortedView As New DataView(Dt1)
+        sortedView.Sort = Convert.ToString(e.SortExpression) & " " & sortingDirection
+        GrdExamResources.DataSource = sortedView
+        GrdExamResources.DataBind()
+        GrdExamResources.Enabled = True
+        GrdExamResources.Visible = True
+        LinkButton.Focus()
+    End Sub
+    Public Property dir() As SortDirection
+        Get
+            If ViewState("dirState") Is Nothing Then
+                ViewState("dirState") = SortDirection.Descending
+            End If
+            Return DirectCast(ViewState("dirState"), SortDirection)
+        End Get
+        Set(ByVal value As SortDirection)
+            ViewState("dirState") = value
+        End Set
+    End Property
+End Class

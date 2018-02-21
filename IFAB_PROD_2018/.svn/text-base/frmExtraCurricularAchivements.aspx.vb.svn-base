@@ -1,0 +1,241 @@
+﻿
+Partial Class frmExtraCurricularAchivements
+    Inherits BasePage
+    ''Created By- Ajit
+    ''Date- 25 Mar 2013
+    Dim ECA As New ExtraCurricularAchievementsEL
+    Dim ECAB As New ExtraCurricularAchivementsBL
+    Dim dt As DataTable
+
+    Protected Sub ddlDepartment_TextChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlDepartment.TextChanged
+        ddlDepartment.Focus()
+        lblmsg.Text = ""
+        lblerrmsg.Text = ""
+    End Sub
+
+    Protected Sub btnadd_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnadd.Click
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            Try
+
+
+                ECA.DeptID = ddlDepartment.SelectedValue
+                ECA.NameOfActivity = txtNameofActivity.Text
+
+                If txtFromDate.Text = "" Then
+                    ECA.FromDate = "1/1/1900"
+                Else
+                    ECA.FromDate = txtFromDate.Text
+                End If
+                If txtToDate.Text = "" Then
+                    ECA.ToDate = "1/1/1900"
+                Else
+                    ECA.ToDate = txtToDate.Text
+                End If
+                If CDate(IIf(txtFromDate.Text <> "", txtFromDate.Text, "1/1/1900")) > CDate(IIf(txtToDate.Text <> "", txtToDate.Text, "1/1/9100")) Then
+                    lblerrmsg.Text = "From Date Cannot be greater than To Date."
+                    lblmsg.Text = ""
+                    Exit Sub
+                End If
+                ECA.Remarks = txtRemarks.Text
+
+                If btnadd.Text = "UPDATE" Then
+                    ECA.Id = ViewState("AID")
+                    ECAB.UpdateRecord(ECA)
+                    btnadd.Text = "ADD"
+                    btnview.Text = "VIEW"
+                    lblerrmsg.Text = ""
+                    lblmsg.Text = "Data Updated Successfully."
+                    GridView1.PageIndex = ViewState("PageIndex")
+                    DisplayGrid()
+                    GridView1.Enabled = "true"
+                    clear()
+
+                ElseIf btnadd.Text = "ADD" Then
+                    ECAB.InsertRecord(ECA)
+                    lblerrmsg.Text = ""
+                    lblmsg.Text = "Data Saved Successfully."
+                    ViewState("PageIndex") = 0
+                    GridView1.PageIndex = 0
+                    DisplayGrid()
+                    clear()
+                End If
+            Catch ex As Exception
+                lblerrmsg.Text = "Date is not valid."
+                lblmsg.Text = ""
+            End Try
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot add/update data."
+            lblmsg.Text = ""
+        End If
+    End Sub
+    Sub clear()
+        txtNameofActivity.Text = ""
+        txtFromDate.Text = ""
+        txtToDate.Text = ""
+        txtRemarks.Text = ""
+    End Sub
+    Sub DisplayGrid()
+        ECA.Id = 0
+        ECA.DeptID = ddlDepartment.SelectedValue
+        ECA.NameOfActivity = txtNameofActivity.Text
+        dt = ECAB.GetECA(ECA)
+        If dt.Rows.Count > 0 Then
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblFromDate"), Label).Text = "01-Jan-1900" Then
+                    CType(rows.FindControl("lblFromDate"), Label).Text = ""
+                End If
+            Next
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblToDate"), Label).Text = "01-Jan-1900" Then
+                    CType(rows.FindControl("lblToDate"), Label).Text = ""
+                End If
+            Next
+            GridView1.Visible = "true"
+            LinkButton.Focus()
+        Else
+            lblerrmsg.Text = "No records to display."
+            lblmsg.Text = ""
+            GridView1.Visible = "False"
+        End If
+
+    End Sub
+
+    Protected Sub GridView1_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GridView1.RowDeleting
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+
+            ECA.Id = CType(GridView1.Rows(e.RowIndex).FindControl("lblAID"), Label).Text
+            ECAB.ChangeFlag(ECA)
+            lblerrmsg.Text = ""
+            lblmsg.Text = "Data Deleted Successfully."
+            GridView1.PageIndex = ViewState("PageIndex")
+
+            ECA.Id = 0
+            ECA.DeptID = ddlDepartment.SelectedValue
+            ECA.NameOfActivity = txtNameofActivity.Text
+            dt = ECAB.GetECA(ECA)
+
+            GridView1.DataSource = dt
+            GridView1.DataBind()
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblFromDate"), Label).Text = "01-Jan-1900" Then
+                    CType(rows.FindControl("lblFromDate"), Label).Text = ""
+                End If
+            Next
+            For Each rows As GridViewRow In GridView1.Rows
+                If CType(rows.FindControl("lblToDate"), Label).Text = "01-Jan-1900" Then
+                    CType(rows.FindControl("lblToDate"), Label).Text = ""
+                End If
+            Next
+
+            GridView1.Visible = "true"
+            LinkButton.Focus()
+            clear()
+        Else
+            lblerrmsg.Text = "You do not belong to this branch, Cannot delete data."
+            lblmsg.Text = ""
+        End If
+    End Sub
+
+    Protected Sub GridView1_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GridView1.RowEditing
+        lblerrmsg.Text = ""
+        lblmsg.Text = ""
+        GridView1.Enabled = "false"
+        'ddlDepartment.Items.Clear()
+        'ddlDepartment.DataSourceID = "objDepartment"
+        'ddlDepartment.DataBind()
+        ddlDepartment.SelectedValue = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblDeptId"), Label).Text
+        txtNameofActivity.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblActivity"), Label).Text
+        txtFromDate.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblFromDate"), Label).Text
+        txtToDate.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblToDate"), Label).Text
+        txtRemarks.Text = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblRemarks"), Label).Text
+        ViewState("AID") = CType(GridView1.Rows(e.NewEditIndex).FindControl("lblAID"), Label).Text
+        btnadd.Text = "UPDATE"
+        btnview.Text = "BACK"
+
+        Dim dt As New DataTable
+
+        ECA.Id = ViewState("AID")
+        ECA.DeptID = ddlDepartment.SelectedValue
+        ECA.NameOfActivity = txtNameofActivity.Text
+        dt = ECAB.GetECA(ECA)
+        GridView1.DataSource = dt
+        GridView1.DataBind()
+        For Each rows As GridViewRow In GridView1.Rows
+            If CType(rows.FindControl("lblFromDate"), Label).Text = "01-Jan-1900" Then
+                CType(rows.FindControl("lblFromDate"), Label).Text = ""
+            End If
+        Next
+        For Each rows As GridViewRow In GridView1.Rows
+            If CType(rows.FindControl("lblToDate"), Label).Text = "01-Jan-1900" Then
+                CType(rows.FindControl("lblToDate"), Label).Text = ""
+            End If
+        Next
+        GridView1.Visible = "true"
+    End Sub
+
+    Protected Sub btnview_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnview.Click
+        lblerrmsg.Text = ""
+        lblmsg.Text = ""
+        If btnview.Text = "VIEW" Then
+            DisplayGrid()
+        Else
+            btnview.Text = "VIEW"
+            btnadd.Text = "ADD"
+            clear()
+            DisplayGrid()
+            GridView1.Enabled = "True"
+        End If
+    End Sub
+
+    Public Property dir() As SortDirection
+        Get
+            If ViewState("dirState") Is Nothing Then
+                ViewState("dirState") = SortDirection.Descending
+            End If
+            Return DirectCast(ViewState("dirState"), SortDirection)
+        End Get
+        Set(ByVal value As SortDirection)
+            ViewState("dirState") = value
+        End Set
+    End Property
+    Protected Sub GridView1_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles GridView1.Sorting
+        Dim sortingDirection As String = String.Empty
+        If dir() = SortDirection.Ascending Then
+            dir = SortDirection.Descending
+            sortingDirection = "Desc"
+        Else
+            dir = SortDirection.Ascending
+            sortingDirection = "Asc"
+        End If
+        Dim dt As New DataTable
+        ECA.Id = 0
+        ECA.DeptID = ddlDepartment.SelectedValue
+        ECA.NameOfActivity = txtNameofActivity.Text
+        dt = ECAB.GetECA(ECA)
+
+        GridView1.DataSource = dt
+        Dim sortedView As New DataView(dt)
+        sortedView.Sort = Convert.ToString(e.SortExpression) & " " & sortingDirection
+        GridView1.DataSource = sortedView
+        GridView1.DataBind()
+        For Each rows As GridViewRow In GridView1.Rows
+            If CType(rows.FindControl("lblFromDate"), Label).Text = "01-Jan-1900" Then
+                CType(rows.FindControl("lblFromDate"), Label).Text = ""
+            End If
+        Next
+        For Each rows As GridViewRow In GridView1.Rows
+            If CType(rows.FindControl("lblToDate"), Label).Text = "01-Jan-1900" Then
+                CType(rows.FindControl("lblToDate"), Label).Text = ""
+            End If
+        Next
+        GridView1.Visible = "true"
+        LinkButton.Focus()
+        clear()
+    End Sub
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+End Class

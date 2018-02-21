@@ -1,0 +1,225 @@
+﻿
+Partial Class frmCreateExamCalendar
+    Inherits BasePage
+    Dim EL As New ELCreateExamCalendar
+    Dim bl As New BLCreateExamCalendar
+    Dim dt As DataTable
+
+    Protected Sub btnSubmit_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSubmit.Click
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            EL.BatchId = ddlExamBatch.SelectedValue
+            EL.SubjectId = ddlSubject.SelectedValue
+            EL.DOE = txtExamDate.Text
+            EL.TOE = txtExamTime.Text
+            If btnSubmit.Text = "UPDATE" Then
+                EL.Id = ViewState("CreateExamCalendar_Auto_id")
+                'dt = BL.CheckDuplicate(EL)
+                'If dt.Rows.Count > 0 Then
+                '    lblerrmsg.Text = "Data already exists."
+                '    lblmsgifo.Text = " "
+                'Else
+                bl.Update(EL)
+                msginfo.Text = ""
+                lblmsg.Text = "Data Updated Successfully."
+                btnSubmit.Text = "ADD"
+                GridCreateExamCalendar.Visible = True
+                btnView.Text = "VIEW"
+                Clear()
+                GridCreateExamCalendar.PageIndex = ViewState("PageIndex")
+                DispGrid()
+            ElseIf btnSubmit.Text = "ADD" Then
+
+                'dt = Depreciation_Rates.CheckDuplicate(DepreiciationRate)
+                'If dt.Rows.Count > 0 Then
+                '    msginfo.Text = "Data already exists."
+                '    lblmsg.Text = ""
+                '    'clear()
+                'Else
+                Dim i As Integer
+                i = bl.Insert(EL)
+                ViewState("dispId ") = CStr(i) + "," + ViewState("dispId ")
+
+                msginfo.Text = ""
+                lblmsg.Text = "Data Saved Successfully."
+                btnSubmit.Text = "ADD"
+                dt = bl.GetAddCreateExamCalender(ViewState("dispId "))
+                GridCreateExamCalendar.Visible = True
+                GridCreateExamCalendar.DataSource = dt
+                GridCreateExamCalendar.DataBind()
+               
+                GridCreateExamCalendar.Enabled = True
+                ViewState("PageIndex") = 0
+                GridCreateExamCalendar.PageIndex = 0
+                'DispGrid()
+                Clear()
+            End If
+        Else
+            msginfo.Text = "You do not belong to this branch, Cannot add/update data."
+            lblmsg.Text = ""
+        End If
+    End Sub
+
+    Protected Sub btnView_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnView.Click
+        If btnView.Text = "VIEW" Then
+            lblmsg.Text = " "
+            msginfo.Text = " "
+            ViewState("PageIndex") = 0
+            GridCreateExamCalendar.PageIndex = 0
+            DispGrid()
+
+        ElseIf btnView.Text = "BACK" Then
+            GridCreateExamCalendar.Enabled = True
+            lblmsg.Text = " "
+            msginfo.Text = " "
+            btnSubmit.Text = "ADD"
+            btnView.Text = "VIEW"
+            Clear()
+            GridCreateExamCalendar.PageIndex = ViewState("PageIndex")
+            DispGrid()
+        End If
+    End Sub
+    Sub DispGrid()
+        EL.Id = 0
+        EL.BatchId = ddlExamBatch.SelectedValue
+        dt = bl.GetCreateExamCalender(EL)
+        If dt.Rows.Count > 0 Then
+            GridCreateExamCalendar.Enabled = True
+            GridCreateExamCalendar.Visible = True
+            GridCreateExamCalendar.DataSource = dt
+            GridCreateExamCalendar.DataBind()
+        Else
+            lblmsg.Text = ""
+            msginfo.Text = "No records to display."
+            GridCreateExamCalendar.Visible = False
+        End If
+    End Sub
+    Sub Clear()
+        txtExamDate.Text = Format(Today, "dd-MMM-yyyy")
+        txtExamTime.Text = ""
+    End Sub
+
+    Protected Sub GridCreateExamCalendar_RowDeleting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewDeleteEventArgs) Handles GridCreateExamCalendar.RowDeleting
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            EL.Id = CType(GridCreateExamCalendar.Rows(e.RowIndex).FindControl("lblID"), HiddenField).Value
+            bl.Delete(EL)
+
+            Clear()
+            GridCreateExamCalendar.PageIndex = ViewState("PageIndex")
+            DispGrid()
+            msginfo.Text = " "
+            lblmsg.Text = "Data Deleted Successfully."
+        Else
+            msginfo.Text = "You do not belong to this branch, Cannot delete data."
+            lblmsg.Text = ""
+        End If
+    End Sub
+
+    Protected Sub GridCreateExamCalendar_RowEditing(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewEditEventArgs) Handles GridCreateExamCalendar.RowEditing
+
+        msginfo.Text = ""
+        lblmsg.Text = ""
+        btnSubmit.Text = "UPDATE"
+        btnView.Visible = True
+        btnView.Text = "BACK"
+        GridCreateExamCalendar.Visible = True
+        ViewState("CreateExamCalendar_Auto_id") = CType(GridCreateExamCalendar.Rows(e.NewEditIndex).FindControl("lblID"), HiddenField).Value
+        ddlExamBatch.SelectedValue = CType(GridCreateExamCalendar.Rows(e.NewEditIndex).FindControl("lblGVBatch_ID"), Label).Text
+        ddlSubject.SelectedValue = CType(GridCreateExamCalendar.Rows(e.NewEditIndex).FindControl("lblGVSubject_Id"), Label).Text
+        txtExamDate.Text = CType(GridCreateExamCalendar.Rows(e.NewEditIndex).FindControl("lblGVDOE"), Label).Text
+        txtExamTime.Text = CType(GridCreateExamCalendar.Rows(e.NewEditIndex).FindControl("lblGVTOE"), Label).Text
+
+        EL.Id = ViewState("CreateExamCalendar_Auto_id")
+        dt = bl.GetCreateExamCalender(EL)
+        GridCreateExamCalendar.DataSource = dt
+        GridCreateExamCalendar.DataBind()
+        GridCreateExamCalendar.Enabled = False
+        GridCreateExamCalendar.Visible = True
+      
+    End Sub
+
+    Protected Sub btnPublish_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnPublish.Click
+        If (Session("BranchCode") = Session("ParentBranch")) Then
+            EL.Id = 0
+            Dim msg As String = ""
+            EL.BatchId = ddlExamBatch.SelectedValue
+            dt = bl.GetPublishCreateExamCalender(EL)
+            If dt.Rows.Count > 0 Then
+                'GridCreateExamCalendar.Enabled = True
+                'GridCreateExamCalendar.Visible = True
+                'GridCreateExamCalendar.DataSource = dt
+                'GridCreateExamCalendar.DataBind()
+
+
+                msg = "<table><br> <tr style=""border-style: solid; border-width: thin""> " + msg
+                msg = msg + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Exam Batch" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Subject Code" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Subject Name" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Date Of Exam" + "</td>" + "<td  style=""border-style: solid; border-width: thin; font-weight: bold; font-size: small;"">" + "Time Of Exam" + "</td>" + "</tr><br><tr style=""border-style: solid: solid; border-width: thin"">"
+                For i As Integer = 0 To dt.Rows.Count - 1
+                    For j As Integer = 0 To dt.Columns.Count - 1
+
+                        msg = msg + "<td  style=""border-style: solid; border-width: thin"">" + dt.Rows(i)(j).ToString + "</td>"
+
+                    Next
+                    msg = msg + "</tr><br><tr style=""border-style: solid: solid; border-width: thin"">"
+
+                Next
+                msg = msg + "</table>"
+                DLCreateExamCalendar.publish(msg)
+
+                lblmsg.Text = "Data is published in Notice Board."
+                msginfo.Text = ""
+            Else
+                lblmsg.Text = ""
+                msginfo.Text = "No records to display."
+                GridCreateExamCalendar.Visible = False
+            End If
+        Else
+            msginfo.Text = "You do not belong to this branch, Cannot Publish data."
+            lblmsg.Text = ""
+        End If
+    End Sub
+
+    Protected Sub Page_Load1(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim heading As String
+        heading = Session("RptFrmTitleName")
+        Me.Lblheading.Text = heading
+        If Not IsPostBack Then
+            ddlExamBatch.Focus()
+            txtExamDate.Text = Format(Today, "dd-MMM-yyyy")
+        End If
+    End Sub
+
+    <System.Web.Services.WebMethod()> Public Sub AbandonSession()
+        Dim i As Int16 = UserDetailsDB.UpdateUserlog()
+        Response.Redirect("LogIn.aspx")
+    End Sub
+
+    Protected Sub GridCreateExamCalendar_Sorting(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.GridViewSortEventArgs) Handles GridCreateExamCalendar.Sorting
+        Dim sortingDirection As String = String.Empty
+        If dir() = SortDirection.Ascending Then
+            dir = SortDirection.Descending
+            sortingDirection = "Desc"
+        Else
+            dir = SortDirection.Ascending
+            sortingDirection = "Asc"
+        End If
+        EL.Id = 0
+        EL.BatchId = ddlExamBatch.SelectedValue
+        dt = bl.GetCreateExamCalender(EL)
+        Dim sortedView As New DataView(dt)
+        sortedView.Sort = Convert.ToString(e.SortExpression) & " " & sortingDirection
+        GridCreateExamCalendar.DataSource = sortedView
+        GridCreateExamCalendar.Enabled = True
+        GridCreateExamCalendar.Visible = True
+        GridCreateExamCalendar.DataBind()
+    End Sub
+    Public Property dir() As SortDirection
+        Get
+            If ViewState("dirState") Is Nothing Then
+                ViewState("dirState") = SortDirection.Descending
+            End If
+            Return DirectCast(ViewState("dirState"), SortDirection)
+        End Get
+        Set(ByVal value As SortDirection)
+            ViewState("dirState") = value
+        End Set
+    End Property
+End Class
